@@ -27,11 +27,14 @@ The paper covers mathematics, physics, and all seven Millennium Problems. All tr
 ## Repository Structure
 
 ```
-papers/          Working paper (afb_working.md) — the main document
-proofs/          Formal scaffolds
-  afb_scaffold.thy    Isabelle/HOL scaffold — verifies in Isabelle2025
-  bst_scaffold.v      Coq scaffold — verifies in Coq
-LICENSE          MIT
+Axiom-of-Finite-Bounds/
+├── README.md
+├── LICENSE
+├── papers/
+│   └── afb_working.md        Working paper — the main document
+└── proofs/
+    ├── afb_scaffold.thy      Isabelle/HOL scaffold — verifies in Isabelle2025-2
+    └── AFB-coq.v             Coq scaffold — verifies in Coq
 ```
 
 ---
