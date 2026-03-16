@@ -1,77 +1,103 @@
-# Bounded Set Theory (BST) & Bounded First-Order Logic (BFOL)
+# ShakyFoundation
 
-> **"Every set has finite cardinality bounded by some metatheoretic ordinal."**
+**A formal alternative foundation for finite mathematics.**
 
-This repository contains the formal appendix and Coq verification scaffold for **The Axiom of Finite Bounds**, a working paper (2026) proposing a new foundation for mathematics that operates without the Axiom of Infinity.
-
-## 1. Overview
-
-Bounded Set Theory (BST) is a formal system built on the premise that mathematical existence is tied to finite describability. Unlike traditional ZFC, which assumes completed infinite totalities, BST recovers the core of real analysis and arithmetic through **Bounded First-Order Logic (BFOL)** and a metatheoretic bound $\Omega$.
-
-### Key Contributions:
-
-* **Resolution of the Burali-Forti Paradox:** BST avoids the classic paradoxes of bounded theories by treating the maximum bound as a metatheoretic constraint rather than an internal object.
-* **Finite Cauchy Completion:** A construction of the "bounded reals" $\mathbb{R}_B(k)$ that allows for differentiation and integration within a finite framework.
-* **The Finite Coincidence Theorem:** Formal proof that cardinality and ordinal-membership coincide for all sets within the system.
+This repository contains the working paper, formal proofs, and scaffolds for the Axiom of Finite Bounds (AFB) — a foundational commitment that every set has finite cardinality bounded by some metatheoretic ordinal — and the mathematics built on top of it.
 
 ---
 
-## 2. Repository Structure
+## What This Is
 
-* `axiom_of_finite_bounds_paper_scaffold.v`: The core Coq development.
-* **Module `BFOL**`: Defines the syntax and inference rules for Bounded First-Order Logic, including primitive bounded quantifiers ($\forall x < k$).
-* **Module `BST**`: Implements the seven axioms of Bounded Set Theory (Extensionality, Pairing, Union, Bounded Separation, Bounded Replacement, Foundation, and the Empty Set).
-* **Theorems**: Includes the formalization of the `Successor_Condition` and the `Scaffold_Precision_Limit`.
+The assumption that infinity exists predates written history. It entered formal mathematics through ancient Greece, became philosophy, became logic, became the Axiom of Infinity in ZFC — and at no point was it proved. It was assumed, formalised, and handed down until it was everywhere.
 
+This project takes the logical consequence of negating that assumption seriously: not just "not infinite," but a positive upper bound. That commitment forces a new logic from scratch — Bounded First-Order Logic (BFOL) — and from there, a complete alternative foundation for finite mathematics.
 
+The result is:
+
+- **Bounded First-Order Logic (BFOL)** — a logic where every quantifier must explicitly declare its finite range
+- **The Axiom of Finite Bounds (AFB)** — every set has finite cardinality bounded by some metatheoretic ordinal
+- **Bounded Set Theory (BST)** — seven axioms built on top of BFOL and AFB
+- **The bounded number chain** — ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴)
+- **Full real and complex analysis** recovered with explicit finite bounds
+
+The paper covers mathematics, physics, and all seven Millennium Problems. All tradeoffs are stated honestly.
 
 ---
 
-## 3. The Formal Foundation
-
-The system replaces the Axiom of Infinity with the **Axiom of Finite Bounds (AFB)**. In the Coq development, this is represented by a meta-level surrogate `Omega` used for cardinal bookkeeping.
-
-```coq
-(* Snippet from bst_formulation.v *)
-Axiom AFB_Bound : forall s : obj, card s <= Omega.
+## Repository Structure
 
 ```
-
-By constraining the domain of discourse to $x < \Omega$, we ensure that all operations—including the power set (which is notably absent as a total operation)—remain within the bounds of constructive, finite mathematics.
-
----
-
-## 4. Why This Matters
-
-Standard mathematics relies on the assumption of the infinite to guarantee the existence of limits and the continuum. BST challenges this by demonstrating that:
-
-1. **Computational Feasibility:** All mathematical objects in BST are, in principle, representable in finite space.
-2. **Logical Consistency:** By bounding quantification, we eliminate the "hidden" infinite assumptions in standard FOL.
-3. **Modern Relevance:** Provides a rigorous framework for mathematics in a world of finite computation and discrete physics.
-
----
-
-## 5. Status & Technical Notes
-
-This is a **working paper scaffold**.
-
-* **Current State:** The Coq file functions as a registry of the paper's core constructions and dependencies.
-* **Proof-Theoretic Strength:** Initial estimates place the strength of BST between $PRA$ (Primitive Recursive Arithmetic) and $\varepsilon_0$, depending on the induction schema used.
-* **Formal Verification:** The core axioms and the relationship between ordinals and cardinality are verified. Further work is required to internalize freshness conditions in the BFOL inductive system.
-
-## 6. How to Run
-
-Requires **Coq 8.15** or later.
-
-```bash
-coqc axiom_of_finite_bounds_paper_scaffold.v
-
+papers/          Working paper (afb_working.md) — the main document
+proofs/          Formal scaffolds
+  afb_scaffold.thy    Isabelle/HOL scaffold — verifies in Isabelle2025
+  bst_scaffold.v      Coq scaffold — verifies in Coq
+LICENSE          MIT
 ```
 
 ---
 
-## 7. Citation & Contact
+## Formal Verification Status
 
-If you wish to discuss the proof-theoretic implications or the formalization of the Finite Coincidence Theorem, please open an issue in this repository.
+Both scaffolds have been verified by proof assistants:
 
-*Note: This work is released by [ShakyFoundation] to encourage discussion on the ontological status of completed infinite totalities.*
+**Isabelle/HOL** (`proofs/afb_scaffold.thy`)
+- Verified in Isabelle2025-2
+- `AFB_Scaffold_Verified` theorem confirmed: `card_bst empty_set = 0 ∧ 0 < Omega`
+- All definitions typecheck, all axioms well-formed
+
+**Coq** (`proofs/bst_scaffold.v`)
+- Verified in Coq
+- Core structure machine-checked
+
+Both scaffolds are honest about their status: they are publication-facing formal appendices, not completed mechanisations. Substitution, freshness conditions, soundness, and completeness are flagged as future work.
+
+---
+
+## Using This With AI
+
+The full working paper is available as `papers/afb_working.md`. If you want to engage with the paper using an AI assistant, feed it the `.md` file directly and ask it to identify future work, gaps, or objections. The paper is designed to be machine-readable.
+
+---
+
+## Contributing
+
+Contributions are welcome and will be scrutinised carefully.
+
+**What is and isn't up for debate:**
+
+The foundational commitment — that infinity is a metatheoretic constraint rather than an internal object, and that every set has finite cardinality bounded by some ordinal — is the axiom. It is not up for debate in pull requests. Everything built on top of it is.
+
+**Welcome contributions:**
+
+- Formalisation of future work sections
+- Extensions to the Isabelle/HOL or Coq scaffolds
+- Identified gaps or errors in the mathematics
+- Additional theorem proofs within BST
+- Corrections to typos, notation, or presentation
+
+**How to contribute:**
+
+1. Fork the repository
+2. Make your changes
+3. Open a pull request with a clear description of what you've changed and why
+4. Be prepared for scrutiny — this is foundational work and precision matters
+
+If you find a genuine error in the paper, open an issue rather than a pull request. Describe the problem precisely.
+
+---
+
+## License
+
+MIT. Everything here is free to use, modify, and build on. If you do something interesting with it, let us know.
+
+---
+
+## Contact
+
+**X/Twitter:** [@ShakyFoundatio](https://twitter.com/ShakyFoundatio)  
+**Website:** [shakyfoundation.com](https://shakyfoundation.com)  
+**Mastodon:** @ShakyFoundation
+
+---
+
+*Working paper — 2026. The foundation is shaky only in the sense that foundations always are when examined closely.*
