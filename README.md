@@ -88,7 +88,7 @@ If you find a genuine error in the paper, open an issue rather than a pull reque
 
 ## License
 
-MIT. Everything here is free to use, modify, and build on. If you do something interesting with it, let us know.
+MIT. Everything here is free to use, modify, and build on. If you do something interesting with it, let me know.
 
 ---
 
