@@ -65,7 +65,7 @@ Contributions are welcome and will be scrutinised carefully.
 
 **What is and isn't up for debate:**
 
-The foundational commitment — that infinity is a metatheoretic constraint rather than an internal object, and that every set has finite cardinality bounded by some ordinal — is the axiom. It is not up for debate in pull requests. Everything built on top of it is.
+The foundational commitment — that every set has finite cardinality bounded by some metatheoretic ordinal, and that no completed infinite totality exists — is the axiom. It is not up for debate in pull requests. Everything built on top of it is.
 
 **Welcome contributions:**
 
