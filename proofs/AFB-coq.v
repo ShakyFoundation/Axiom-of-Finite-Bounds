@@ -1,12 +1,12 @@
 (**
-  bst_formulation_b_appendix_scaffold.v
+  bst_formulation_b_appendix_scaffold_updated.v
 
-  Appendix scaffold for the working paper on Bounded First-Order Logic
-  (BFOL) and Bounded Set Theory (BST).
+  Coq scaffold for the working paper on the Axiom of Finite Bounds (AFB),
+  Bounded First-Order Logic (BFOL), and Bounded Set Theory (BST).
 
   Purpose.
   --------
-  This file records, in a compact Coq form, the principal syntactic
+  This file records, in compact Coq form, the principal syntactic
   categories, proof rules, object-language constants, and axiom-schemas
   tracked in the paper. It is intended to function as a formal appendix
   scaffold and cross-checking aid for the manuscript.
@@ -95,32 +95,46 @@ Module BFOL.
   (** Draft absurdity marker.
 
       This serves as a placeholder contradiction formula for the natural
-      deduction presentation used in the appendix scaffold. A fuller
-      mechanization could replace it with a dedicated falsity constant. *)
-  Definition absurd : formula := FRel leq_sym [].
+      deduction presentation. A dedicated [false_sym] is used rather than
+      reusing [leq_sym] at arity 0. *)
+  Parameter false_sym : rel_sym.
+  Definition absurd : formula := FRel false_sym [].
 
   (** Formula substitution.
 
-      The operation is left abstract in this appendix file. The paper
-      states bounded proof rules and substitution behavior informally; a
-      later mechanization would replace this parameter with a concrete,
-      verified, capture-avoiding definition and its lemmas. *)
+      Left abstract in this scaffold. A later mechanization would replace
+      this parameter with a concrete, verified, capture-avoiding
+      definition. *)
   Parameter subst_formula : var -> term -> formula -> formula.
 
   (** Contexts are finite lists of assumptions. *)
   Definition context := list formula.
 
+  (** Side-condition scaffolding.
+
+      The paper's bounded quantifier rules require freshness/eigenvariable
+      conditions. These are not yet enforced inside [Provable], but the
+      following abstract predicates reserve their place in the formal
+      development. A later mechanization can use them to refine the
+      quantifier rules and connect them to a concrete account of free
+      variables and capture-avoiding substitution. *)
+  Parameter free_in_term : var -> term -> Prop.
+  Parameter free_in_formula : var -> formula -> Prop.
+  Parameter fresh_for_ctx : var -> context -> Prop.
+
   (** Natural deduction for BFOL.
 
       Propositional and equality rules follow ordinary first-order proof
-      practice. The bounded quantifier rules should be read as a compact
-      schematic encoding of the manuscript's rules.
+      practice. The bounded quantifier rules encode the manuscript's rules
+      schematically.
 
-      Important manuscript-to-Coq note:
-      the paper states freshness restrictions for bounded
-      forall-introduction and exists-elimination. Those side conditions
-      are not yet represented explicitly in this lightweight appendix
-      version. *)
+      Note: freshness restrictions for bounded forall-introduction and
+      exists-elimination are not yet represented explicitly in this
+      lightweight scaffold. This is a known gap flagged for future work.
+
+      Note: no explosion rule (ex falso) is present. This is intentional
+      for the scaffold.
+   *)
   Inductive Provable : context -> formula -> Prop :=
   | Pr_Assume : forall Gamma phi,
       In phi Gamma ->
@@ -185,12 +199,24 @@ Module BFOL.
       Provable (phi :: BLe (TVar x) b :: Gamma) psi ->
       Provable Gamma psi.
 
+  (** Named schematic side-condition formulas corresponding to the paper.
+
+      These do not yet constrain [Provable]; they serve as formal
+      placeholders for the manuscript's eigenvariable restrictions. *)
+  Definition ForallB_Fresh_OK
+    (x : var) (b : term) (Gamma : context) (phi : formula) : Prop :=
+    fresh_for_ctx x Gamma.
+
+  Definition ExistsB_Fresh_OK
+    (x : var) (b : term) (Gamma : context) (phi psi : formula) : Prop :=
+    fresh_for_ctx x Gamma /\ ~ free_in_formula x psi.
+
 End BFOL.
 
 Module BST.
   Import BFOL.
 
-  (** Meta-level carrier for the BST appendix scaffold.
+  (** Meta-level carrier for the BST scaffold.
 
       The paper sharply distinguishes BFOL as a bounded object-language
       from the further semantic restriction that intended BST models be
@@ -205,25 +231,48 @@ Module BST.
 
   (** Meta-level finite bound.
 
-      In the manuscript's more mature formulation, the Global Boundedness
-      Principle is metatheoretic: the maximal extent of an intended model
-      need not be nameable inside the object language. The parameter
-      [Omega] is therefore best read here only as a draft meta-level
-      surrogate used for compact cardinal statements in this appendix. *)
+      In the manuscript's preferred formulation, the Global Boundedness
+      Principle is metatheoretic: every intended model of BST has a finite
+      domain, and the maximal extent of that domain need not be nameable
+      in the object language. The parameter [Omega] is therefore best read
+      here only as a draft meta-level surrogate used for compact cardinal
+      statements in this appendix scaffold. *)
   Parameter Omega : nat.
   Axiom Omega_nonzero : Omega > 0.
   Axiom AFB_Bound : forall x : obj, card x <= Omega.
 
-  (** Backward-compatible aliases from earlier draft names. *)
   Definition Omega_not_zero := Omega_nonzero.
   Definition AFB := AFB_Bound.
 
-  (** Meta-level formula constructors for membership and equality.
+  (** Primitive ordinal/cardinality registry.
 
-      This bridge is pragmatic rather than final: it allows the appendix
-      scaffold to state the paper's BST axioms using the BFOL formula type
-      without claiming that the object-language/semantics interface has
-      already been fully internalized. *)
+      The paper treats primitive ordinals and primitive cardinality as
+      conceptually prior to the explicit statement of AFB, and records a
+      finite-coincidence theorem linking them in the finite setting.
+      The present scaffold only reserves these notions abstractly. *)
+  Parameter empty_ordinal : obj.
+  Parameter succ_ordinal : obj -> obj.
+  Parameter canonical_ord : obj -> obj.
+  Parameter is_finite_set : obj -> Prop.
+
+  Axiom Empty_Ordinal_Is_Nat :
+    is_ordinal empty_ordinal.
+
+  Axiom Succ_Ordinal_Preserves_Nat :
+    forall n : obj, is_ordinal n -> is_ordinal (succ_ordinal n).
+
+  Axiom Finite_Sets_Are_Bounded :
+    forall x : obj, is_finite_set x -> card x <= Omega.
+
+  Axiom Finite_Coincidence_Scaffold :
+    forall x : obj, is_finite_set x -> is_ordinal (canonical_ord x).
+
+  Definition EmptyOrdinal_Nat := Empty_Ordinal_Is_Nat.
+  Definition SuccOrdinal_Nat := Succ_Ordinal_Preserves_Nat.
+  Definition FiniteSets_Bounded := Finite_Sets_Are_Bounded.
+  Definition FiniteCoincidence := Finite_Coincidence_Scaffold.
+
+  (** Meta-level formula constructors for membership and equality. *)
   Parameter MemberF : obj -> obj -> formula.
   Parameter EqualF  : obj -> obj -> formula.
 
@@ -243,7 +292,6 @@ Module BST.
   Axiom Empty_Set_Cardinality :
     card empty_set = 0.
 
-  (** Backward-compatible aliases. *)
   Definition EmptySet_Property := Empty_Set_Property.
   Definition EmptySet_Card := Empty_Set_Cardinality.
 
@@ -269,7 +317,11 @@ Module BST.
 
   Definition OrderedPair_Injective := Ordered_Pair_Injective.
 
-  (** Bounded union. *)
+  (** Bounded union.
+
+      Note: the union axiom below remains a surrogate. The bound variable
+      does not occur in the body, so it does not yet fully express
+      ordinary union membership. *)
   Parameter b_union : obj -> obj.
   Axiom Union_Property : forall x z : obj,
     Thm (FImp (MemberF z (b_union x))
@@ -294,7 +346,10 @@ Module BST.
 
   Definition Separation_Card := Separation_Cardinality.
 
-  (** Replacement. *)
+  (** Replacement.
+
+      Note: [Replacement_Property] remains a surrogate. The bounded
+      existential does not yet relate [y] to the graph [F]. *)
   Parameter replacement : obj -> (obj -> obj -> formula) -> obj.
 
   Axiom Replacement_Property : forall (x : obj) (F : obj -> obj -> formula),
@@ -306,14 +361,19 @@ Module BST.
       Thm (FImp (MemberF y (replacement x F))
                 (FExistsB 0 (denote x) (FNot absurd))).
 
-  (** Regularity. *)
+  (** Foundation / Regularity and finite Choice.
+
+      In the more mature architecture described in the paper, Foundation
+      is intended as a theorem of BST rather than as an independent
+      primitive axiom, and Choice is present only in bounded/finite form.
+      In the current scaffold both are recorded axiomatically as bridge
+      items. *)
   Axiom Regularity : forall x : obj,
     (exists y : obj, Thm (MemberF y x)) ->
     exists y : obj,
       Thm (MemberF y x) /\
       (forall z : obj, Thm (MemberF z y) -> ~ Thm (MemberF z x)).
 
-  (** Bounded choice. *)
   Parameter choice_set : obj -> obj.
   Axiom Bounded_Choice : forall x : obj,
     (forall y : obj,
@@ -325,11 +385,7 @@ Module BST.
         Thm (MemberF z y) /\
         Thm (MemberF (opair y z) (choice_set x)).
 
-  (** Primitive ordinal/numerical fragment.
-
-      These definitions and axioms track the paper's minimal ordinal and
-      cardinal apparatus used to state AFB-related constructions before
-      the later metatheoretic developments. *)
+  (** Primitive ordinal/numerical fragment. *)
   Definition is_nat (n : obj) : Prop := is_ordinal n.
 
   Parameter succ : obj -> option obj.
@@ -337,6 +393,20 @@ Module BST.
     card n + 1 <= Omega <-> exists sn : obj, succ n = Some sn.
 
   Definition Succ_Condition := Successor_Condition.
+
+  (** Bounded induction scaffold.
+
+      This is a schematic meta-level version reflecting the paper's
+      emphasis on bounded induction over finite ordinal segments. *)
+  Axiom BST_Bounded_Induction :
+    forall P : obj -> Prop,
+      forall k : obj,
+        is_nat k ->
+        P empty_ordinal ->
+        (forall n : obj,
+            is_nat n -> card n < card k -> P n -> P (succ_ordinal n)) ->
+        forall n : obj,
+          is_nat n -> card n <= card k -> P n.
 
   (** Draft rational and scaffold encodings used to mirror later sections
       of the manuscript. *)
@@ -353,10 +423,6 @@ Module BST.
       exists q : obj,
         Thm (MemberF (opair k q) s) /\ is_rational q.
 
-  (** In this appendix scaffold, the following theorem is an immediate
-      consequence of the ambient finite-bound axiom. It is retained as a
-      named checkpoint because it corresponds to a claim tracked in the
-      working paper. *)
   Theorem Scaffold_Precision_Limit : forall s : obj,
     is_scaffold s -> card s <= Omega.
   Proof.
@@ -367,11 +433,40 @@ Module BST.
   Definition scaffold_precision_limit := Scaffold_Precision_Limit.
 
   (** Feasibility is represented here as a meta-level predicate on BFOL
-      formulas. In the present appendix file this remains schematic: the
-      paper's philosophical and foundational thesis is recorded, but not
-      yet analyzed proof-theoretically in Coq. *)
+      formulas. In the present appendix file this remains schematic. *)
   Parameter is_feasible : formula -> Prop.
   Axiom BST_Feasibility : forall phi : formula,
     Thm phi -> is_feasible phi.
+
+  (** Additional checkpoint lemmas. *)
+  Theorem Finite_Set_Bound : forall x : obj,
+    is_finite_set x -> card x <= Omega.
+  Proof.
+    intros x Hfin.
+    apply Finite_Sets_Are_Bounded.
+    exact Hfin.
+  Qed.
+
+  Theorem Empty_Ordinal_Is_Natural :
+    is_nat empty_ordinal.
+  Proof.
+    exact Empty_Ordinal_Is_Nat.
+  Qed.
+
+  Theorem Successor_Ordinal_Is_Natural : forall n : obj,
+    is_nat n -> is_nat (succ_ordinal n).
+  Proof.
+    intros n Hn.
+    apply Succ_Ordinal_Preserves_Nat.
+    exact Hn.
+  Qed.
+
+  Theorem Canonical_Ordinal_Is_Natural_For_Finite_Sets : forall x : obj,
+    is_finite_set x -> is_nat (canonical_ord x).
+  Proof.
+    intros x Hfin.
+    apply Finite_Coincidence_Scaffold.
+    exact Hfin.
+  Qed.
 
 End BST.
