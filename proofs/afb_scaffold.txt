@@ -1,0 +1,376 @@
+ /-
+  afb_scaffold.lean
+
+  Lean 4 scaffold for the working paper on the Axiom of Finite Bounds (AFB),
+  Bounded First-Order Logic (BFOL), and Bounded Set Theory (BST).
+
+  Purpose.
+  --------
+  This file records, in compact Lean form, the principal syntactic
+  categories, proof rules, object-language constants, and axiom-schemas
+  tracked in the paper. It is intended to function as a formal appendix
+  scaffold and cross-checking aid for the manuscript.
+
+  Status.
+  -------
+  This is not a completed mechanization of the full metatheory developed
+  or proposed in the paper. In particular:
+
+  - BFOL is represented here as a bounded proof language with primitive
+    bounded quantifiers.
+  - The manuscript's Global Boundedness Principle (GBP) is primarily a
+    metatheoretic restriction on intended models; this file uses a simple
+    meta-level surrogate [Omega] only for draft cardinal bookkeeping.
+  - Several proof-theoretic side conditions stated in the manuscript,
+    especially freshness conditions on bounded quantifier rules, are not
+    yet internalized in the inductive proof system below.
+  - Substitution, well-formedness, semantic interpretation, and
+    soundness/completeness are not yet fully developed here.
+  - The BST section should be read as a registry of the paper's core
+    constructions and dependencies, not as a final semantic reduction of
+    all BST claims to Lean.
+
+  Accordingly, this file is best understood as a publication-facing formal
+  scaffold accompanying the working paper, rather than as a finished
+  verified deep embedding.
+-/
+
+namespace BFOL
+
+/-- Variables are represented by natural-number names. -/
+abbrev var := Nat
+
+/-- Function and relation symbols carry arities. The current syntax does
+not yet enforce those arities intrinsically. -/
+axiom func_sym : Type
+axiom rel_sym  : Type
+axiom func_arity : func_sym → Nat
+axiom rel_arity  : rel_sym → Nat
+
+/-- BFOL terms. Unbounded quantifiers are intentionally absent from the
+language of formulas below. -/
+inductive term : Type
+| TVar : var → term
+| TConst : Nat → term
+| TFun : func_sym → List term → term
+
+
+/-- BFOL formulas. -/
+inductive formula : Type
+| FEqual   : term → term → formula
+| FRel     : rel_sym → List term → formula
+| FNot     : formula → formula
+| FAnd     : formula → formula → formula
+| FOr      : formula → formula → formula
+| FImp     : formula → formula → formula
+| FForallB : var → term → formula → formula
+| FExistsB : var → term → formula → formula
+
+
+/-- Distinguished bounding relation. -/
+axiom leq_sym : rel_sym
+
+noncomputable def BLe (u t : term) : formula :=
+  formula.FRel leq_sym [u, t]
+
+/-- Draft absurdity marker. -/
+axiom false_sym : rel_sym
+
+noncomputable def absurd : formula :=
+  formula.FRel false_sym []
+
+/-- Formula substitution, left abstract in this scaffold. -/
+axiom subst_formula : var → term → formula → formula
+
+/-- Contexts are finite lists of assumptions. -/
+abbrev context := List formula
+
+/-- Side-condition scaffolding. -/
+axiom free_in_term : var → term → Prop
+axiom free_in_formula : var → formula → Prop
+axiom fresh_for_ctx : var → context → Prop
+
+/-- Natural deduction for BFOL. -/
+inductive Provable : context → formula → Prop
+| Pr_Assume : ∀ Γ φ,
+    φ ∈ Γ →
+    Provable Γ φ
+| Pr_And_I : ∀ Γ φ ψ,
+    Provable Γ φ →
+    Provable Γ ψ →
+    Provable Γ (formula.FAnd φ ψ)
+| Pr_And_EL : ∀ Γ φ ψ,
+    Provable Γ (formula.FAnd φ ψ) →
+    Provable Γ φ
+| Pr_And_ER : ∀ Γ φ ψ,
+    Provable Γ (formula.FAnd φ ψ) →
+    Provable Γ ψ
+| Pr_Or_IL : ∀ Γ φ ψ,
+    Provable Γ φ →
+    Provable Γ (formula.FOr φ ψ)
+| Pr_Or_IR : ∀ Γ φ ψ,
+    Provable Γ ψ →
+    Provable Γ (formula.FOr φ ψ)
+| Pr_Or_E : ∀ Γ φ ψ χ,
+    Provable Γ (formula.FOr φ ψ) →
+    Provable (φ :: Γ) χ →
+    Provable (ψ :: Γ) χ →
+    Provable Γ χ
+| Pr_Imp_I : ∀ Γ φ ψ,
+    Provable (φ :: Γ) ψ →
+    Provable Γ (formula.FImp φ ψ)
+| Pr_Imp_E : ∀ Γ φ ψ,
+    Provable Γ (formula.FImp φ ψ) →
+    Provable Γ φ →
+    Provable Γ ψ
+| Pr_Not_I : ∀ Γ φ,
+    Provable (φ :: Γ) absurd →
+    Provable Γ (formula.FNot φ)
+| Pr_Not_E : ∀ Γ φ,
+    Provable Γ φ →
+    Provable Γ (formula.FNot φ) →
+    Provable Γ absurd
+| Pr_Eq_Refl : ∀ Γ t,
+    Provable Γ (formula.FEqual t t)
+| Pr_Eq_Symm : ∀ Γ s t,
+    Provable Γ (formula.FEqual s t) →
+    Provable Γ (formula.FEqual t s)
+| Pr_Eq_Trans : ∀ Γ r s t,
+    Provable Γ (formula.FEqual r s) →
+    Provable Γ (formula.FEqual s t) →
+    Provable Γ (formula.FEqual r t)
+| Pr_ForallB_I : ∀ Γ x b φ,
+    Provable (BLe (term.TVar x) b :: Γ) φ →
+    Provable Γ (formula.FForallB x b φ)
+| Pr_ForallB_E : ∀ Γ x b φ u,
+    Provable Γ (formula.FForallB x b φ) →
+    Provable Γ (BLe u b) →
+    Provable Γ (subst_formula x u φ)
+| Pr_ExistsB_I : ∀ Γ x b φ u,
+    Provable Γ (subst_formula x u φ) →
+    Provable Γ (BLe u b) →
+    Provable Γ (formula.FExistsB x b φ)
+| Pr_ExistsB_E : ∀ Γ x b φ ψ,
+    Provable Γ (formula.FExistsB x b φ) →
+    Provable (φ :: BLe (term.TVar x) b :: Γ) ψ →
+    Provable Γ ψ
+
+/-- Named schematic side-condition formulas corresponding to the paper. -/
+def ForallB_Fresh_OK
+  (x : var) (_b : term) (Γ : context) (_φ : formula) : Prop :=
+  fresh_for_ctx x Γ
+
+def ExistsB_Fresh_OK
+  (x : var) (_b : term) (Γ : context) (_φ ψ : formula) : Prop :=
+  fresh_for_ctx x Γ ∧ ¬ free_in_formula x ψ
+
+end BFOL
+
+namespace BST
+open BFOL
+
+/-- Meta-level carrier for the BST scaffold. -/
+axiom obj : Type
+axiom denote : obj → term
+axiom card : obj → Nat
+axiom is_ordinal : obj → Prop
+
+/-- Meta-level finite bound. -/
+axiom Omega : Nat
+axiom Omega_nonzero : Omega > 0
+axiom AFB_Bound : ∀ x : obj, card x ≤ Omega
+
+abbrev Omega_not_zero := Omega_nonzero
+abbrev AFB := AFB_Bound
+
+/-- Primitive ordinal/cardinality registry. -/
+axiom empty_ordinal : obj
+axiom succ_ordinal : obj → obj
+axiom canonical_ord : obj → obj
+axiom is_finite_set : obj → Prop
+
+axiom Empty_Ordinal_Is_Nat :
+  is_ordinal empty_ordinal
+
+axiom Succ_Ordinal_Preserves_Nat :
+  ∀ n : obj, is_ordinal n → is_ordinal (succ_ordinal n)
+
+axiom Finite_Sets_Are_Bounded :
+  ∀ x : obj, is_finite_set x → card x ≤ Omega
+
+axiom Finite_Coincidence_Scaffold :
+  ∀ x : obj, is_finite_set x → is_ordinal (canonical_ord x)
+
+abbrev EmptyOrdinal_Nat := Empty_Ordinal_Is_Nat
+abbrev SuccOrdinal_Nat := Succ_Ordinal_Preserves_Nat
+abbrev FiniteSets_Bounded := Finite_Sets_Are_Bounded
+abbrev FiniteCoincidence := Finite_Coincidence_Scaffold
+
+/-- Meta-level formula constructors for membership and equality. -/
+axiom MemberF : obj → obj → formula
+axiom EqualF  : obj → obj → formula
+
+/-- Theorems of the empty context. -/
+def Thm (φ : formula) : Prop := Provable [] φ
+
+/-- Extensionality. -/
+axiom Extensionality : ∀ x y : obj,
+  (∀ z : obj, Thm (formula.FImp (MemberF z x) (MemberF z y))) →
+  (∀ z : obj, Thm (formula.FImp (MemberF z y) (MemberF z x))) →
+  Thm (EqualF x y)
+
+/-- Empty set. -/
+axiom empty_set : obj
+axiom Empty_Set_Property : ∀ x : obj,
+  Thm (formula.FNot (MemberF x empty_set))
+axiom Empty_Set_Cardinality :
+  card empty_set = 0
+
+abbrev EmptySet_Property := Empty_Set_Property
+abbrev EmptySet_Card := Empty_Set_Cardinality
+
+/-- Pairing. -/
+axiom pair : obj → obj → obj
+axiom Pairing_Left  : ∀ x y : obj,
+  Thm (MemberF x (pair x y))
+axiom Pairing_Right : ∀ x y : obj,
+  Thm (MemberF y (pair x y))
+axiom Pairing_Only  : ∀ x y z : obj,
+  Thm (formula.FImp (MemberF z (pair x y))
+    (formula.FOr (EqualF z x) (EqualF z y)))
+axiom Pairing_Cardinality : ∀ x y : obj,
+  (x = y  → card (pair x y) = 1) ∧
+  (x ≠ y → card (pair x y) = 2)
+
+abbrev Pairing_Card_obj_eq := Pairing_Cardinality
+
+/-- Ordered pairs. -/
+axiom opair : obj → obj → obj
+axiom Ordered_Pair_Injective : ∀ a b c d : obj,
+  Thm (EqualF (opair a b) (opair c d)) → a = c ∧ b = d
+
+abbrev OrderedPair_Injective := Ordered_Pair_Injective
+
+/-- Bounded union. -/
+axiom b_union : obj → obj
+axiom Union_Property : ∀ x z : obj,
+  Thm (formula.FImp (MemberF z (b_union x))
+    (formula.FExistsB 0 (denote x) (MemberF z (pair z z))))
+
+/-- Power set, subject to the ambient bound recorded by [Omega]. -/
+axiom power_set : obj → Option obj
+axiom Power_Set_Condition : ∀ x : obj,
+  (Nat.pow 2 (card x) ≤ Omega) ↔
+  (∃ p : obj, power_set x = some p)
+
+abbrev PowerSet_Condition_alias := Power_Set_Condition
+
+/-- Separation. -/
+axiom separation : obj → (obj → formula) → obj
+
+axiom Separation_Property : ∀ (x : obj) (P : obj → formula) (z : obj),
+  Thm (formula.FImp (MemberF z (separation x P)) (MemberF z x))
+
+axiom Separation_Cardinality : ∀ (x : obj) (P : obj → formula),
+  card (separation x P) ≤ card x
+
+abbrev Separation_Card := Separation_Cardinality
+
+/-- Replacement. -/
+axiom replacement : obj → (obj → obj → formula) → obj
+
+axiom Replacement_Property : ∀ (x : obj) (F : obj → obj → formula),
+  (∀ a b1 b2,
+      Thm (F a b1) →
+      Thm (F a b2) →
+      Thm (EqualF b1 b2)) →
+  ∀ y : obj,
+    Thm (formula.FImp (MemberF y (replacement x F))
+      (formula.FExistsB 0 (denote x) (formula.FNot absurd)))
+
+/-- Foundation / Regularity and finite Choice. -/
+axiom Regularity : ∀ x : obj,
+  (∃ y : obj, Thm (MemberF y x)) →
+  ∃ y : obj,
+    Thm (MemberF y x) ∧
+    (∀ z : obj, Thm (MemberF z y) → ¬ Thm (MemberF z x))
+
+axiom choice_set : obj → obj
+axiom Bounded_Choice : ∀ x : obj,
+  (∀ y : obj,
+      Thm (MemberF y x) →
+      ∃ z : obj, Thm (MemberF z y)) →
+  ∀ y : obj,
+    Thm (MemberF y x) →
+    ∃ z : obj,
+      Thm (MemberF z y) ∧
+      Thm (MemberF (opair y z) (choice_set x))
+
+/-- Primitive ordinal/numerical fragment. -/
+def is_nat (n : obj) : Prop := is_ordinal n
+
+axiom succ : obj → Option obj
+axiom Successor_Condition : ∀ n : obj,
+  card n + 1 ≤ Omega ↔ ∃ sn : obj, succ n = some sn
+
+abbrev Succ_Condition := Successor_Condition
+
+/-- Bounded induction scaffold. -/
+axiom BST_Bounded_Induction :
+  ∀ P : obj → Prop,
+    ∀ k : obj,
+      is_nat k →
+      P empty_ordinal →
+      (∀ n : obj,
+          is_nat n → card n < card k → P n → P (succ_ordinal n)) →
+      ∀ n : obj,
+        is_nat n → card n ≤ card k → P n
+
+/-- Draft rational and scaffold encodings. -/
+def is_rational (q : obj) : Prop :=
+  ∃ n d : obj,
+    Thm (EqualF q (pair n d)) ∧
+    is_nat n ∧
+    is_nat d ∧
+    card d > 0
+
+def is_scaffold (s : obj) : Prop :=
+  ∀ k : obj,
+    is_nat k →
+    ∃ q : obj,
+      Thm (MemberF (opair k q) s) ∧ is_rational q
+
+theorem Scaffold_Precision_Limit : ∀ s : obj,
+  is_scaffold s → card s ≤ Omega := by
+  intro s _
+  exact AFB_Bound s
+
+abbrev scaffold_precision_limit := Scaffold_Precision_Limit
+
+/-- Feasibility is represented here as a meta-level predicate on BFOL
+formulas. In the present scaffold this remains schematic. -/
+axiom is_feasible : formula → Prop
+axiom BST_Feasibility : ∀ φ : formula,
+  Thm φ → is_feasible φ
+
+/-- Additional checkpoint lemmas. -/
+theorem Finite_Set_Bound : ∀ x : obj,
+  is_finite_set x → card x ≤ Omega := by
+  intro x h
+  exact Finite_Sets_Are_Bounded x h
+
+theorem Empty_Ordinal_Is_Natural :
+  is_nat empty_ordinal := by
+  exact Empty_Ordinal_Is_Nat
+
+theorem Successor_Ordinal_Is_Natural : ∀ n : obj,
+  is_nat n → is_nat (succ_ordinal n) := by
+  intro n hn
+  exact Succ_Ordinal_Preserves_Nat n hn
+
+theorem Canonical_Ordinal_Is_Natural_For_Finite_Sets : ∀ x : obj,
+  is_finite_set x → is_nat (canonical_ord x) := by
+  intro x h
+  exact Finite_Coincidence_Scaffold x h
+
+end BST
