@@ -35,7 +35,7 @@
   finished verified deep embedding.
 *)
 
-theory afb_scaffold
+theory afb_scaffold2
   imports Main
 begin
 
@@ -124,6 +124,22 @@ text \<open>Contexts are finite lists of assumptions.\<close>
 type_synonym context_bfol = "formula_bfol list"
 
 text \<open>
+  Side-condition scaffolding.
+
+  The paper's bounded quantifier rules require freshness/eigenvariable
+  conditions. These are not yet enforced inside [Provable], but the
+  following abstract predicates reserve their place in the formal
+  development. A later mechanization can use them to refine the
+  quantifier rules and connect them to a concrete account of free
+  variables and capture-avoiding substitution.
+\<close>
+
+consts
+  free_in_term    :: "var \<Rightarrow> term_bfol \<Rightarrow> bool"
+  free_in_formula :: "var \<Rightarrow> formula_bfol \<Rightarrow> bool"
+  fresh_for_ctx   :: "var \<Rightarrow> context_bfol \<Rightarrow> bool"
+
+text \<open>
   Natural deduction for BFOL.
 
   Propositional and equality rules follow ordinary first-order proof
@@ -192,6 +208,30 @@ inductive Provable :: "context_bfol \<Rightarrow> formula_bfol \<Rightarrow> boo
        (phi # BLe (TVar x) b # Gamma) \<turnstile> psi \<rbrakk>
      \<Longrightarrow> Gamma \<turnstile> psi"
 
+text \<open>
+  Named schematic side-condition formulas corresponding to the paper.
+
+  These do not yet constrain [Provable]; they serve as formal placeholders
+  for the manuscript's eigenvariable restrictions:
+
+    - bounded forall-introduction:
+        x not free in undischarged assumptions other than x \<le> t
+    - bounded exists-elimination:
+        x fresh and not free in the conclusion or in other
+        undischarged assumptions
+
+  A later mechanization can fold these into a refined proof system.
+\<close>
+
+definition ForallB_Fresh_OK ::
+  "var \<Rightarrow> term_bfol \<Rightarrow> context_bfol \<Rightarrow> formula_bfol \<Rightarrow> bool" where
+  "ForallB_Fresh_OK x b Gamma phi \<longleftrightarrow>
+     fresh_for_ctx x Gamma"
+
+definition ExistsB_Fresh_OK ::
+  "var \<Rightarrow> term_bfol \<Rightarrow> context_bfol \<Rightarrow> formula_bfol \<Rightarrow> formula_bfol \<Rightarrow> bool" where
+  "ExistsB_Fresh_OK x b Gamma phi psi \<longleftrightarrow>
+     fresh_for_ctx x Gamma \<and> \<not> free_in_formula x psi"
 
 (* ================================================================== *)
 (* PART 2: BST — Bounded Set Theory                                   *)
@@ -221,9 +261,17 @@ consts
 text \<open>
   Meta-level finite bound.
 
-  In the manuscript's more mature formulation, the Global Boundedness
-  Principle is metatheoretic. [Omega] is a draft meta-level surrogate
-  used for compact cardinal statements in this scaffold.
+  In the manuscript's preferred formulation, the Global Boundedness
+  Principle is metatheoretic:
+
+    Every intended model of BST has a finite domain, and the maximum
+    extent of that domain need not be nameable in the object language.
+
+  The present scaffold does not internalize that semantic condition.
+  Instead, [Omega] is used as a compact meta-level surrogate for draft
+  cardinal bookkeeping. It should therefore be read as a publication
+  scaffold device rather than as the paper's final foundational form of
+  AFB/GBP.
 \<close>
 
 consts Omega :: nat
@@ -238,6 +286,44 @@ text \<open>Backward-compatible aliases.\<close>
 
 lemmas Omega_not_zero = Omega_nonzero
 lemmas AFB = AFB_Bound
+
+text \<open>
+  Primitive ordinal/cardinality registry.
+
+  The paper treats primitive ordinals and primitive cardinality as
+  conceptually prior to the explicit statement of AFB, and records a
+  finite-coincidence theorem linking them in the finite setting.
+  The present scaffold only reserves these notions abstractly; their
+  full internal development remains future work.
+\<close>
+
+consts
+  empty_ordinal   :: obj
+  succ_ordinal    :: "obj \<Rightarrow> obj"
+  canonical_ord   :: "obj \<Rightarrow> obj"
+  is_finite_set   :: "obj \<Rightarrow> bool"
+
+axiomatization where
+  Empty_Ordinal_Is_Nat :
+    "is_ordinal empty_ordinal"
+
+axiomatization where
+  Succ_Ordinal_Preserves_Nat :
+    "\<And>n :: obj. is_ordinal n \<Longrightarrow> is_ordinal (succ_ordinal n)"
+
+axiomatization where
+  Finite_Sets_Are_Bounded :
+    "\<And>x :: obj. is_finite_set x \<Longrightarrow> card_bst x \<le> Omega"
+
+axiomatization where
+  Finite_Coincidence_Scaffold :
+    "\<And>x :: obj.
+       is_finite_set x \<Longrightarrow> is_ordinal (canonical_ord x)"
+
+lemmas EmptyOrdinal_Nat = Empty_Ordinal_Is_Nat
+lemmas SuccOrdinal_Nat = Succ_Ordinal_Preserves_Nat
+lemmas FiniteSets_Bounded = Finite_Sets_Are_Bounded
+lemmas FiniteCoincidence = Finite_Coincidence_Scaffold
 
 text \<open>
   Meta-level formula constructors for membership and equality.
@@ -371,7 +457,16 @@ axiomatization where
          Thm (FImp (MemberF y (replacement x F))
                    (FExistsB 0 (denote x) (FNot absurd)))"
 
-text \<open>Regularity.\<close>
+text \<open>
+  Foundation / Regularity and finite Choice.
+
+  In the more mature architecture described in the paper, Foundation is
+  intended as a theorem of BST rather than as an independent primitive
+  axiom, and Choice is present only in bounded/finite form. In the
+  current scaffold both are recorded axiomatically as bridge items so
+  that downstream constructions can be tracked without yet formalizing
+  their derivation.
+\<close>
 
 axiomatization where
   Regularity :
@@ -380,8 +475,6 @@ axiomatization where
        \<exists>y :: obj.
          Thm (MemberF y x) \<and>
          (\<forall>z :: obj. Thm (MemberF z y) \<longrightarrow> \<not> Thm (MemberF z x))"
-
-text \<open>Bounded choice.\<close>
 
 consts choice_set :: "obj \<Rightarrow> obj"
 
@@ -416,6 +509,26 @@ axiomatization where
        (\<exists>sn :: obj. succ_bst n = Some sn)"
 
 lemmas Succ_Condition = Successor_Condition
+
+text \<open>
+  Bounded induction scaffold.
+
+  The working paper compares two induction schemas and treats bounded
+  induction over finite ordinal segments as central. The present theory
+  records only a schematic meta-level version. It is not yet tied to an
+  internal semantic account of definability in BFOL/BST.
+\<close>
+
+axiomatization where
+  BST_Bounded_Induction :
+    "\<And>P :: obj \<Rightarrow> bool.
+       (\<And>k :: obj.
+          is_nat k \<Longrightarrow>
+          P empty_ordinal \<Longrightarrow>
+          (\<forall>n :: obj.
+              is_nat n \<longrightarrow> card_bst n < card_bst k \<longrightarrow>
+              P n \<longrightarrow> P (succ_ordinal n)) \<Longrightarrow>
+          (\<forall>n :: obj. is_nat n \<longrightarrow> card_bst n \<le> card_bst k \<longrightarrow> P n))"
 
 text \<open>Draft rational and scaffold encodings.\<close>
 
@@ -458,27 +571,76 @@ axiomatization where
     "\<And>phi :: formula_bfol. Thm phi \<Longrightarrow> is_feasible phi"
 
 (* ================================================================== *)
+(* PART 3: SMALL CHECKPOINTS ADDED FROM PAPER-ALIGNED SCAFFOLDING     *)
+(* ================================================================== *)
+
+section \<open>Additional checkpoint lemmas\<close>
+
+text \<open>
+  These lemmas remain intentionally modest. They do not claim the full
+  metatheory developed in the paper; they simply expose some of the
+  newly registered scaffold items under stable names.
+\<close>
+
+theorem Finite_Set_Bound :
+  "is_finite_set x \<Longrightarrow> card_bst x \<le> Omega"
+  by (simp add: Finite_Sets_Are_Bounded)
+
+theorem Empty_Ordinal_Is_Natural :
+  "is_nat empty_ordinal"
+  by (simp add: Empty_Ordinal_Is_Nat)
+
+theorem Successor_Ordinal_Is_Natural :
+  "is_nat n \<Longrightarrow> is_nat (succ_ordinal n)"
+  by (simp add: Succ_Ordinal_Preserves_Nat)
+
+theorem Canonical_Ordinal_Is_Natural_For_Finite_Sets :
+  "is_finite_set x \<Longrightarrow> is_nat (canonical_ord x)"
+  by (simp add: Finite_Coincidence_Scaffold)
+
+(* ================================================================== *)
+(* MODEL-THEORETIC PLACEHOLDERS                                       *)
+(* ================================================================== *)
+
+section \<open>Model-theoretic placeholders\<close>
+
+text \<open>
+  Future mechanization targets corresponding to the paper include:
+
+    - BFOL semantic evaluation over bounded structures
+    - finite-model soundness/completeness checkpoints
+    - explicit BST-model definitions
+    - bounded reflection principles
+    - finite satisfiability/consistency transfer arguments
+
+  These are intentionally not encoded as theorems in the present file.
+\<close>
+
+(* ================================================================== *)
 (* VERIFICATION CHECKPOINT                                            *)
 (* ================================================================== *)
 
 text \<open>
   Verification checkpoint.
 
-  If this theorem is accepted by Isabelle/HOL without errors, the
-  following has been machine-verified:
+  If this theory is accepted by Isabelle/HOL without errors, the
+  following has been machine-checked:
 
   - All definitions in this scaffold typecheck.
   - All axioms are well-formed and accepted by Isabelle/HOL.
   - The Scaffold_Precision_Limit theorem is proved: any scaffold object
     has cardinality bounded by Omega, as an immediate consequence of AFB.
+  - Additional checkpoint lemmas for finite-set boundedness, primitive
+    ordinals, and the reserved finite-coincidence scaffold also check.
   - The core formal structure of Bounded First-Order Logic (BFOL) and
-    Bounded Set Theory (BST) is machine-checked.
+    Bounded Set Theory (BST) is machine-checked as a publication-facing
+    scaffold.
 
   This does not constitute a full verification of the manuscript's
-  metatheory. Substitution, freshness conditions, soundness, and
-  completeness remain as future work. What is verified is that the
-  principal definitions, axiom schemas, and proof rules are formally
-  coherent and accepted by a proof assistant.
+  metatheory. Substitution, freshness conditions, soundness, completeness,
+  and the full semantics of the BST layer remain future work. What is
+  verified is that the principal definitions, axiom schemas, and proof
+  rules are formally coherent and accepted by a proof assistant.
 \<close>
 
 theorem AFB_Scaffold_Verified :
@@ -487,9 +649,9 @@ theorem AFB_Scaffold_Verified :
 
 text \<open>
   If the theorem above is accepted without errors and the output panel
-  shows:
+  shows a theorem of the shape
 
-    theorem AFB_Scaffold_Verified: card_bst empty_set = 0 \<and> 0 < Omega
+    card_bst empty_set = 0 \<and> 0 < Omega
 
   then the scaffold has been accepted by Isabelle/HOL.
 \<close>
