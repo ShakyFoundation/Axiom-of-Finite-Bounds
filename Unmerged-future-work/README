@@ -7,9 +7,14 @@ This subfolder contains drafts, notes, and preliminary work that has not yet bee
 ## Contents
 
 
-| File Name                                                  | Description                                                |
-| ---------------------------------------------------------- | ---------------------------------------------------------- |
-| [Bounded-Complex-Analysis.md](Bounded-Complex-Analysis.md) | Draft notes and ideas related to bounded complex analysis. |
+| File Name                                                                                                                                                                  | Description                                                                           |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [BST-Based-Topology-and-Measure-Theory.md](BST-Based-Topology-and-Measure-Theory.md)                                                                                       | Draft notes and ideas related to BST-based topology and measure theory.               |
+| [Bounded-Complex-Analysis.md](Bounded-Complex-Analysis.md)                                                                                                                 | Draft notes and ideas related to bounded complex analysis.                            |
+| [Computational-Complexity-and-BST-(Proposed-Extension).md](Computational-Complexity-and-BST-(Proposed-Extension).md)                                                       | Proposed extension of computational complexity theory using BST.                      |
+| [Discrete-Quantum-Gravity-and-BST-(Proposed-Extension).md](Discrete-Quantum-Gravity-and-BST-(Proposed-Extension).md)                                                       | Proposed extension of discrete quantum gravity using BST.                             |
+| [Proof-Theoretic-Ordinal-Analysis-of-BST.md](Proof-Theoretic-Ordinal-Analysis-of-BST.md)                                                                                   | Notes on proof-theoretic ordinal analysis of BST.                                     |
+| [The-Finite-Analog-Programme-(Advanced-Algebraic-Structures)-(Proposed-Extension).md](The-Finite-Analog-Programme-(Advanced-Algebraic-Structures)-(Proposed-Extension).md) | Proposed extension of the finite analog programme with advanced algebraic structures. |
 
 
 ---
@@ -27,3 +32,10 @@ This subfolder contains drafts, notes, and preliminary work that has not yet bee
 1. **Review:** Open the files in this folder to understand the current state of the work.
 2. **Provide Feedback:** Use GitHub issues or pull requests to discuss and suggest improvements.
 3. **Merge:** Once the work is ready, move it to the appropriate folder and create a pull request for review.
+
+---
+
+## Notes
+
+- Files in this folder are subject to change and may be incomplete.
+- Always check the latest commit for updates before reviewing.
