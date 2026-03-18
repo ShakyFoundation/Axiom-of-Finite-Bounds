@@ -1,5 +1,5 @@
 (*
-  afb_scaffold_2_merged.thy
+  afb_scaffold.thy
 
   Publication-facing Isabelle/HOL scaffold for the Axiom of Finite Bounds
   (AFB), Bounded First-Order Logic (BFOL), Bounded Set Theory (BST), and
