@@ -23,6 +23,53 @@ All tradeoffs are stated honestly in the paper.
 
 ---
 
+## The Axiom
+
+```
+¬∃S [∅ ∈ S ∧ ∀x(x ∈ S → x ∪ {x} ∈ S)]
+∧ ∃n ∈ ℕ: ∀S (|S| ≤ n)
+```
+
+Two inseparable components: negation of infinity, and the bound that makes the negation real. The bare negation without the bound merely relocates infinity. The bound is metatheoretically fixed, unknown in magnitude, and potentially unimaginably large. It does not claim infinite mathematics is wrong — only that it is unnecessary.
+
+---
+
+## Paper Structure
+
+The working paper proceeds in strict order of logical dependence across three stages and eleven parts.
+
+**Stage I — Foundational Package** (Parts III–IV)  
+BFOL, primitive ordinals, and AFB as a unified commitment. The seven BST axioms built on top. Power Set, Infinity, and unrestricted Choice absent — each omission formally justified.
+
+**Stage II — Mathematics the System Supports** (Parts V–IX)  
+The Burali-Forti problem resolved. Two induction schemas. Functions without Power Set. The full bounded number chain through ℂ_B(k⁴). Real and complex analysis recovered within strictly finite bounds.
+
+**Stage III — Applications and Extrapolations** (Parts X–XI)  
+Physics: infinity as calculational scaffolding, not physical ontology. All seven Millennium Problems analysed individually.
+
+---
+
+## How Classical Theorems Relate to BST
+
+Every major classical theorem falls into one of four categories:
+
+**A — Recovered with explicit bounds**  
+Classical theorems provable in BST with explicit precision bounds. The BST version is strictly more informative — it names the bound rather than asserting mere existence. Continuity, differentiation, integration, the Intermediate Value Theorem, transcendental functions via bounded Taylor series.
+
+**B — Directly provable**  
+Theorems about finite structures provable in BST without modification. Arithmetic, number theory, finite group and field theory, graph theory, combinatorics, linear algebra in finite dimensions.
+
+**C — Correctly absent**  
+Theorems requiring completed infinite totalities, uncountable Choice, or objects BST does not posit. Absent not by oversight but because the objects they concern do not exist under AFB. Banach–Tarski, Vitali sets, Cantor's transfinite hierarchy.
+
+**D — The narrow gap**  
+Three universal statements at the exact boundary of what finite induction can reach. Every specific instance is provable. The universal collection is not. This gap is real and is not softened.
+- Goodstein's theorem
+- Paris–Harrington theorem  
+- Universal totality of the Ackermann function
+
+---
+
 ## Repository Structure
 
 ```
@@ -63,6 +110,12 @@ Both scaffolds are honest about their scope: they are formal appendices, not com
 ## Using This With AI
 
 Feed `papers/afb_working.md` directly to any capable language model and ask it to identify gaps, future work, or objections. The paper is structured to be machine-readable. It holds up under that kind of scrutiny — try it.
+
+---
+
+## Peer Review
+
+Responses and formal critiques are welcome at [shakyfoundation.com/peer-review](https://www.shakyfoundation.com/peer-review.html).
 
 ---
 
