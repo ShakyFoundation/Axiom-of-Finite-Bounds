@@ -65,7 +65,7 @@ Theorems requiring completed infinite totalities, uncountable Choice, or objects
 **D — The narrow gap**  
 Three universal statements at the exact boundary of what finite induction can reach. Every specific instance is provable. The universal collection is not. This gap is real and is not softened.
 - Goodstein's theorem
-- Paris–Harrington theorem  
+- Paris–Harrington theorem
 - Universal totality of the Ackermann function
 
 ---
@@ -79,8 +79,9 @@ ShakyFoundation/
 ├── papers/
 │   └── afb_working.md        # Working paper — the main document
 ├── proofs/
-│   ├── afb_scaffold.thy      # Isabelle/HOL scaffold — verified in Isabelle2025-2
-│   └── AFB-coq.v             # Coq scaffold — verified in Coq
+│   ├── afb_scaffold.thy      # Isabelle/HOL scaffold — typechecks in Isabelle2025-2
+│   ├── AFB-coq.v             # Coq scaffold — core structure machine-checked
+│   └── AFB-lean.lean         # Lean scaffold — verifies
 └── [branch] Unmerged-future-work/
     └── *.md                  # Exploratory extensions — topology, complexity,
                               #   quantum gravity, model theory, and more
@@ -92,18 +93,21 @@ ShakyFoundation/
 
 ## Formal Verification Status
 
-Both scaffolds verify in their respective proof assistants.
+Three proof assistant scaffolds are included. All typecheck. None are completed mechanisations — they are publication-facing formal appendices that make the structure of the theory machine-readable and internally consistent. The distinction matters and is stated honestly here.
 
-**Isabelle/HOL** (`proofs/afb_scaffold.thy`)
-- Verified in Isabelle2025-2
-- `AFB_Scaffold_Verified` theorem confirmed: `card_bst empty_set = 0 ∧ 0 < Omega`
-- All definitions typecheck; all axioms well-formed
+**What is verified:**  
+The declarations, definitions, axioms, and checkpoint lemmas are syntactically coherent and accepted by their respective proof assistants. Key theorems — including `card_bst empty_set = 0 ∧ 0 < Omega`, finite set boundedness, and the validation category classification — are proved as immediate consequences of the registered axioms.
 
-**Coq** (`proofs/AFB-coq.v`)
-- Verified in Coq
-- Core structure machine-checked
+**What is not yet verified:**  
+A full internal semantics, capture-avoiding substitution theory, soundness, and completeness. Several axioms currently function as named dependency markers rather than fully informative formalisations. The scaffolds make these gaps explicit rather than concealing them.
 
-Both scaffolds are honest about their scope: they are formal appendices, not completed mechanisations. Substitution, freshness conditions, soundness, and completeness are flagged as future work.
+**Isabelle/HOL** (`proofs/afb_scaffold.thy`) — typechecks in Isabelle2025-2. Covers BFOL syntax and proof system, BST axiom registry, bounded number chain, semantic model record, and extension registries across topology, complexity, and model theory.
+
+**Coq** (`proofs/AFB-coq.v`) — core structure machine-checked.
+
+**Lean** (`proofs/AFB-lean.lean`) — verifies.
+
+The concrete next steps the scaffolds make visible — substitution machinery, recursive satisfaction definitions, finite-model locales, sharper object-language statements — are natural formalisation targets for contributors.
 
 ---
 
@@ -128,10 +132,10 @@ Contributions are welcome and will be scrutinised carefully.
 ### What we need
 
 **Formalisation**
-- Extend the Isabelle/HOL or Coq scaffolds
-- Formalise sections currently marked as future work
+- Extend the Isabelle/HOL, Coq, or Lean scaffolds
+- Formalise sections currently marked as future work — substitution machinery, soundness, completeness, finite-model locales
 - Prove additional theorems within BST
-- The `Unmerged-future-work` branch is a good place to start — it contains proposed extensions across topology, complexity theory, model theory, quantum gravity, and more. Most are rough. Many are formalisation targets waiting for someone to pick them up.
+- The `Unmerged-future-work` branch contains proposed extensions across topology, complexity theory, model theory, quantum gravity, and more. Most are rough. Many are formalisation targets waiting for someone to pick them up.
 
 **Mathematics and errors**
 - Identify gaps or errors in the paper — open an issue, not a pull request; describe the problem precisely
