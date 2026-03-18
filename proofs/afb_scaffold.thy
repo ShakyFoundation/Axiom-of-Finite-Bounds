@@ -79,7 +79,7 @@
   already complete in the present file.
 *)
 
-theory afb_bfol_core
+theory afb_scaffold
   imports Main
 begin
 
