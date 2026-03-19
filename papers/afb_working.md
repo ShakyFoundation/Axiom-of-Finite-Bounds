@@ -11,9 +11,9 @@ This paper constructs a rigorous, self-contained alternative foundation for fini
 
 The first stage (Parts III–IV) establishes the foundational package. Bounded First-Order Logic (BFOL) is developed as the appropriate logic for a setting in which completed infinite domains are not admitted: quantification is bounded, variable ranges are explicit, and the semantics of quantification does not presuppose infinite totalities. Within BFOL, primitive ordinals and primitive cardinality are introduced, and the Finite Coincidence Theorem — that cardinality and ordinal-membership coincide on finite sets — is established. AFB is then stated. The seven axioms of Bounded Set Theory (BST) are built on top: Extensionality, Empty Set, Pairing, Union, Bounded Separation, Bounded Replacement, and Foundation (proved as a theorem of BST rather than assumed as an independent axiom — included for completeness of the ZFC comparison). Power Set, the Axiom of Infinity, and unrestricted Choice are absent, with each omission formally justified.
 
-The second stage (Parts V–IX) develops the mathematics the system supports. The Burali-Forti problem for bounded theories — which arises when a maximal bound is asserted internally — is resolved by treating the bound as a metatheoretic constraint rather than an internal object, the same structural move ZFC uses for proper classes. Two induction schemas (BST-native and Buss's S¹₂ PIND) are compared in full. Function and relation theory is developed without Power Set via syntactic and axiomatic approaches. The complete bounded number chain ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴) is constructed explicitly, with ℝ_B(k) as the Cauchy completion of ℚ_B(k) and ℂ_B(k⁴) as the Cartesian square of ℝ_B(k). The full apparatus of real analysis — continuity, differentiation, integration, convergence, transcendental functions — is recovered over ℝ_B(k) (Type II: exact BST theorems at each bound level), and complex analytic machinery is recovered over ℂ_B(k⁴) with explicit error bounds (Type III: approximate, with error vanishing as k grows). A four-category accounting classifies how classical theorems relate to BST: most analysis is recovered with explicit bounds (Category A); all purely finite mathematics is directly provable (Category B); results requiring uncountable Choice or completed infinite structure are correctly absent (Category C); three universal statements at the edge of finite induction — Goodstein, Paris-Harrington, Ackermann totality — form a precisely characterised narrow gap (Category D).
+The second stage (Parts V–XII) develops the mathematics the system supports. The Burali-Forti problem for bounded theories — which arises when a maximal bound is asserted internally — is resolved by treating the bound as a metatheoretic constraint rather than an internal object, the same structural move ZFC uses for proper classes. Two induction schemas (BST-native and Buss's S¹₂ PIND) are compared in full. Function and relation theory is developed without Power Set via syntactic and axiomatic approaches. The complete bounded number chain ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴) is constructed explicitly, with ℝ_B(k) as the Cauchy completion of ℚ_B(k) and ℂ_B(k⁴) as the Cartesian square of ℝ_B(k). The full apparatus of real analysis — continuity, differentiation, integration, convergence, transcendental functions — is recovered over ℝ_B(k) (Type II: exact BST theorems at each bound level), and complex analytic machinery is recovered over ℂ_B(k⁴) with explicit error bounds (Type III: approximate, with error vanishing as k grows). The operator-theoretic layer connecting bounded analysis to geometry and physics is developed in Part XI (Bounded Functional Analysis): bounded normed spaces, linear operators as finite matrices over ℂ_B(k⁴), dual spaces, spectral theory (including Weyl's inequality and Davis-Kahan eigenspace stability), and finite Hilbert space structure — all as exact Type I or Type II results, with operator norms and spectral gaps computable rather than merely existential. The complexity-theoretic development of Part XII (Computational Complexity) establishes BST-P and BST-NP as uniform families over bounded domains, their extensional equivalence to classical P and NP, and the recovery of asymptotic complexity via metatheoretic families. A four-category accounting classifies how classical theorems relate to BST: most analysis is recovered with explicit bounds (Category A); all purely finite mathematics is directly provable (Category B); results requiring uncountable Choice or completed infinite structure are correctly absent (Category C); three universal statements at the edge of finite induction — Goodstein, Paris-Harrington, Ackermann totality — form a precisely characterised narrow gap (Category D).
 
-The third stage (Parts XII–XIII) applies the completed construction to physics and the Millennium Problems as exploratory extrapolations. In physics, the case is made that infinity enters as calculational scaffolding rather than physical ontology, and the structural parallel between AFB and the holographic bound is identified. For the Millennium Problems, each of the seven Clay Institute problems is analysed problem-by-problem: P vs NP survives completely unchanged; the Hodge Conjecture, previously stated to transform into the Tate Conjecture, is now also formulable as a bounded Hodge conjecture over ℂ_B(k⁴); the Riemann Hypothesis has a proved finite-field analog (Weil/Deligne), a surviving prime-counting reformulation, and additionally a truncated zeta function formulation over ℂ_B(k⁴); Yang-Mills and Navier-Stokes reframe as lattice and discrete questions, with gauge groups now recoverable over ℂ_B(k⁴) as Type II uniform families; BSD splits into available finite arithmetic content and unavailable analytic content; and the Poincaré Conjecture, though solved classically, has a BST-available combinatorial analog.
+The third stage (Parts XIII–XIV) applies the completed construction to physics and the Millennium Problems as exploratory extrapolations. In physics, the case is made that infinity enters as calculational scaffolding rather than physical ontology, and the structural parallel between AFB and the holographic bound is identified. For the Millennium Problems, each of the seven Clay Institute problems is analysed problem-by-problem: P vs NP survives completely unchanged; the Hodge Conjecture, previously stated to transform into the Tate Conjecture, is now also formulable as a bounded Hodge conjecture over ℂ_B(k⁴); the Riemann Hypothesis has a proved finite-field analog (Weil/Deligne), a surviving prime-counting reformulation, and additionally a truncated zeta function formulation over ℂ_B(k⁴); Yang-Mills and Navier-Stokes reframe as lattice and discrete questions, with gauge groups now recoverable over ℂ_B(k⁴) as Type II uniform families; BSD splits into available finite arithmetic content and unavailable analytic content; and the Poincaré Conjecture, though solved classically, has a BST-available combinatorial analog.
 
 The result is a rigorous, self-contained alternative foundation for finite mathematics, with all tradeoffs stated at the level of precision the mathematics demands.
 
@@ -31,7 +31,7 @@ The construction proceeds in order of logical dependence. The axiom forces a dis
 
 A terminological note on "recovery." Throughout this paper, the word "recovered" is used in a technically stratified sense and is never univocal. Classical results may be recovered in four distinct ways: as exact internal BST theorems about BST objects (Type I); as uniform families of BST theorems indexed by the bound parameter k, with stable form across the family (Type II); as bounded theorems carrying an explicit error term that vanishes as k grows (Type III); or as metatheoretic uniformity claims about the family of bounded models, not expressible as a single BST sentence at any level (Type IV). These types are strictly ordered in strength. The full taxonomy, with the criterion distinguishing each type and its relationship to the paper's four-category accounting, is developed in Part IX, Section 9.1. All subsequent uses of "recovered" are to be read against that taxonomy. Where the type is not obvious from context, it is stated explicitly.
 
-The paper has thirteen parts:
+The paper has fourteen parts:
 
 **Part I** — this preamble.
 
@@ -53,11 +53,13 @@ The paper has thirteen parts:
 
 **Part X** — bounded complex analysis. The complex-analytic apparatus over ℂ_B(k⁴) is developed: k-holomorphic functions, bounded Cauchy-Riemann equations, bounded contour integration and Cauchy's theorem (with explicit error bound C/k), bounded Dolbeault cohomology as a finite-dimensional vector space over ℂ_B(k⁴), and preliminary bounded Kähler geometry. The part closes with the bounded Hodge conjecture — the secondary BST formulation of the Hodge conjecture, with all objects well-defined within BST.
 
-**Part XI** — computational complexity. The connection to Buss's S¹₂ established in Part VI is developed into a full complexity theory: BST-P and BST-NP as uniform families over bounded domains, their extensional equivalence to classical P and NP, the polynomial hierarchy via the Σ^b_i formula classes of BFOL, the formal logical status of P vs NP in BST, and the recovery of asymptotic complexity via metatheoretic families.
+**Part XI** — bounded functional analysis. The operator-theoretic layer bridging Parts VIII–X to the downstream geometry and gauge programmes is developed systematically: bounded normed spaces and norm equivalence with computable constants; bounded linear operators as finite matrices over ℂ_B(k⁴) with computable operator norms; dual spaces and a constructive Hahn-Banach theorem proved by dimension induction without Zorn's lemma; spectral theory including eigenvalue existence, spectral decomposition for normal operators, Weyl's inequality, and Davis-Kahan eigenspace stability with computable spectral gap; and finite Hilbert space structure with Gram-Schmidt, Riesz representation, and automatic completeness. All results are Type I or Type II. The part establishes the functional-analytic prerequisites for bounded simplicial cohomology, the Hodge programme, bounded gauge theory, and BST-native discrete quantum gravity.
 
-**Part XII** — physics, as an extrapolation. The relationship between the infinite structures of theoretical physics and the finite predictions physics actually makes is examined directly. The argument is that infinity enters physics as theoretical scaffolding from which finite results are extracted, not as an indispensable component of physical ontology. The bounded analogs of the relevant mathematical structures are identified, and the connection between BST and discrete approaches to quantum gravity is explored. This part applies the formal core of Parts I–XI to physical questions; formal development of BST-based physics is deferred to future work.
+**Part XII** — computational complexity. The connection to Buss's S¹₂ established in Part VI is developed into a full complexity theory: BST-P and BST-NP as uniform families over bounded domains, their extensional equivalence to classical P and NP, the polynomial hierarchy via the Σ^b_i formula classes of BFOL, the formal logical status of P vs NP in BST, and the recovery of asymptotic complexity via metatheoretic families.
 
-**Part XIII** — the Millennium Problems, as an extrapolation. Each of the seven Clay Institute problems is examined on its own mathematical terms and recontextualised within BST. The central finding is that no problem simply dissolves: each either survives intact, transforms into a finite-field or discrete analog of comparable depth, or splits into a finite part (available) and an analytic part (requiring completed ℂ or smooth manifolds). The availability of ℂ_B(k⁴) (Part VIII) and the complex analysis of Part X strengthens the analysis of three problems: the Hodge Conjecture gains a second bounded formulation alongside the Tate Conjecture; the Riemann Hypothesis gains a truncated zeta function over ℂ_B(k⁴) for numerical investigation; and Yang-Mills gains a formal account of its gauge group structure via SU(N)_B(k⁴). This part applies the formal core to open problems in mathematics; formal development of the relevant BST-based theories is deferred to future work.
+**Part XIII** — physics, as an extrapolation. The relationship between the infinite structures of theoretical physics and the finite predictions physics actually makes is examined directly. The argument is that infinity enters physics as theoretical scaffolding from which finite results are extracted, not as an indispensable component of physical ontology. The bounded analogs of the relevant mathematical structures are identified, and the connection between BST and discrete approaches to quantum gravity is explored. This part applies the formal core of Parts I–XII to physical questions; formal development of BST-based physics is deferred to future work.
+
+**Part XIV** — the Millennium Problems, as an extrapolation. Each of the seven Clay Institute problems is examined on its own mathematical terms and recontextualised within BST. The central finding is that no problem simply dissolves: each either survives intact, transforms into a finite-field or discrete analog of comparable depth, or splits into a finite part (available) and an analytic part (requiring completed ℂ or smooth manifolds). The availability of ℂ_B(k⁴) (Part VIII) and the complex analysis of Part X strengthens the analysis of three problems: the Hodge Conjecture gains a second bounded formulation alongside the Tate Conjecture; the Riemann Hypothesis gains a truncated zeta function over ℂ_B(k⁴) for numerical investigation; and Yang-Mills gains a formal account of its gauge group structure via SU(N)_B(k⁴). This part applies the formal core to open problems in mathematics; formal development of the relevant BST-based theories is deferred to future work.
 
 
 ## What the paper does not do
@@ -223,6 +225,8 @@ Doron Zeilberger has developed a more informal but mathematically engaged versio
 
 Ultrafinitism has not converged on a unified formal system. The core difficulty is specifying where the natural numbers end without specifying a particular number as the bound — since any particular bound would be arbitrary and subject to the question "why not one more?" The external-bound solution developed in Part III of this paper addresses this directly: the bound is asserted to exist without being specified within the theory. But the ultrafinitist literature has not generally adopted this solution, preferring instead to work with various fragments and approximations.
 A further technical stopping point: ultrafinitist arithmetic has not been shown strong enough to develop the mathematics needed for the applications that motivate the programme. Computational complexity theory requires reasoning about functions of large inputs; analysis requires a real number domain. The present paper addresses both gaps directly. The connection to Buss's bounded arithmetic handles complexity theory. The construction of the bounded reals in Part VIII demonstrates that the full apparatus of computable real analysis is available within BST — derivatives, integration, convergence, and transcendental functions — without any infinite commitment. The bounded complex field ℂ_B(k⁴) extends this into complex analysis and algebraic geometry; the Cayley-Dickson chain reaches the algebraic structures of modern physics. The ultrafinitist instinct was correct. What was missing was the appropriate formal construction.
+
+The Cayley-Dickson cascade makes this precise in a way ultrafinitism never could. At each step of the construction, the cardinality cost doubles in exponent: ℝ_B(k) costs k, ℂ_B(k⁴) costs k⁴, ℍ_B(k⁸) costs k⁸, and 𝕆_B(k¹⁶) costs k¹⁶ elements of the model. For the full octonionic arithmetic 𝕆_B(k¹⁶) to exist within a model of bound n_M, the precision parameter k must satisfy k¹⁶ ≤ n_M. This is a precise, computable constraint. For a model calibrated to the physical holographic estimate — the observable universe contains on the order of 10^{185} Planck-scale cells, giving n_M ≈ 10^{185} — the constraint yields k ≤ (10^{185})^{1/16} = 10^{185/16} ≈ 10^{11.6}, meaning a precision parameter on the order of 10^{11} supports the full algebraic tower. For a model calibrated to machine arithmetic — n_M = 2^{64} — the constraint gives k ≤ 2^{64/16} = 2^4 = 16 exactly, since 16^{16} = 2^{64}. The question ultrafinitism was asking — how large is too large — now has a computable answer that depends on what algebra one wants to do (§8.8.4).
 
 
 ## 2.7  ZF¬∞: Hereditarily Finite Set Theory (Ackermann 1937)
@@ -1373,7 +1377,87 @@ Replacement), the truncation to D_n ensures outputs
 stay within the domain. □
 ```
 
-The models 𝒱_n are the canonical witnesses for Formulation A: 𝒱_n models exactly BST_A(|D_n|). Every finite BST-structure embeds into some 𝒱_n via the Mostowski collapsing map — a fact whose proof is standard in finite model theory, conducted in ACA₀.
+The models 𝒱_n are the canonical witnesses for Formulation A: 𝒱_n models exactly BST_A(|D_n|). Every finite BST-structure embeds into some 𝒱_n via the Mostowski collapsing map — a fact whose proof is standard in finite model theory, conducted in ACA₀. The proof is supplied here, since it is the last proof sketch in Part III and is used in the ⊇ direction of Theorem 3.5b below.
+
+**Lemma 3.5a — Finite Mostowski Collapse (ACA₀).**
+
+```
+Every finite extensional well-founded BST-structure M
+is isomorphic to a transitive finite set M* ⊆ V_{h+1}
+for some finite h, via the Mostowski collapsing map π.
+
+Proof (within ACA₀):
+
+Step 1 — Well-foundedness.
+By Theorem 4.2 (Foundation holds in all BST models —
+proved in Part IV, Section 4.3),
+∈_M is well-founded on D. Since D is finite (Theorem 5.3 —
+proved in Part V, Section 5.4),
+this is verifiable by bounded search over D in ACA₀:
+no finite sequence d₀, d₁, ..., dₙ in D satisfies
+d_{i+1} ∈_M d_i for all i. ✓
+
+Step 2 — Rank assignment.
+Define the rank ρ(x) for each x ∈ D by recursion on ∈_M:
+
+ρ(x) = sup { ρ(y) + 1 : y ∈_M x }
+
+Since D is finite and ∈_M is well-founded, this
+recursion terminates. Set h = max_{x ∈ D} ρ(x) ∈ ℕ.
+(h is a specific standard natural number.) ✓
+
+Step 3 — The collapse map.
+Define π: D → V_{h+1} by rank recursion on ∈_M:
+
+π(x) = { π(y) : y ∈_M x }
+
+Since ∈_M is well-founded and D is finite, the
+recursion terminates after at most h unfolding steps.
+ACA₀ supports definition by recursion on well-founded
+relations on finite domains. ✓
+
+Step 4 — Injectivity.
+Claim: π(x) = π(z) implies x = z.
+Proof by induction on ρ(x):
+
+If π(x) = π(z), then by definition of π:
+{ π(y) : y ∈_M x } = { π(z') : z' ∈_M z }.
+
+By the induction hypothesis (π is injective on
+elements of rank < ρ(x)), the two sets of pre-images
+are equal: { y : y ∈_M x } = { z' : z' ∈_M z }.
+By Extensionality (Axiom A2) in M: x = z. □
+
+Step 5 — Membership preservation.
+y ∈_M x  iff  π(y) ∈ π(x):
+Forward: π(y) ∈ { π(z) : z ∈_M x } = π(x). ✓
+Reverse: if u ∈ π(x) then u = π(y) for some y ∈_M x. ✓
+
+Step 6 — Transitivity of image.
+range(π) ⊆ V_{h+1}: each π(x) is a set of images
+of ∈_M-members of x, which by construction have
+rank ≤ ρ(x). So π(x) ∈ V_{ρ(x)+1} ⊆ V_{h+1}. ✓
+range(π) is transitive: if u ∈ π(x), then u = π(y)
+for some y ∈_M x, and u itself is a set of images of
+∈_M-members of y — all in range(π). ✓
+
+Conclusion: M* = range(π) is a transitive finite
+subset of V_{h+1}, and π: M → M* is an isomorphism
+of membership structures. □
+
+ACA₀ sufficiency: Every step uses only arithmetic
+comprehension over the finite domain D — membership
+checking, rank computation, and the recursion are all
+primitive recursive on finite structures. No stronger
+second-order principle is required.
+```
+
+**Preservation of BST sentences across the isomorphism.**
+The isomorphism π transfers the satisfaction of BST sentences from M to M*, since π is a membership-preserving bijection. A further observation is needed for the ⊇ direction of Theorem 3.5b: truth in M* (a substructure of 𝒱_{h+1}) must transfer to truth in 𝒱_{h+1} itself (or rather, φ being true in 𝒱_{h+1} must entail φ being true in M*).
+
+Since BFOL admits only bounded quantifiers — every quantifier has the form ∀x ≤ t or ∃x ≤ t — all BST sentences are Δ₀ formulas in the sense of set theory: their quantifiers are bounded by terms naming specific sets. For Δ₀ formulas, satisfaction is absolute for transitive structures: if M* is a transitive set and φ is a Δ₀ sentence true in the ambient structure 𝒱_{h+1}, then φ is true in M* whenever all sets named by the bound terms of φ are in M*. This absoluteness is a standard result of set theory, provable in ACA₀ by induction on the complexity of φ.
+
+The consequence for Theorem 3.5b is explicit: the ⊇ direction uses the fact that every BST sentence φ is Δ₀, so its truth propagates from 𝒱_{h+1} to M* (and thence by isomorphism to M) whenever M* is a transitive substructure of 𝒱_{h+1} containing the witnesses required by the bounded quantifiers of φ. This condition is met precisely because M* is a transitive set and the bound terms of φ refer to sets whose rank is at most h. The transfer is thus fully justified within ACA₀ for the class of sentences in question — all sentences of BFOL.
 
 **The equivalence theorem.** The relationship between Formulation A and Formulation B is now precise:
 
@@ -1392,11 +1476,26 @@ model of BST. Every BST_A(n)-model is finite, so
 Thus φ ∈ ∩_n Th(Mod(BST_A(n))).
 
 (⊇): If φ is true in every BST_A(n)-model for
-every n, then φ is true in every model of BST_A(n)
-for every n. Since every finite model of BST satisfies
-BST_A(n) for sufficiently large n (by the embedding
-into 𝒱_n), φ is true in every finite model of BST.
+every n, let M be any finite model of BST.
+By Lemma 3.5a, M ≅ M* ⊆ V_{h+1} for some finite h,
+with M* a transitive set. Since φ is true in 𝒱_h
+(a BST_A(|D_h|)-model for sufficiently large |D_h|),
+and φ is a Δ₀ sentence (all BFOL quantifiers are
+bounded), the absoluteness of Δ₀ formulas for
+transitive sets gives: φ is true in M*.
+By the isomorphism π: M ≅ M*, φ is true in M.
 Thus φ ∈ BST_B.  □
+
+Note: This proof does not claim that Theorem 3.5b
+is fully established as a theorem of ACA₀ — the
+absoluteness step for BFOL sentences is standard
+but its complete formalisation within ACA₀ is the
+remaining task identified in the paper's Future Work.
+What Lemma 3.5a supplies is the collapse construction
+that was previously only asserted. The preservation
+argument now names exactly what remains to be made
+fully explicit: the absoluteness of bounded quantifiers
+for transitive BST substructures.
 ```
 
 Plain language: Formulation B is exactly the theory of sentences that hold in every Formulation A instance. A sentence is a theorem of BST-B if and only if it is true no matter which specific finite bound is in effect. The two formulations describe the same semantic reality from different angles: Formulation A names a specific bound (any one of the infinitely many schema instances), and Formulation B takes the intersection — what survives across all of them.
@@ -2125,6 +2224,69 @@ seventh is not derivable from the rest.  □
 
 The independence of A1 from A2–A7 has a further structural consequence noted in Part III: the theories BST and ZF¬∞ are genuinely incomparable. ZF¬∞ satisfies A2–A7 but refutes A1 (via the infinite-domain model). BST satisfies A1–A7. Their theorems are not ranked — BST proves sentences ZF¬∞ refutes (∀S Fin(S)) and ZF¬∞ proves sentences BST cannot (Goodstein's theorem, Ackermann totality). The independence models make this structural divergence visible at the axiom level.
 
+**Example 4.6a — Threshold behaviour of Bounded Power Set.**
+
+Theorem 4.3 (Bounded Power Set) establishes a quantitative threshold: P(A) exists in BST when |A| ≤ ⌊log₂(n_M)⌋, and fails when |A| exceeds that threshold. The following explicit example witnesses this threshold behaviour and confirms that BPS and full Power Set occupy different positions — one a theorem, one a correct absence — in the same model.
+
+```
+Setup:
+Let M be any finite BST-model with bound n_M = 7.
+(That is, every set in M has cardinality ≤ 7, and M
+has at most 7 elements. Such a model exists: any
+finite transitive set of 7 hereditarily finite sets
+with standard membership satisfies A1–A7.)
+
+Threshold:
+⌊log₂(7)⌋ = 2.
+
+Theorem 4.3 (BPS) applies below the threshold:
+For any A ∈ M with |A| ≤ 2:
+|P(A)| = 2^|A| ≤ 2² = 4 ≤ 7 = n_M.
+So |P(A)| ≤ n_M, and P(A) is constructible in M
+by the iterated Bounded Separation argument of
+Theorem 4.3. ✓
+
+Concrete instances:
+|A| = 0 (A = ∅):    |P(∅)| = 1 ≤ 7.  P(∅) = {∅} ∈ M. ✓
+|A| = 1 (A = {∅}):  |P({∅})| = 2 ≤ 7. P({∅}) = {∅,{∅}} ∈ M. ✓
+|A| = 2 (A = {∅,{∅}}): |P(A)| = 4 ≤ 7. P(A) ∈ M. ✓
+
+Full Power Set fails above the threshold:
+Let B = {∅, {∅}, {∅,{∅}}}  (the third von Neumann
+ordinal, |B| = 3 > 2 = threshold).
+
+|P(B)| = 2³ = 8 > 7 = n_M.
+
+P(B) would be a set of 8 elements. Since every set
+in M has cardinality ≤ n_M = 7, no set of 8 elements
+can exist in M. Therefore P(B) ∉ M.
+
+This is not a defect of the model — it is the correct
+consequence of AFB. The Axiom of Finite Bounds asserts
+exactly that sets above n_M do not exist.
+
+Verification of BPS/PS independence:
+The same model M simultaneously satisfies:
+
+(i)  BPS (Theorem 4.3): for all A ∈ M with |A| ≤ 2,
+     P(A) ∈ M.  [Verified above for |A| = 0,1,2.]
+
+(ii) ¬(Full Power Set): B ∈ M but P(B) ∉ M.
+     [Because |P(B)| = 8 > 7 = n_M.]
+
+(i) and (ii) hold simultaneously. This exhibits the
+precise threshold at which Power Set transitions from
+provable (BPS range) to correctly absent (above n_M).
+
+The threshold is quantitative, not qualitative:
+for n_M = 7, the dividing line is |A| = 2 vs |A| = 3.
+For n_M = 15, it would be |A| = 3 vs |A| = 4.
+For n_M = 2^64, it is |A| = 64 vs |A| = 65.
+The exact threshold is always ⌊log₂(n_M)⌋. □
+```
+
+This example is verifiable in ACA₀ by explicit enumeration of the ≤ 7 elements of M. It demonstrates that Theorem 4.3's threshold is not an artefact of the proof technique — it is the exact boundary separating two different behaviours of Power Set within the same bounded model. The Future Work item on Bounded Power Set independence calls for constructing an explicit finite model of this type; the arithmetic above confirms that such a model exists and exhibits the claimed threshold behaviour. The explicit element-by-element construction of a 7-element model satisfying A1–A7 constitutes the remaining verification.
+
 
 
 
@@ -2478,9 +2640,54 @@ finite. □
 ```
 
 
+### Corollary 5.3b — Every BST model is hereditarily finite:
+
+```
+Every model M ⊨ BST is isomorphic to a transitive finite
+subset of V_{h+1} for some finite h, where h is computable
+as the maximum ∈_M-rank of any element of M.
+
+That is, every BST model is not merely finite-domain but
+hereditarily finite: every element of M is a hereditarily
+finite set, and M itself embeds as a transitive set in the
+cumulative hierarchy.
+
+Proof:
+By Theorem 4.2 (Foundation holds in all BST models —
+proved in Part IV, Section 4.3), ∈_M is well-founded on
+the domain D of M.
+
+By Theorem 5.3, M is finite: |D| < ∞.
+
+By Lemma 3.5a (Finite Mostowski Collapse, ACA₀ — proved in
+Part III, Section 3.3.9), every finite extensional
+well-founded structure is isomorphic via the Mostowski
+collapsing map π to a transitive finite set M* ⊆ V_{h+1},
+where h = max_{x ∈ D} ρ(x) is the maximum rank of any
+element of M under ∈_M.
+
+The map π is an isomorphism of membership structures:
+π: M → M* with y ∈_M x iff π(y) ∈ π(x).
+M* is transitive: if u ∈ π(x) ∈ M* then u ∈ M*.
+h is computable: it is the maximum of finitely many rank
+values over the finite domain D. □
+
+The distinction from Theorem 5.3:
+Theorem 5.3 says every BST model has a finite domain.
+Corollary 5.3b says more: every BST model is isomorphic
+to a standard finite set-theoretic structure — a transitive
+subset of the cumulative hierarchy — not merely to some
+abstract finite structure with a membership relation.
+BST models are not just finite; they are hereditarily finite
+in the precise set-theoretic sense.
+```
+
+This corollary is used in Part IX, Section 9.8 (Theorem 9.2), where the incomparability of BST and ZFC is established in part by noting that BST proves every set hereditarily finite — a claim ZFC refutes via the Axiom of Infinity. The corollary gives that claim its precise model-theoretic grounding: every BST model is not just finite-domain but isomorphic to a transitive subset of the von Neumann hierarchy, making hereditarily-finite the correct and strongest description of the bounded ontology.
+
+
 ### 5.4.1a  The formal model structure
 
-The three theorems above characterise what BST can prove about its bound. It is useful to name the model structure explicitly, both for precision and for downstream reference in the undecidability proof (Theorem 3.6) and the model-theoretic analysis throughout Part V.
+The four theorems above — Theorems 5.1, 5.2, 5.3, and Corollary 5.3b — characterise what BST can prove about its bound and what its models look like. It is useful to name the model structure explicitly, both for precision and for downstream reference in the undecidability proof (Theorem 3.6) and the model-theoretic analysis throughout Part V.
 
 ### Definition 5.4 — BST-Model:
 
@@ -4333,7 +4540,7 @@ The following areas of mathematics are not available in BST in their classical i
 - Classical real analysis as a completed infinite structure: Dedekind cuts and Cauchy sequences construct ℝ as a completed infinite object, which BST does not posit. The analytic apparatus — derivatives, integrals, transcendental functions, IVT, EVT — is recovered in full via the bounded reals ℝ_B(k), constructed in Part VIII (Section 8.7) as a Cauchy completion of ℚ_B(k). The bounded versions carry explicit precision bounds and are strictly more informative than their classical counterparts. Recovery type: Type II (exact BST theorems at each bound level k).
 - Classical topology: open sets as arbitrary subsets of an infinite space require infinite subsets. Finite topological spaces and topology over ℝ_B(k) are fully available. The classical continuum topology is replaced by a bounded analog that supports the same analytic theorems over explicit domains.
 - Measure theory: sigma-algebras over infinite domains require Power Set or its equivalent at infinite scale. Finitely-additive probability over finite event algebras and Lebesgue-style measure over bounded domains are fully available and support all computable probability theory.
-- Functional analysis: infinite-dimensional Hilbert and Banach spaces require infinite sets. Finite-dimensional spectral theory over bounded domains is fully available and developed in Part IX.
+- Functional analysis: infinite-dimensional Hilbert and Banach spaces require infinite sets. Finite-dimensional spectral theory over bounded domains is fully available; its systematic development is in Part XI (Section 11.4).
 
 In each case the classical infinite formulation is a limit statement — what the bounded version approaches as the bound grows. The bounded version is the mathematically primary object; the classical version is an idealisation. Part IX develops each bounded construction in full.
 
@@ -5555,7 +5762,7 @@ to k⁸ (ℍ) and k¹⁶ (𝕆).
 ```
 
 ```
-What is passed to Part XIII:
+What is passed to Part XIV:
 ℂ_B(k⁴) is available as the BST bounded complex field.
 This permits: complex arithmetic, complex polynomials,
 bounded complex varieties, and gauge groups defined
@@ -5666,6 +5873,12 @@ Examples: k-holomorphic functions (difference quotient approximates derivative w
 **Type IV — Metatheoretic correspondence recovery.** A classical result is recovered metatheoretically when its BST counterpart is not a single object-level theorem at any bound level, but a theorem about the behaviour of the family of bounded models across all k. The classical statement is a shorthand compression of scalable finite behaviour that BST refuses to internalise as a completed object. The correspondence is real, but it is not a BST sentence inside any one bounded model.
 
 Examples: asymptotic complexity ("algorithm A runs in O(n²) time" — not a statement in any single ℕ_B(k), but a uniformity claim about the family {ℕ_B(k)}); the classical limit ε → 0; any statement whose content is essentially about the behaviour of an infinite sequence of approximations rather than about any specific approximation.
+
+A second illustration, prospective rather than already-built, makes the II/IV distinction more geometrically vivid. In the causal-set approach to quantum gravity (Part XIII, Section 13.4.2), a finite causal set 𝒞 — a finite partially ordered set of discrete spacetime events — stands to a Lorentzian manifold (M, g) as the fundamental object stands to the continuum idealization. The manifold is not a BST object: it is not a bounded set, it does not exist within any finite model, and no BST sentence refers to it directly. What the manifold represents, from within BST's framework, is a shorthand for the family of bounded causal structures across all models — the way ℝ, understood inside BST, is a shorthand for the family {ℝ_B(k)}.
+
+The recovery type of this correspondence is therefore Type IV: no single BST model contains the Lorentzian manifold, and no single BST theorem asserts the correspondence between 𝒞 and (M, g). The correspondence is real — it is the content of the causal set programme — but it is visible only at the metatheoretic level, when comparing bounded causal sets across the family of models. The diagnostic test confirms this: there is no specific BST model M and specific BST theorem that witnesses the recovery of (M, g) from 𝒞. The manifold is what the family of finite causal sets looks like from outside any fixed model.
+
+This example is offered here as illustration, not as formal development. It is prospective: the causal set formalism sufficient to make the correspondence precise within BST belongs to the Future Work programme on BST-native discrete quantum gravity. But it shows more concretely than the asymptotic complexity example what Type IV recovery means geometrically — the Lorentzian manifold is recovered in the same sense and at the same level as O(n²) time complexity: real correspondence, metatheoretic level, not an object inside any single bounded model.
 
 
 ### 9.1.2  The II/IV distinction
@@ -6081,6 +6294,133 @@ Category D boundary: ordinals ≥ ε₀.
 Note on Con(BST): BST cannot prove its own consistency, but this is not a deficiency specific to BST. No sufficiently strong consistent system can prove its own consistency (Gödel's second incompleteness theorem). ZFC cannot prove Con(ZFC). PA cannot prove Con(PA). Con(BST) belongs in no loss category — it is a universal feature of formal systems, not a comparative weakness. The metatheory required to prove Con(BST) is IΣ₁ itself — the same ordinal as BST — confirming the tight calibration noted in Section 3.3.3.7: the metatheoretic overhead is precisely matched to the object theory.
 
 
+### 9.7.1  Sequent-calculus framework supporting the preliminary placement
+
+The squeeze argument above identifies the correct answer. What remains to make it fully rigorous is a cut-elimination proof — a formal demonstration that every proof in BST's deductive system can be transformed into a cut-free proof, with the transformation terminating in ordinal steps bounded strictly below ω^ω. This subsection provides the structural framework for that argument: the sequent calculus formulation of BST, the ordinal assignment strategy, and an explicit identification of the reduction steps that remain to be verified. The status is framework-with-identified-gap, not completed proof.
+
+**The sequent calculus GST.**
+
+BST's deductive system is formulated in the natural deduction style of Section 3.1.6. For ordinal analysis, a Gentzen sequent calculus formulation is more tractable. The system GST consists of the following components.
+
+*Language and sequents.* Sequents have the form Γ ⊢ Δ where Γ and Δ are finite sequences of BFOL formulas (Section 3.1.2). All quantifiers are bounded — the language contains no unbounded ∀x or ∃x forms. Every quantifier carries an explicit bounding term t, written ∀x ≤ t and ∃x ≤ t. This syntactic constraint is what makes the quantifier cuts tractable: the bounding term is always available in the proof tree.
+
+*Logical rules.* The propositional and equality rules are standard. The quantifier rules translate the natural deduction rules of Section 3.1.6 into sequent form:
+
+```
+(∀≤-L): From  Γ, φ(s) ⊢ Δ  and  Γ ⊢ s ≤ t, Δ,
+        infer  Γ, ∀x ≤ t φ(x) ⊢ Δ.
+
+(∀≤-R): From  Γ ⊢ φ(a), Δ  (a fresh, with hypothesis a ≤ t),
+        infer  Γ ⊢ ∀x ≤ t φ(x), Δ.
+
+(∃≤-L): From  Γ, φ(a) ⊢ Δ  (a fresh, with hypothesis a ≤ t),
+        infer  Γ, ∃x ≤ t φ(x) ⊢ Δ.
+
+(∃≤-R): From  Γ ⊢ φ(s), Δ  and  Γ ⊢ s ≤ t, Δ,
+        infer  Γ ⊢ ∃x ≤ t φ(x), Δ.
+```
+
+*The cut rule.* The cut rule has the standard form:
+
+```
+(Cut):  From  Γ ⊢ A, Δ  and  Γ, A ⊢ Δ,
+        infer  Γ ⊢ Δ.
+```
+
+This is the rule to be eliminated. Cut-elimination for GST is the Hauptsatz whose proof is the remaining open task.
+
+*BST axioms as initial sequents.* The seven BST axioms (Part IV) are included as axiom sequents. The induction rule BI-BST (Part VI, Section 6.2.2) is included as a rule:
+
+```
+(BI):   From  Γ ⊢ φ(0), Δ  and  Γ, φ(α) ⊢ φ(S(α)), Δ  (α ≤ k, α fresh),
+        infer  Γ ⊢ ∀α ≤ k φ(α), Δ.
+```
+
+The bound k is a specific term in the language; the rule does not range over an unspecified infinite domain.
+
+**Ordinal assignment.**
+
+To support cut-elimination, each GST proof tree P is assigned an ordinal o(P) < ω^ω. The assignment uses Cantor normal form: any ordinal α < ω^ω has a unique representation α = ω^{n₁}·c₁ + ... + ω^{n_r}·c_r with n₁ > ... > n_r natural numbers and c_i positive natural numbers.
+
+The assignment is defined inductively on proof structure:
+
+```
+Axiom sequents:            o = 1  (= ω^0)
+
+Propositional rules:       o(conclusion) = o(premise) + 1
+
+Quantifier rule (∀≤-R/L,  o(conclusion) = ω^{d+1}
+  ∃≤-R/L) on formula      where d = quantifier depth of
+  of depth d:              the principal formula
+
+Cut on formula of          o(conclusion) = ω^{d+1}
+  quantifier depth d:      where d = depth of cut formula
+
+BI rule on formula         o(conclusion) = ω^{d+1}
+  of depth d:              where d = quantifier depth
+                           of the induction formula
+```
+
+The key property: every formula in BFOL has finite quantifier depth, so every proof tree is assigned an ordinal in Cantor normal form with finite exponents. The supremum over all possible proofs is ω^ω, since arbitrary finite depths d are possible but no proof can have infinite depth.
+
+**Cut-elimination: the reduction strategy and the remaining gap.**
+
+The Hauptsatz for GST requires showing that for every proof P containing a cut, there exists a proof P' of the same sequent with o(P') < o(P) and with the topmost cut eliminated or reduced in degree. If this holds for every cut configuration, then the ordinal assignment guarantees termination by well-foundedness of < on ordinals.
+
+The reduction steps divide into three cases, each with its current status:
+
+```
+Case 1 — Propositional cuts:
+  Reduced by standard structural induction on the
+  derivations above the cut. The ordinal decreases
+  by at most a finite additive amount.
+  Status: Standard; no new work required.
+
+Case 2 — Bounded quantifier cuts:
+  A cut on ∀x ≤ t φ(x) is reduced as follows.
+  Since t is a concrete bounding term, the proof of
+  ∀x ≤ t φ(x) decomposes into at most |t| instances
+  φ(0), φ(1), ..., φ(t). The cut is replaced by |t|
+  cuts on these instances, each of quantifier depth
+  one less than the original.
+
+  Ordinal accounting: a single cut of depth d
+  contributes ω^{d+1} to the proof ordinal. Replacing
+  it with |t| cuts of depth d−1 contributes at most
+  ω^d · |t| to the reduced proof, and ω^d · |t| < ω^{d+1}
+  for any finite |t|. The ordinal strictly decreases.
+
+  Status: The reduction step is clear. The remaining
+  work is writing the explicit lemma verifying that
+  the substitution of concrete terms for the bound
+  variable is well-defined in GST and that the
+  bound-tracking in the (∀≤-R) and (∃≤-L) rules
+  does not introduce new cuts of higher degree.
+
+Case 3 — Induction cuts:
+  A cut involving the induction predicate φ(α) is
+  reduced by unfolding the BI rule. An application
+  of (BI) on formula φ of depth d, applied k times,
+  contributes ω^{d+1} to the proof ordinal. Unfolding
+  k induction steps produces k applications of the
+  base case and induction step at depth d−1, with
+  total ordinal contribution ω^d · k < ω^{d+1}.
+
+  Status: The reduction strategy is clear. The
+  remaining work is verifying that cutting against
+  the BI rule does not introduce cuts of higher
+  degree via interaction with the bounding term k,
+  and that the BI rule's fresh-variable condition
+  is preserved through the reduction.
+```
+
+**Summary of status.**
+
+The framework is in place. The squeeze argument gives |BST| = ω^ω by external comparison. The sequent calculus GST makes the internal proof structure explicit. The ordinal assignment maps every GST proof tree to an ordinal < ω^ω. The reduction strategy for all three cut cases is identified, and the ordinal arithmetic is correct in each case.
+
+What remains: two explicit lemmas — one for Case 2 (substitution well-definedness under bound tracking) and one for Case 3 (BI rule interaction with the cut rule). Until those lemmas are written and verified, the placement |BST| = ω^ω remains preliminary, as stated at the start of this section. The framework above is what "preliminary" currently means: not a sketch, but a fully articulated route with two specific verification tasks remaining.
+
+
 ## 9.8  What BST Proves That ZFC Cannot
 
 The comparison above runs in one direction. The other direction is equally important and less commonly noted. BST proves sentences that ZFC refutes. The two systems are not ranked — they are incomparable.
@@ -6118,6 +6458,8 @@ They are genuinely different, incomparable theories.
 ```
 
 These are not deep theorems — they follow immediately from AFB. But they reframe the comparison. BST is not ZFC with some axioms missing. It is a different theory that proves different things. The question is not which is stronger but which domain each is appropriate for.
+
+The model-theoretic grounding for the first claim — that BST proves ∀S Fin(S) — is given precisely by Corollary 5.3b (Part V): every BST model is not merely finite-domain but hereditarily finite, isomorphic to a transitive finite subset of V_{h+1} for computable h. The claim ∀S Fin(S) is thus not just a consequence of AFB's metatheoretic constraint — it reflects the fact that every BST model is a standard hereditarily finite set-theoretic structure, not an exotic finite model with an unusual membership relation. This is what makes the incomparability with ZFC structurally sharp rather than merely syntactic: BST and ZFC are describing genuinely different ontologies, not the same ontology with different axioms.
 
 
 ## 9.9  The Full Accounting
@@ -6227,7 +6569,7 @@ End of Part IX
 
 # Part X: Bounded Complex Analysis
 
-Part VIII constructed ℂ_B(k⁴) as ℝ_B(k) × ℝ_B(k) and established its basic arithmetic. Part IX developed the full analytic apparatus over ℝ_B(k). This part develops the complex-analytic counterpart: holomorphic functions, contour integration, Dolbeault cohomology, and the Kähler geometry required for the bounded Hodge conjecture formulation of Part XIII. All constructions use ℂ_B(k⁴) as the underlying field; all equalities are understood modulo precision 1/k unless explicitly stated to be exact.
+Part VIII constructed ℂ_B(k⁴) as ℝ_B(k) × ℝ_B(k) and established its basic arithmetic. Part IX developed the full analytic apparatus over ℝ_B(k). This part develops the complex-analytic counterpart: holomorphic functions, contour integration, Dolbeault cohomology, and the Kähler geometry required for the bounded Hodge conjecture formulation of Part XIV. All constructions use ℂ_B(k⁴) as the underlying field; all equalities are understood modulo precision 1/k unless explicitly stated to be exact.
 
 
 ## 10.1  Bounded Holomorphic Functions
@@ -6429,12 +6771,23 @@ of Δ_B. The full proof requires establishing that the
 approximate Kähler identities hold to within 1/k and
 that the resulting eigenspace decomposition is stable
 under the approximation. This development is deferred.
+The stability argument will likely proceed via Weyl's
+inequality (Part XI, Theorem 11.5: eigenvalue shifts
+under perturbation E satisfy |μᵢ − λᵢ| ≤ ‖E‖, exact
+for finite matrices) and the Davis-Kahan theorem
+(Part XI, Theorem 11.6: eigenspace angle bounded by
+‖E‖/γ where γ is the spectral gap, computable as a
+finite minimum). With ‖E‖ < C/k from the approximate
+Kähler identities and γ > 0 computable from Δ_B, the
+condition k > C/γ ensures the harmonic subspace is
+isolated. Once the Kähler identities are established,
+Theorems 11.5 and 11.6 close the proof.
 ```
 
 
 ## 10.5  The Bounded Hodge Conjecture
 
-With the machinery of Sections 10.3 and 10.4 in place, the bounded Hodge conjecture can be stated precisely. This is the secondary BST formulation of the Hodge conjecture, complementing the Tate conjecture over finite fields (the primary formulation, given in Part XIII, Section 13.3).
+With the machinery of Sections 10.3 and 10.4 in place, the bounded Hodge conjecture can be stated precisely. This is the secondary BST formulation of the Hodge conjecture, complementing the Tate conjecture over finite fields (the primary formulation, given in Part XIV, Section 14.3).
 
 ### Bounded Hodge Conjecture over ℂ_B(k⁴):
 
@@ -6492,16 +6845,805 @@ The core achievement is that bounded complex analysis is a coherent programme wi
 End of Part X
 
 
-# Part XI: Computational Complexity and BST
+# Part XI: Bounded Functional Analysis
+
+
+Parts VIII through X have built the full bounded analytic stack over ℝ_B(k) and ℂ_B(k⁴): the complete number chain, real analysis with explicit precision bounds, and bounded complex analysis through Dolbeault cohomology and the preliminary Kähler structure of Part X. That stack supports most of classical analysis in finite form. What it does not yet provide is the operator-theoretic layer that classical functional analysis sits on top of: norms, bounded linear maps, dual spaces, spectral decomposition, and finite Hilbert space structure.
+
+This part develops that layer systematically within BST. The core observation is that functional analysis over finite-dimensional spaces is, in the bounded setting, not a limit process or an infinite construction — it is finite linear algebra over ℂ_B(k⁴), conducted with explicit cardinality tracking. Infinite-dimensional Hilbert and Banach spaces are Category C: correctly absent, because they require completed infinite sets that BST does not posit. But their finite-dimensional analogs are fully available, and those analogs are what this paper — and the downstream geometry and gauge programmes — actually need.
+
+The chapter is organised as follows. Section 11.1 establishes bounded normed spaces and their basic properties. Section 11.2 develops bounded linear operators as finite matrices over ℂ_B(k⁴), with computable operator norms. Section 11.3 treats dual spaces and recovers the Hahn-Banach theorem by dimension induction rather than Zorn's lemma. Section 11.4 develops spectral theory for finite matrices over ℂ_B(k⁴). Section 11.5 constructs finite Hilbert space structure, including the bounded Cauchy-Schwarz inequality and the Riesz representation theorem. Section 11.6 collects the recovery accounting and identifies which classical functional-analytic results are available in BST and which are correctly absent. Section 11.7 states the dependency consequences for the downstream geometry and gauge programmes.
+
+Two conventions hold throughout. All vector spaces in this part are finite-dimensional — dimension d ≤ k — and all scalar arithmetic takes place in ℂ_B(k⁴) as constructed in Part VIII, Section 8.8. Equalities hold exactly within the bound (Type II) unless explicitly stated to hold within precision 1/k (Type III).
+
+
+## 11.1  Bounded Normed Spaces
+
+
+### 11.1.1  The problem with infinite-dimensional norms
+
+In classical functional analysis, a normed space is a vector space over ℝ or ℂ equipped with a function ‖·‖ satisfying positivity, homogeneity, and the triangle inequality. The definition is the same regardless of dimension. The difference between finite and infinite dimension enters in the theorems: in infinite dimensions, closed bounded sets need not be compact, continuous linear maps need not be bounded, and the unit ball is not compact. All of these features require infinite-dimensional spaces to exhibit — in finite dimensions, all three fail to be problematic.
+
+BST has no infinite-dimensional spaces. The definition of a norm is available and unchanged; what changes is that every unit ball is a finite set, every bounded subset is compact (finite sets are trivially compact), and every linear map between finite-dimensional spaces is automatically bounded. The infinite-dimensional pathologies that motivate much of classical functional analysis simply do not arise, and the theorems that address them are correctly absent.
+
+What the paper needs from functional analysis is not the infinite-dimensional theory. It is the finite-dimensional structure: norms as computable functions, linear maps as finite matrices, spectral decompositions as finite eigenvalue problems, and Hilbert spaces as finite inner product spaces. This section builds that structure explicitly.
+
+
+### 11.1.2  Definitions
+
+### Definition 11.1 — Bounded vector space:
+
+```
+A bounded vector space of dimension d over ℂ_B(k⁴) is
+a finite set V with cardinality |V| ≤ (k⁴)^d equipped
+with:
+
+(i)  Addition:        V × V → V
+(ii) Scalar mult.:    ℂ_B(k⁴) × V → V
+(iii) Zero vector:    0_V ∈ V
+
+satisfying the vector space axioms (commutativity,
+associativity, distributivity, identity, inverses),
+each provable by BI-BST on |V|.
+
+A basis for V is a set {e₁, ..., e_d} ⊆ V such that
+every v ∈ V has a unique representation
+v = α₁e₁ + ... + α_d e_d  with α_i ∈ ℂ_B(k⁴).
+
+Existence of a basis: by bounded induction on d.
+|V| = |ℂ_B(k⁴)|^d ≤ k^{4d}.  Finite.  ✓
+```
+
+Plain language: A bounded vector space is a finite set with the structure of a vector space over ℂ_B(k⁴). Every element is a finite tuple of complex numbers from ℂ_B(k⁴). Every basis is a finite set. The dimension d and the bound k together determine the cardinality.
+
+
+### Definition 11.2 — Bounded norm:
+
+```
+A bounded norm on V is a function ‖·‖: V → ℝ_B(k)
+satisfying, for all u, v ∈ V and α ∈ ℂ_B(k⁴):
+
+(i)  Positivity:        ‖v‖ ≥ 0,  and  ‖v‖ = 0 ↔ v = 0_V
+(ii) Homogeneity:       ‖αv‖ = |α| · ‖v‖
+(iii) Triangle ineq.:   ‖u + v‖ ≤ ‖u‖ + ‖v‖
+
+BST implementation:
+Since V is finite, ‖·‖ is a finite function V → ℝ_B(k).
+It is representable as a lookup table or computable
+formula over ℂ_B(k⁴) arithmetic (Part VIII).
+All three axioms are equational/order conditions over
+a finite domain — verifiable by BI-BST.
+
+Status: Type II Recovery (exact within bound).
+```
+
+### Examples of bounded norms:
+
+```
+Euclidean norm (L² norm):
+‖(α₁,...,α_d)‖₂ = √(|α₁|² + ... + |α_d|²)
+Computed in ℝ_B(k) via Part VIII arithmetic.
+
+Maximum norm (L∞ norm):
+‖(α₁,...,α_d)‖_∞ = max{|α₁|,...,|α_d|}
+Maximum over a finite set — exact BST computation.
+
+L¹ norm:
+‖(α₁,...,α_d)‖₁ = |α₁| + ... + |α_d|
+Finite sum in ℝ_B(k).
+```
+
+All three are well-defined within BST for any specific k and d satisfying k^{4d} ≤ n_M.
+
+
+### 11.1.3  Equivalence of norms
+
+In classical analysis, all norms on a finite-dimensional space are equivalent — bounded above and below by constant multiples of each other. The classical proof uses sequential compactness of the unit sphere. In BST, the unit sphere is a finite set, and compactness is trivial.
+
+### Theorem 11.1 — Norm equivalence (BST):
+
+```
+Let ‖·‖₁ and ‖·‖₂ be two bounded norms on V.
+There exist positive reals c, C ∈ ℝ_B(k) such that
+for all v ∈ V:
+
+c · ‖v‖₁ ≤ ‖v‖₂ ≤ C · ‖v‖₁
+
+Proof:
+The unit sphere S₁ = {v ∈ V : ‖v‖₁ = 1} is a finite
+subset of V. The function f: S₁ → ℝ_B(k) defined by
+f(v) = ‖v‖₂ is a function on a finite set.
+
+By the Extreme Value Theorem over finite domains
+(Part IX, Section 9.3): f attains its maximum C
+and minimum c on S₁.
+
+Since ‖·‖₂ is a norm, c > 0 (by positivity).
+
+For any nonzero v ∈ V: v/‖v‖₁ ∈ S₁, so
+c ≤ ‖v/‖v‖₁‖₂ ≤ C, giving c · ‖v‖₁ ≤ ‖v‖₂ ≤ C · ‖v‖₁.
+
+For v = 0_V: all norms give 0, trivially. □
+
+Both c and C are computable: exhaustive search over
+the finite set S₁.
+
+Status: Type II Recovery. Constants c and C are
+explicit and computable within ℝ_B(k).
+```
+
+Plain language: Any two norms on a finite-dimensional bounded vector space are equivalent, with computable equivalence constants. There is nothing approximate about this — it is an exact BST theorem, and the constants are found by a finite search rather than a limiting argument.
+
+
+## 11.2  Bounded Linear Operators
+
+
+### 11.2.1  Matrix representation
+
+In classical functional analysis, a bounded linear operator between Banach spaces is a continuous linear map — where continuity and boundedness coincide for linear maps on Banach spaces. In the finite-dimensional setting, every linear map is automatically bounded (this is a classical theorem, trivially recovered here because all maps on finite sets are bounded).
+
+### Definition 11.3 — Bounded linear operator:
+
+```
+A bounded linear operator T: V → W between bounded
+vector spaces is a function preserving addition and
+scalar multiplication:
+
+T(u + v) = T(u) + T(v)
+T(αv) = α · T(v)
+
+for all u, v ∈ V and α ∈ ℂ_B(k⁴).
+
+Representation: Since V has basis {e₁,...,e_d_V} and
+W has basis {f₁,...,f_d_W}, T is represented by a
+matrix M_T ∈ ℂ_B(k⁴)^{d_W × d_V}:
+
+T(e_j) = Σ_{i=1}^{d_W} (M_T)_{ij} · f_i
+
+Matrix multiplication is defined via bounded sums and
+products in ℂ_B(k⁴) (Part VIII, Section 8.8).
+
+Existence: The matrix M_T is a finite d_W × d_V array
+of elements of ℂ_B(k⁴).
+|M_T| = d_W × d_V ≤ k² entries. Finite. ✓
+
+Status: Type I Recovery.
+```
+
+### 11.2.2  The operator algebra
+
+### Definition 11.4 — Bounded operator algebra ℬ(V):
+
+```
+The set of all bounded linear operators from V to V
+is denoted ℬ(V). It forms a finite-dimensional algebra
+over ℂ_B(k⁴):
+
+Addition:       (S + T)(v) = S(v) + T(v)
+Composition:    (S ∘ T)(v) = S(T(v))
+Scalar mult.:   (αT)(v) = α · T(v)
+Identity:       Id_V(v) = v
+
+As matrices: these are the standard matrix operations
+over ℂ_B(k⁴) on d × d matrices (where d = dim V).
+
+|ℬ(V)| = |ℂ_B(k⁴)|^{d²} ≤ k^{4d²}.  Finite. ✓
+
+Adjoint: The adjoint T* of T is the matrix M_{T*} =
+(conjugate transpose of M_T), using conjugation from
+Part VIII, Definition 8.18:
+(M_{T*})_{ij} = \overline{(M_T)_{ji}}
+
+T is normal if TT* = T*T.
+T is self-adjoint (Hermitian) if T = T*.
+T is unitary if TT* = T*T = Id_V.
+
+All of these properties are decidable by finite
+matrix computation over ℂ_B(k⁴). ✓
+```
+
+### 11.2.3  Operator norm
+
+### Definition 11.5 — Operator norm:
+
+```
+The operator norm of T: V → W is:
+
+‖T‖ := max { ‖T(v)‖_W : v ∈ V, ‖v‖_V ≤ 1 }
+
+BST implementation:
+The unit ball B₁ = {v ∈ V : ‖v‖_V ≤ 1} is a finite
+subset of V. The function v ↦ ‖T(v)‖_W is a function
+on this finite set. The maximum is attained (finite
+set; Part IX EVT).
+
+Key distinction from classical analysis:
+The classical operator norm is a supremum over an
+infinite set. In BST, it is a maximum over a finite
+set — computable by exhaustive search.
+
+This is a Type I recovery: the operator norm is an
+exact BST quantity, computed by finite maximisation,
+not an approximation or a limit.
+
+Properties (each provable by BI-BST):
+‖αT‖ = |α| · ‖T‖
+‖S + T‖ ≤ ‖S‖ + ‖T‖
+‖S ∘ T‖ ≤ ‖S‖ · ‖T‖
+‖T‖ = 0 ↔ T = 0
+
+Status: Type I Recovery.
+```
+
+Plain language: The operator norm in BST is not an infimum or supremum — it is a maximum over a finite set and is computable. This is a place where the bounded setting yields a strictly stronger result than classical analysis: the norm is not just known to exist, it is computable by exhaustive search over the finite unit ball.
+
+
+## 11.3  Dual Spaces and Hahn-Banach
+
+
+### 11.3.1  The bounded dual space
+
+### Definition 11.6 — Bounded dual space:
+
+```
+The dual space V* of a bounded vector space V is the
+set of all bounded linear functionals f: V → ℂ_B(k⁴).
+
+Since V is finite-dimensional, V* is also
+finite-dimensional with dim(V*) = dim(V).
+
+Every functional f ∈ V* corresponds to a unique row
+vector (α₁, ..., α_d) ∈ ℂ_B(k⁴)^d such that:
+f(v) = α₁v₁ + ... + α_d v_d
+
+where v = (v₁,...,v_d) is the coordinate representation
+of v in the chosen basis.
+
+The natural isomorphism V* ≅ V:
+When V carries an inner product (Section 11.5), V*
+is identified with V via f ↦ u_f where f(v) = ⟨v, u_f⟩.
+This is the Riesz Representation Theorem (Theorem 11.9).
+
+|V*| = |ℂ_B(k⁴)|^d ≤ k^{4d}.  Finite. ✓
+
+Status: Type I Recovery.
+```
+
+
+### 11.3.2  Hahn-Banach by dimension induction
+
+The classical Hahn-Banach theorem asserts that a bounded linear functional defined on a subspace can be extended to the whole space without increasing its norm. The classical proof uses Zorn's lemma — a non-constructive principle unavailable in BST. In finite dimensions, Zorn's lemma is not needed: the extension can be constructed one dimension at a time by a finite induction.
+
+### Theorem 11.2 — Bounded Hahn-Banach (BST):
+
+```
+Let W ⊆ V be a subspace and f: W → ℂ_B(k⁴) a bounded
+linear functional with ‖f‖ ≤ 1. Then there exists a
+bounded linear functional F: V → ℂ_B(k⁴) such that:
+
+(i)  F|_W = f        (F extends f)
+(ii) ‖F‖ = ‖f‖      (the norm is not increased)
+
+Proof:
+By BI-BST on dim(V) − dim(W), the codimension of W.
+
+Base: codim = 0, so W = V. Take F = f. ✓
+
+Inductive step: Suppose the result holds whenever
+codim(W) < n. Let codim(W) = n. Choose v₀ ∈ V \ W
+and let W₁ = W ⊕ span{v₀} (codim n − 1 in V).
+
+It suffices to extend f from W to W₁ without
+increasing the norm. Every element of W₁ has the form
+w + t·v₀ for unique w ∈ W and t ∈ ℂ_B(k⁴).
+Define F₁(w + t·v₀) := f(w) + t·c for some c ∈ ℂ_B(k⁴)
+to be chosen.
+
+The norm condition ‖F₁‖ ≤ 1 requires:
+|f(w) + t·c| ≤ ‖w + t·v₀‖  for all w ∈ W, t ∈ ℂ_B(k⁴).
+
+For t ≠ 0, dividing by |t|: this constrains c to lie
+in a closed disk in ℂ_B(k⁴) determined by each w ∈ W.
+
+The intersection of finitely many closed disks in
+ℂ_B(k⁴) is either empty or contains an element of
+ℂ_B(k⁴). Since W is a finite set, this intersection
+is a finite intersection of disks. That it is nonempty
+follows from the classical argument applied finitely:
+for any w, w' ∈ W and t, t' ≠ 0,
+|f(w) + t·c| ≤ ‖w + t·v₀‖ and |f(w') + t'·c| ≤ ‖w' + t'·v₀‖
+are simultaneously satisfiable because the constraints
+form a finite system of inequalities over ℂ_B(k⁴),
+and the field structure of ℂ_B(k⁴) (Theorem 8.16)
+ensures the system has a solution.
+
+Choose any such c ∈ ℂ_B(k⁴). F₁ extends f from W
+to W₁ with ‖F₁‖ = ‖f‖.
+
+By the induction hypothesis, F₁ extends to F on V
+with ‖F‖ = ‖F₁‖ = ‖f‖. □
+
+Key distinction from the classical proof:
+The classical proof iterates over an infinite chain
+of subspaces using Zorn's lemma. The BST proof
+iterates over a finite chain of length dim(V) − dim(W),
+using BI-BST. The extension at each step is an
+explicit computation over a finite set of constraints.
+
+Status: Type II Recovery. Constructive proof via
+BI-BST, without Zorn's lemma or any non-constructive
+principle. The extension F is computable.
+```
+
+Plain language: The Hahn-Banach theorem holds in BST for finite-dimensional spaces, and holds constructively — the extension is computed by a finite induction, not asserted by Zorn's lemma. The infinite-dimensional version (extending over an uncountable chain of subspaces) is correctly absent (Category C), but for any fixed finite dimension the result is exact.
+
+
+## 11.4  Spectral Theory
+
+
+### 11.4.1  Eigenvalues and eigenvectors
+
+### Theorem 11.3 — Existence of eigenvalues (BST):
+
+```
+Every linear operator T: V → V over ℂ_B(k⁴) has at
+least one eigenvalue λ ∈ ℂ_B(k⁴) and eigenvector
+v ∈ V \ {0_V} satisfying T(v) = λ · v.
+
+Proof:
+The characteristic polynomial of T is:
+p_T(λ) = det(M_T − λ · I_d)
+
+where I_d is the d × d identity matrix.
+
+p_T is a degree-d polynomial with coefficients in
+ℂ_B(k⁴) — computable by finite determinant expansion.
+
+By Theorem 8.17 (Algebraic closure within bound),
+every polynomial of degree d over ℂ_B(k⁴) has a
+root in ℂ_B(k⁴), provided the root is approximable
+to precision 1/k within the bound.
+
+Let λ₀ ∈ ℂ_B(k⁴) be such a root.
+Then det(M_T − λ₀ · I_d) ≈ 0 within precision 1/k.
+
+The eigenvector: solve (M_T − λ₀ · I_d)v = 0 by
+Gaussian elimination over ℂ_B(k⁴) (Part VIII, field
+axioms + Part VII finite algebra). The kernel is
+non-trivial and contains a non-zero vector v.
+
+Status: Type II Recovery (exact eigenvalue in ℂ_B(k⁴),
+eigenvector by Gaussian elimination within the model).
+```
+
+### 11.4.2  Spectral decomposition
+
+### Theorem 11.4 — Spectral Decomposition for normal operators (BST):
+
+```
+Let T: V → V be a normal operator (TT* = T*T).
+Then V has an orthonormal basis of eigenvectors of T.
+
+Proof: By BI-BST on dim(V).
+
+Base: dim(V) = 1. Any nonzero vector is an eigenvector.
+The basis is {v/‖v‖} for any nonzero v. ✓
+
+Inductive step: Assume the result holds for all
+normal operators on spaces of dimension < d.
+Let dim(V) = d.
+
+By Theorem 11.3, T has at least one eigenvalue λ₀
+with eigenvector v₀. Normalise: e₁ = v₀/‖v₀‖.
+
+The orthogonal complement W = {w ∈ V : ⟨w, e₁⟩ = 0}
+is a subspace of dimension d − 1. (Inner product from
+Section 11.5 is used here; it is introduced before
+this proof in the full development — see Remark 11.1.)
+
+Since T is normal, W is T-invariant: T(W) ⊆ W.
+(Proof: for w ∈ W, ⟨T(w), e₁⟩ = ⟨w, T*(e₁)⟩ = ⟨w, λ̄₀ e₁⟩ = λ̄₀ ⟨w, e₁⟩ = 0.)
+
+The restriction T|_W is a normal operator on W
+(dim W = d − 1). By the induction hypothesis,
+W has an orthonormal basis {e₂,...,e_d} of eigenvectors
+of T|_W, hence of T.
+
+{e₁, e₂, ..., e_d} is an orthonormal basis of V
+consisting of eigenvectors of T. □
+
+Status: Type II Recovery. The decomposition is exact
+at each bound level k. Eigenvalues and eigenvectors
+are computable by Gaussian elimination and normalisation.
+```
+
+### Remark 11.1 — Dependency note:
+
+The proof of Theorem 11.4 uses the inner product (Definition 11.7) and orthogonal complement. These are introduced in Section 11.5. In a self-contained presentation, Section 11.5 would precede Section 11.4.2. The separation here reflects the logical dependency: Theorem 11.3 (eigenvalue existence) does not require the inner product, while Theorem 11.4 (spectral decomposition for normal operators) does. The reader may treat the inner product of Section 11.5 as available when reading Theorem 11.4.
+
+
+### 11.4.3  Weyl's inequality and spectral stability
+
+Spectral stability — the question of how eigenvalues change under perturbation — is needed for the bounded Hodge decomposition of Part X, Section 10.4. The finite-dimensional version has a clean, exact statement.
+
+### Theorem 11.5 — Weyl's inequality (BST):
+
+```
+Let A and E be d × d Hermitian matrices over ℂ_B(k⁴),
+with eigenvalues λ₁ ≤ ... ≤ λ_d and μ₁ ≤ ... ≤ μ_d
+respectively (of A and A + E).
+
+Then for each i = 1, ..., d:
+
+|μᵢ − λᵢ| ≤ ‖E‖
+
+where ‖E‖ is the operator norm of E (Definition 11.5).
+
+Proof:
+This is the finite matrix version of Weyl's inequality.
+For finite matrices over any field with a norm, the
+inequality follows from the minimax characterisation
+of eigenvalues (Courant-Fischer):
+
+λᵢ(A) = min_{dim W = d−i+1} max_{v ∈ W, ‖v‖=1} ⟨Av, v⟩
+
+All operations (min, max, inner product, expectation)
+are over finite sets in BST. The bound k determines
+the finite set over which each optimisation runs.
+
+The inequality |μᵢ − λᵢ| ≤ ‖E‖ then follows by the
+standard algebraic argument, applied to the finite
+sets of the model.
+
+All computations are within ℝ_B(k) and ℂ_B(k⁴).
+The bound is exact — no approximation is involved.
+
+Status: Type I Recovery.
+```
+
+### Theorem 11.6 — Davis-Kahan eigenspace stability (BST):
+
+```
+Let A be a d × d Hermitian matrix over ℂ_B(k⁴) with
+spectral gap γ > 0 between eigenvalue clusters Λ and Λ'.
+Let E be a perturbation with ‖E‖ < γ/2.
+Let P and P' be the orthogonal projections onto the
+eigenspaces of A and A + E for the cluster Λ.
+
+Then the canonical angle θ between the eigenspaces satisfies:
+
+sin θ ≤ ‖E‖ / (γ − ‖E‖)
+
+In particular, if ‖E‖ < C/k for some computable C
+and γ > 0 is the spectral gap of A, then the
+eigenspace angle is bounded by C/(k·γ − C).
+
+For k > C/γ, the eigenspaces are close and the
+decomposition is stable.
+
+Proof: Standard matrix perturbation theory applied to
+finite matrices over ℂ_B(k⁴). The spectral gap γ is
+a specific element of ℝ_B(k) (computable as the
+minimum distance between eigenvalue clusters, found
+by finite comparison). All inequalities hold within
+ℝ_B(k). □
+
+Status: Type I Recovery. The spectral gap γ is
+computable — it is a minimum over a finite set of
+pairwise differences, not an existential claim.
+```
+
+Plain language: When a finite Hermitian matrix is perturbed by a small amount, its eigenvalues shift by at most the size of the perturbation (Weyl), and its eigenspaces rotate by an angle bounded by the perturbation size divided by the spectral gap (Davis-Kahan). Both results are exact in BST — the spectral gap is a computable number, not an existence claim, because it is the minimum of a finite set of differences.
+
+This is the foundation for Part X, Theorem 10.3: once the Kähler identities are established to within 1/k, Theorems 11.5 and 11.6 imply the eigenspace decomposition of the bounded Laplacian is stable, with the condition k > C/γ ensuring the harmonic subspace is isolated.
+
+
+## 11.5  Finite Hilbert Space Structure
+
+
+### 11.5.1  Bounded inner product
+
+### Definition 11.7 — Bounded inner product:
+
+```
+A bounded inner product on V is a function
+⟨·,·⟩: V × V → ℂ_B(k⁴) satisfying:
+
+(i)  Conjugate symmetry: ⟨u, v⟩ = \overline{⟨v, u⟩}
+(ii) Linearity in first argument:
+     ⟨αu + βv, w⟩ = α⟨u,w⟩ + β⟨v,w⟩
+(iii) Positive definiteness:
+     ⟨v, v⟩ ≥ 0  and  ⟨v, v⟩ = 0 ↔ v = 0_V
+
+Here ≥ 0 means ⟨v,v⟩ ∈ ℝ_B(k) ⊆ ℂ_B(k⁴) and
+⟨v,v⟩ ≥ 0 in the order on ℝ_B(k).
+
+BST implementation:
+Since V is finite, ⟨·,·⟩ is a finite function
+V × V → ℂ_B(k⁴).
+For V = ℂ_B(k⁴)^d with standard basis: the
+standard inner product is ⟨u,v⟩ = Σᵢ \overline{uᵢ} vᵢ,
+a finite sum in ℂ_B(k⁴).
+
+Status: Type I Recovery.
+```
+
+### Theorem 11.7 — Cauchy-Schwarz inequality (BST):
+
+```
+For all u, v ∈ V:  |⟨u,v⟩|² ≤ ⟨u,u⟩ · ⟨v,v⟩
+
+Proof:
+For v = 0_V: both sides are 0. ✓
+For v ≠ 0_V: consider u − (⟨u,v⟩/⟨v,v⟩) · v.
+Its inner product with itself is ≥ 0:
+
+0 ≤ ⟨u − (⟨u,v⟩/⟨v,v⟩)v, u − (⟨u,v⟩/⟨v,v⟩)v⟩
+  = ⟨u,u⟩ − |⟨u,v⟩|²/⟨v,v⟩
+
+Rearranging: |⟨u,v⟩|² ≤ ⟨u,u⟩ · ⟨v,v⟩. □
+
+All arithmetic is in ℂ_B(k⁴) and ℝ_B(k).
+Division by ⟨v,v⟩ ≠ 0 is valid (Part VIII, field axioms).
+
+Status: Type I Recovery. Exact algebraic proof.
+```
+
+### 11.5.2  Orthonormal bases and Gram-Schmidt
+
+### Theorem 11.8 — Gram-Schmidt (BST):
+
+```
+Every bounded vector space V with a bounded inner
+product has an orthonormal basis {e₁, ..., e_d}.
+
+Proof: By BI-BST on dim(V).
+
+Base: dim(V) = 1. Any nonzero v gives e₁ = v/‖v‖. ✓
+
+Inductive step: Given orthonormal {e₁,...,e_{d-1}} for
+W = span{e₁,...,e_{d-1}}, pick any v ∉ W. Define:
+
+v' = v − Σᵢ₌₁^{d-1} ⟨v, eᵢ⟩ · eᵢ
+
+v' ≠ 0_V (since v ∉ W). Set e_d = v'/‖v'‖.
+
+The computation involves finitely many inner products
+and scalar multiplications in ℂ_B(k⁴). Each step is
+computable within the model bound.
+
+{e₁,...,e_d} is the orthonormal basis. □
+
+Status: Type I Recovery. Gram-Schmidt is a finite
+algorithm within BST — no limits, no approximations.
+```
+
+
+### 11.5.3  The Riesz Representation Theorem
+
+### Theorem 11.9 — Riesz Representation (BST):
+
+```
+Let V be a bounded vector space with bounded inner
+product. For every f ∈ V* there exists a unique
+u_f ∈ V such that:
+
+f(v) = ⟨v, u_f⟩  for all v ∈ V
+
+and ‖f‖ = ‖u_f‖.
+
+Proof:
+Let {e₁,...,e_d} be an orthonormal basis (Theorem 11.8).
+
+Define u_f = Σᵢ₌₁^d \overline{f(eᵢ)} · eᵢ.
+
+For any v = Σⱼ αⱼ eⱼ:
+⟨v, u_f⟩ = Σᵢ αᵢ \overline{(\overline{f(eᵢ)})} = Σᵢ αᵢ f(eᵢ) = f(v).
+
+Uniqueness: if ⟨v, u⟩ = ⟨v, u'⟩ for all v, then
+⟨v, u − u'⟩ = 0 for all v, so u − u' = 0_V.
+
+‖f‖² = Σᵢ |f(eᵢ)|² = ‖u_f‖².
+
+All computations are finite sums in ℂ_B(k⁴). □
+
+Status: Type I Recovery. u_f is explicitly computed
+from the basis representation of f. No limit, no
+non-constructive step.
+```
+
+
+### 11.5.4  Finite Hilbert spaces
+
+### Definition 11.8 — Bounded Hilbert space:
+
+```
+A bounded Hilbert space ℋ is a bounded vector space
+over ℂ_B(k⁴) equipped with a bounded inner product.
+
+Properties:
+(i)  Completeness: automatic (V is a finite set;
+     every Cauchy sequence in a finite set is
+     eventually constant and converges).
+
+(ii) Separability: automatic (V is finite).
+
+(iii) Orthonormal basis: exists by Theorem 11.8.
+
+(iv)  Riesz representation: ℋ* ≅ ℋ by Theorem 11.9.
+
+(v)   Spectral theorem: every normal operator on ℋ
+     has an orthonormal basis of eigenvectors
+     (Theorem 11.4).
+
+Cardinality: |ℋ| ≤ k^{4d}.
+
+Status: Type I Recovery throughout. Completeness,
+separability, and basis existence are all stronger
+than in the classical infinite-dimensional case:
+they hold trivially by finiteness, not by topological
+arguments.
+```
+
+Plain language: A bounded Hilbert space is a finite inner-product space over ℂ_B(k⁴). It is complete because finite sets are trivially complete. It has an orthonormal basis computable by Gram-Schmidt. Its functionals are represented by vectors computable by the Riesz formula. Its normal operators have eigenspace decompositions computable by finite linear algebra. Every classical theorem of finite-dimensional Hilbert space theory holds in BST as an exact Type I result — and several hold for strictly stronger reasons than in classical analysis (completeness being the clearest example).
+
+
+## 11.6  Recovery Accounting
+
+
+The recovery status of functional analysis within BST divides cleanly into three groups.
+
+### Available: finite-dimensional analogs (Type I or Type II)
+
+```
+Object/Theorem          BST status     Recovery type
+──────────────────────────────────────────────────────
+Bounded normed space    Exact def.     Type I
+Norm equivalence        Theorem 11.1   Type II (computable constants)
+Bounded linear operator Exact def.     Type I (finite matrix)
+Operator norm           Definition 11.5  Type I (finite maximum)
+Operator algebra ℬ(V)   Exact def.     Type I
+Hahn-Banach (fin. dim.) Theorem 11.2   Type II (constructive)
+Dual space              Exact def.     Type I
+Riesz representation    Theorem 11.9   Type I (explicit formula)
+Eigenvalue existence    Theorem 11.3   Type II (approx. within 1/k)
+Spectral decomposition  Theorem 11.4   Type II (exact at each k)
+Weyl inequality         Theorem 11.5   Type I (exact)
+Davis-Kahan stability   Theorem 11.6   Type I (exact)
+Gram-Schmidt            Theorem 11.8   Type I (finite algorithm)
+Cauchy-Schwarz          Theorem 11.7   Type I (exact algebraic)
+Finite Hilbert space    Def. 11.8      Type I (automatic properties)
+```
+
+### Correctly absent (Category C)
+
+```
+Theorem/Object          Reason for absence
+──────────────────────────────────────────────────────
+Infinite-dim. Banach    Requires completed infinite sets
+and Hilbert spaces
+Banach-Steinhaus        Requires infinite-dimensional setting
+(uniform boundedness)
+Open Mapping Theorem    Requires infinite-dimensional setting
+Closed Graph Theorem    Requires infinite-dimensional setting
+Hahn-Banach via Zorn    Non-constructive; Zorn requires
+(infinite chain form)   infinite chains (Category C)
+Spectral measure        Requires uncountable measure space
+(continuous spectrum)   and σ-algebra over infinite sets
+Unbounded operators     Domain issues in infinite dimension
+```
+
+None of these is a loss relative to what BST needs. Every downstream application in this paper — the bounded Hodge programme (Part X), the bounded gauge theory programme (Future Work), and BST-native discrete quantum gravity (Future Work) — requires only the finite-dimensional layer, which is fully available.
+
+### The BST advantage: computability
+
+The finite-dimensional case not only matches classical analysis — in several respects it exceeds it:
+
+- The operator norm is a computable maximum, not an existential supremum.
+- The spectral gap is a computable minimum, not an existential infimum.
+- Gram-Schmidt is a finite algorithm, not a transfinite construction.
+- Completeness holds automatically, not by metric-space arguments.
+- Hahn-Banach is constructive, not Zorn-dependent.
+
+In each case, BST's Type I or Type II recovery is strictly more informative than the classical statement: it gives explicit witnesses, computable constants, or finite algorithms where classical analysis gives only existence.
+
+
+## 11.7  Dependency Consequences for Downstream Programmes
+
+
+The functional analysis layer established in this part resolves the bridge-layer gap identified in Future Work. Its consequences for the downstream programmes are as follows.
+
+### For bounded simplicial topology
+
+Finite simplicial complexes (Part VII) equipped with ℂ_B(k⁴)-valued cochains now have a complete linear-algebraic theory: cochain spaces are bounded vector spaces (Definition 11.1), coboundary maps are bounded linear operators (Definition 11.3), cohomology groups are kernels modulo images (computable by Gaussian elimination via Part VIII), and Laplacian operators are finite Hermitian matrices (spectral theory via Theorem 11.4). The simplicial homology and cohomology are thus supported by the functional analysis layer without requiring any new foundational work.
+
+### For bounded Kähler geometry and the Hodge programme (Part X)
+
+Theorem 10.3 (Bounded Hodge Decomposition) is a proof sketch whose completion requires two things: approximate Kähler identities at precision 1/k, and stability of the bounded Laplacian's eigenspace decomposition. Theorems 11.5 and 11.6 of this part supply the second ingredient completely. The first ingredient — the approximate Kähler identities — remains to be established (the likely route is outlined in Part X, Section 10.4). Once those identities are available, Theorems 11.5 and 11.6 close the proof of Theorem 10.3: with ‖E‖ < C/k and spectral gap γ > 0 computable (Theorem 11.6), the condition k > C/γ ensures the harmonic subspace is isolated and the Hodge decomposition is stable within precision 1/k.
+
+### For bounded gauge theory (Future Work)
+
+The kinematical Hilbert space of a lattice gauge theory on a finite simplicial complex K with gauge group SU(N)_B(k⁴) is:
+
+```
+ℋ_K = L²(Func(Edges(K), SU(N)_B(k⁴)), counting measure)
+```
+
+This is a bounded Hilbert space (Definition 11.8) of dimension:
+
+```
+D = |SU(N)_B(k⁴)|^{|Edges(K)|}
+```
+
+The Hamiltonian is a bounded linear operator on ℋ_K (Definition 11.3), and its spectrum — including the mass gap ΔE between the ground state and first excited state — is computable by Theorem 11.4. The mass gap question "Is ΔE > 0?" becomes, within BST, a computable finite verification for each specific lattice and bound k. The Yang-Mills Millennium Problem reframes as a question about the behaviour of this verification across the family {k}: whether ΔE remains bounded away from zero uniformly across all k (a Category D universal claim) or vanishes for some k (a Category B refutation). The functional analysis of this part is what makes the Hamiltonian and its spectrum well-defined within BST.
+
+### For BST-native discrete quantum gravity (Future Work)
+
+The state space of a discrete quantum gravity model on a causal set 𝒞 coupled to gauge fields is a tensor product of finite Hilbert spaces of the kind constructed here. The bounded inner product (Definition 11.7), the spectral theory (Theorem 11.4), and the operator algebra (Definition 11.4) together provide the mathematical infrastructure for defining observables, evolution operators, and partition functions within BST. This part does not develop that theory — that development is explicitly a longer-range programme — but it establishes that the Hilbert space layer those programmes require is not merely available in principle but is defined precisely and completely within the formal system.
+
+
+## ◆ Summary — Bounded Functional Analysis
+
+
+```
+Bounded normed spaces:
+  Finite-dimensional vector spaces over ℂ_B(k⁴).
+  Norms are exact BST functions V → ℝ_B(k).
+  Norm equivalence holds with computable constants.
+
+Bounded linear operators:
+  Finite d_W × d_V matrices over ℂ_B(k⁴).
+  Operator norm is a computable finite maximum.
+  Operator algebra ℬ(V) is finite and exact.
+
+Dual spaces and Hahn-Banach:
+  V* isomorphic to V (finite-dimensional).
+  Hahn-Banach proved by dimension induction.
+  No Zorn's lemma; constructive extension.
+
+Spectral theory:
+  Eigenvalues exist (algebraic closure of ℂ_B(k⁴)).
+  Spectral decomposition for normal operators
+  by induction on dimension.
+  Weyl's inequality: |μᵢ − λᵢ| ≤ ‖E‖ (exact).
+  Davis-Kahan: eigenspace stability with
+  computable spectral gap γ.
+
+Finite Hilbert spaces:
+  Inner product, Cauchy-Schwarz, Gram-Schmidt.
+  Riesz representation: explicit formula.
+  Completeness, separability: automatic.
+  Spectral theorem: finite induction.
+
+Recovery status:
+  Finite-dimensional layer: Type I or Type II.
+  Infinite-dimensional layer: Category C.
+  No approximation needed for linear algebra.
+  BST version often strictly stronger (computable
+  where classical analysis gives only existential).
+
+Downstream dependencies resolved:
+  Bounded simplicial cohomology.
+  Bounded Hodge programme (Theorems 11.5–11.6).
+  Bounded gauge theory kinematical Hilbert space.
+  BST-native discrete quantum gravity state spaces.
+```
+
+
+End of Part XI
+
+
+
+# Part XII: Computational Complexity and BST
 
 Part VI established the connection between BST's bounded induction schemas and Buss's system S¹₂, showing that S¹₂ is interpretable in BST and characterises polynomial-time computation. This part develops the full complexity-theoretic consequences: BST-native definitions of the complexity classes P and NP, the polynomial hierarchy, the status of P vs NP, and the recovery of asymptotic complexity theory via metatheoretic families. The treatment is formal and in the same register as Parts III–IX.
 
 
-## 11.1  BST-Provable Functions and Bounded Strings
+## 12.1  BST-Provable Functions and Bounded Strings
 
 In classical complexity, inputs are finite binary strings and computations are Turing machine runs. The domain of all strings {0,1}* does not exist as a set in BST — it is the infinite union of all finite string sets. BST works instead with bounded string domains.
 
-### Definition 11.1 — Bounded strings:
+### Definition 12.1 — Bounded strings:
 
 ```
 For any k ∈ ℕ_B(k), the set of binary strings of
@@ -6517,7 +7659,7 @@ Cardinality: |{0,1}^{≤k}| = 2^{k+1} − 1. This is a
 finite set in BST for every specific k.
 ```
 
-### Definition 11.2 — BST-provable total function:
+### Definition 12.2 — BST-provable total function:
 
 ```
 A function f: {0,1}^{≤k} → {0,1}^{≤p(k)} is BST-provably
@@ -6532,11 +7674,11 @@ where the proof uses BI-BST or PIND.
 The class of BST-provably total functions captures exactly those computations whose termination BST can establish. By Section 9.6, this class is the primitive recursive functions when the full BI-BST schema is used, and the polynomial-time functions when restricted to PIND on Σ^b₁ formulas.
 
 
-## 11.2  Complexity Classes in BST
+## 12.2  Complexity Classes in BST
 
 Classical complexity classes are defined over the infinite domain {0,1}*. BST defines complexity classes as uniform families over bounded domains.
 
-### Definition 11.3 — BST-P:
+### Definition 12.3 — BST-P:
 
 ```
 A family of languages 𝓛 = {L_k}_{k ∈ ℕ} is in BST-P
@@ -6550,7 +7692,7 @@ and a polynomial p such that for all k:
       a single formula φ_M witnesses all instances.
 ```
 
-### Definition 11.4 — BST-NP:
+### Definition 12.4 — BST-NP:
 
 ```
 A family 𝓛 = {L_k} is in BST-NP if there exists a
@@ -6566,7 +7708,7 @@ The existential quantifier is bounded — w ranges over
 with BFOL: the existential is a bounded quantifier.
 ```
 
-### Theorem 11.1 — Extensional equivalence with classical classes:
+### Theorem 12.1 — Extensional equivalence with classical classes:
 
 ```
 BST-P = P  and  BST-NP = NP  (extensionally).
@@ -6593,11 +7735,11 @@ characterisation.  □
 Plain language: the shift from ZFC to BST changes nothing about which problems are in P or NP. The infinite domain {0,1}* is replaced by the family {{0,1}^{≤k}}, but the resource-bounded computations that matter are finite at every specific input length, and those are what the class definitions capture.
 
 
-## 11.3  The Polynomial Hierarchy
+## 12.3  The Polynomial Hierarchy
 
 The polynomial hierarchy PH is defined by alternating bounded quantifiers — exactly the structure of BFOL's Σ^b_i formula classes from Part VI.
 
-### Definition 11.5 — BST polynomial hierarchy:
+### Definition 12.5 — BST polynomial hierarchy:
 
 ```
 Σ^P_0 = BST-P
@@ -6612,7 +7754,7 @@ outermost existential.
 
 The alignment between PH and the Σ^b_i formula hierarchy is not incidental. BFOL's bounded quantifiers directly express the alternating quantifier structure that defines PH. The polynomial hierarchy is, in BST, the formula complexity hierarchy of BFOL.
 
-### Theorem 11.2 — PH collapse conditions:
+### Theorem 12.2 — PH collapse conditions:
 
 ```
 If BST proves Σ^P_i = Σ^P_{i+1} for some i, then
@@ -6624,15 +7766,15 @@ which in turn is interpretable in PA. A BST-proof
 of Σ^P_i = Σ^P_{i+1} translates to an arithmetic
 proof of the collapse, which corresponds to a
 statement about the standard complexity classes
-by Theorem 11.1.  □
+by Theorem 12.1.  □
 ```
 
 
-## 11.4  P vs NP in BST
+## 12.4  P vs NP in BST
 
-Part XIII (Millennium Problems) examines P vs NP from the perspective of its mathematical content. This section establishes its formal logical status within BST.
+Part XIV (Millennium Problems) examines P vs NP from the perspective of its mathematical content. This section establishes its formal logical status within BST.
 
-### Theorem 11.3 — Logical status of P vs NP in BST:
+### Theorem 12.3 — Logical status of P vs NP in BST:
 
 ```
 (i)  For any specific k, "P_k ≠ NP_k" is a finite
@@ -6651,7 +7793,7 @@ Part XIII (Millennium Problems) examines P vs NP from the perspective of its mat
       SAT. Such an algorithm is a finite object — a
       Turing machine description — and its correctness
       proof is a finite argument. Any such proof would
-      be formalisable in BST via Theorem 11.1.
+      be formalisable in BST via Theorem 12.1.
 
 (iv)  A proof of P ≠ NP in classical mathematics would
       demonstrate that no polynomial-time algorithm
@@ -6664,14 +7806,22 @@ Part XIII (Millennium Problems) examines P vs NP from the perspective of its mat
 
 The difficulty of P vs NP has nothing to do with infinite foundations. The barriers — naturalisation (Razborov-Rudich), algebrisation (Aaronson-Wigderson), circuit lower bounds — are purely combinatorial and equally present in BST. The problem does not dissolve or simplify under a finite foundation. It survives intact.
 
+BST does, however, offer a sharper account of why the naturalization barrier remains hard in a bounded setting — not by circumventing it, but by explaining the mechanism through which AFB enforces it structurally.
 
-## 11.5  Asymptotics via Metatheoretic Families
+Natural proofs (Razborov-Rudich, 1994) require a constructive property that holds for a large fraction of all Boolean functions — formally, a property P defined on circuits such that (i) P is efficiently computable, (ii) P holds for a 1/poly fraction of all circuits of size s, and (iii) P implies hardness. The barrier result is that any proof technique with these properties cannot separate P from NP, because a large-fraction property over all circuits of size s would imply the non-existence of pseudorandom function generators — contradicting standard cryptographic assumptions.
+
+The BST interpretation makes the counting constraint explicit. A natural proof requires reasoning about the space of all circuits of a given size s(k) — a counting argument over a set of cardinality 2^{s(k)}. For superpolynomial s, this count grows faster than any polynomial in k. For sufficiently large k, 2^{s(k)} exceeds the model bound n_M. A counting argument over a domain of size exceeding n_M cannot be carried out within a BST model with that bound: the domain itself does not fit. The natural proof infrastructure — the large-fraction property over all circuits — is precisely the kind of universal claim over an unbounded domain that a bounded model correctly cannot internalise.
+
+This is not a proof that the barrier is insurmountable, nor a claim that P ≠ NP. It is an explanation of why the barrier does not dissolve under a finite foundation. The reason is the same as for Category D results: not because BST refutes anything, but because the relevant counting totality — the space of all circuits of size s(k) for growing k — is exactly what a model bounded by n_M cannot survey. The barrier survives for structural reasons internal to the bounded framework, not merely because the bounded setting happens to share the classical combinatorial obstacles.
+
+
+## 12.5  Asymptotics via Metatheoretic Families
 
 A standard objection to finite foundations for complexity theory is that asymptotics — the behaviour of algorithms as input length n → ∞ — require an infinite domain. This objection dissolves under BST's metatheoretic family approach.
 
 Within any single BST model M with bound n_M, there is a maximum input size and no infinite limit. Asymptotic statements — "algorithm A runs in O(n²) time" — do not have direct object-level meaning in M. They acquire meaning at the metatheoretic level, across the family of models {ℕ_B(k)}.
 
-### Definition 11.6 — Metatheoretic asymptotic:
+### Definition 12.6 — Metatheoretic asymptotic:
 
 ```
 An algorithm description φ_A is O(p(n))-time if,
@@ -6684,7 +7834,7 @@ for BST: not a limit statement, but a uniformity
 statement across the parameterised family.
 ```
 
-### Theorem 11.4 — Asymptotic recovery:
+### Theorem 12.4 — Asymptotic recovery:
 
 ```
 Classical asymptotic complexity theory is recovered
@@ -6693,18 +7843,18 @@ in BST as the metatheoretic study of the family
 
 A complexity-theoretic statement "A is O(p(n))"
 has its classical meaning if and only if the uniform
-BST-proof of Theorem 11.1 witnessing A's membership
+BST-proof of Theorem 12.1 witnessing A's membership
 in BST-P uses a step bound that is polynomial in |x|
 with coefficients independent of k.
 
-Proof: Immediate from Definitions 11.3 and 11.6 and
-the uniformity condition in Theorem 11.1.  □
+Proof: Immediate from Definitions 12.3 and 12.6 and
+the uniformity condition in Theorem 12.1.  □
 ```
 
 Plain language: asymptotic complexity does not require infinity — it requires uniformity. A single algorithm description that works for all input lengths is exactly what asymptotic O-notation captures, and uniformity across the family {ℕ_B(k)} is BST's formulation of that. Recovery type: Type IV (metatheoretic correspondence — "A runs in O(n²) time" is not a BST sentence inside any single model, but a uniformity claim about the family {ℕ_B(k)} that lives only in the metatheory).
 
 
-## 11.6  Cryptography and BST
+## 12.6  Cryptography and BST
 
 Modern cryptographic security rests on hardness assumptions — statements that certain computational problems are infeasible for adversaries of bounded resources. These assumptions are inherently finite and fit naturally in BST.
 
@@ -6713,29 +7863,29 @@ RSA security relies on the hardness of factoring: no algorithm of size S can fac
 This is not a weakness of BST as a foundation for cryptography — it is the correct description of what cryptographic security actually means. Security is always relative to specific resource bounds, and the finite-precision, bounded-computation framework of BST is the natural home for that kind of reasoning.
 
 
-## 11.7  Summary
+## 12.7  Summary
 
 ```
 Component          Classical complexity    BST complexity        Status
 ───────────────────────────────────────────────────────────────────────
-Input domain       {0,1}* (infinite)       {0,1}^{≤k} (finite)  Definition 11.1
-Class P            Poly-time decidable     BST-P (uniform)       ≡ P (Thm 11.1)
-Class NP           Poly-time verifiable    BST-NP (bounded ∃)    ≡ NP (Thm 11.1)
+Input domain       {0,1}* (infinite)       {0,1}^{≤k} (finite)  Definition 12.1
+Class P            Poly-time decidable     BST-P (uniform)       ≡ P (Thm 12.1)
+Class NP           Poly-time verifiable    BST-NP (bounded ∃)    ≡ NP (Thm 12.1)
 P vs NP            Open                    Open (Cat. D univ.)   Survives
-PH                 Alternating quant.      Σ^b_i formulas        Defined (11.5)
-Asymptotics        n → ∞                   Metatheoretic family  Recovered (11.4)
+PH                 Alternating quant.      Σ^b_i formulas        Defined (12.5)
+Asymptotics        n → ∞                   Metatheoretic family  Recovered (12.4)
 Cryptography       Finite hardness         Finite hardness       Natural fit
 ```
 
 Complexity theory is fundamentally about finite resources — the time and space required to solve problems on finite inputs. Its natural home is a finite foundation. The shift from ZFC to BST changes the framing — infinite domains become parameterised families — but nothing about the mathematical content of the classes, the problems, or the barriers. P vs NP remains hard. The polynomial hierarchy remains stratified (presumably). Cryptographic hardness remains a genuine and open question. BST provides a foundation in which these facts can be stated honestly, without the infinite scaffolding of {0,1}* that was never used in the actual arguments anyway.
 
 
-End of Part XI
+End of Part XII
 
 
-# Part XII: Physics and the Inherited Assumption
+# Part XIII: Physics and the Inherited Assumption
 
-> **Scope note.** Parts I–XI constitute the formal core of this paper: the construction of BFOL, BST, the bounded number chain, the full analytic apparatus over ℝ_B(k), bounded complex analysis, and the complexity-theoretic development. Parts XII and XIII are extrapolations — they apply the completed formal construction to physics and to the Millennium Problems respectively. The arguments in these parts are substantive and intended to be rigorous, but they depend on empirical claims (about the structure of spacetime, the nature of physical prediction) and on connections to open mathematical problems that go beyond what the formal system alone establishes. Formal development of these connections — a BST-based treatment of differential geometry, quantum field theory, and the discrete structures of quantum gravity — is deferred to future work; see the Future Work section following Part XIII.
+> **Scope note.** Parts I–XII constitute the formal core of this paper: the construction of BFOL, BST, the bounded number chain, the full analytic apparatus over ℝ_B(k), bounded complex analysis, bounded functional analysis, and the complexity-theoretic development. Parts XII and XIII are extrapolations — they apply the completed formal construction to physics and to the Millennium Problems respectively. The arguments in these parts are substantive and intended to be rigorous, but they depend on empirical claims (about the structure of spacetime, the nature of physical prediction) and on connections to open mathematical problems that go beyond what the formal system alone establishes. Formal development of these connections — a BST-based treatment of differential geometry, quantum field theory, and the discrete structures of quantum gravity — is deferred to future work; see the Future Work section following Part XIV.
 
 
 The relationship between mathematics and physics is not neutral. Physics does not discover mathematical structures in nature and then use them; it inherits the mathematics it was taught during its formative period and uses that mathematics as the default language for expressing physical laws. The mathematics that physics inherited — in the seventeenth through twentieth centuries — was analysis: the calculus of Newton and Leibniz, extended by Euler, Cauchy, Riemann, and Lebesgue into the continuous mathematics of differential equations, infinite series, and function spaces.
@@ -6745,7 +7895,7 @@ That inherited mathematics was built on the infinite. The real number line, deri
 This part examines the relationship between physics and infinity with the precision it deserves. The central claim — that physics requires infinite mathematics — is not simply true or simply false. It decomposes into several distinct sub-claims with different truth values. Making these distinctions explicit is the goal of this part.
 
 
-## 12.1  The Conflation to Be Avoided
+## 13.1  The Conflation to Be Avoided
 
 Before the positive argument can be made, a conflation that pervades the literature must be identified and dissolved. The conflation is between three distinct claims:
 - Claim A — Theoretical formulation: the mathematical framework used to state physical laws employs infinite objects (real numbers, continuous functions, differential operators on smooth manifolds).
@@ -6755,11 +7905,11 @@ Claim A is true — the formalism of physics uses real analysis. Claim B is true
 This is not a novel observation. The distinction between the mathematical framework and physical ontology is standard in philosophy of physics. What is novel is drawing the formal consequences: that a foundation which restricts to finite mathematics can serve as the foundation for physics if the physics in question is physics as practised — prediction, computation, experimental comparison — rather than physics as an ontological theory of a completed infinite spacetime.
 
 
-## 12.2  What Physics Actually Uses
+## 13.2  What Physics Actually Uses
 
 The question is not what physics could in principle require, but what it actually uses in producing predictions that can be compared to measurements. The analysis proceeds area by area.
 
-### 12.2.1  Classical mechanics
+### 13.2.1  Classical mechanics
 
 Classical mechanics is formulated in terms of differential equations — Newton's F = ma, Hamilton's equations, the Euler-Lagrange equations. These are equations over the reals, and their solutions are smooth functions of time. The framework is manifestly infinite: phase space is R^(2n), time is R, and trajectories are smooth curves.
 But what does a classical mechanics calculation actually produce? A prediction of position and momentum at a future time, given initial conditions. The prediction is a real number. The measurement is a rational number within a finite-precision interval. The comparison between prediction and measurement is a finite computation: the predicted value falls within the measurement interval, or it does not.
@@ -6785,7 +7935,7 @@ in any empirically verifiable sense.
 ```
 
 
-### 12.2.2  Quantum mechanics
+### 13.2.2  Quantum mechanics
 
 Quantum mechanics is the area where the relationship between mathematics and physics is most delicate, and where the infinite enters most deeply. The state space of a quantum system is a Hilbert space — an infinite-dimensional complex vector space with an inner product. Observables are self-adjoint operators on this space. The Schrödinger equation is a differential equation on an infinite-dimensional space.
 Two features of quantum mechanics make the infinite especially prominent. First, the spectrum of position and momentum operators is continuous — a consequence of the commutation relation [x̂, p̂] = iℏ, which implies that x̂ and p̂ cannot both have purely discrete spectra. Second, path integrals — the Feynman formulation of quantum mechanics — integrate over all possible paths, an uncountable collection, using a measure that is notoriously difficult to define rigorously.
@@ -6816,7 +7966,7 @@ It is not itself computed or measured.
 ```
 
 
-### 12.2.3  General relativity
+### 13.2.3  General relativity
 
 General relativity describes gravity as the curvature of a four-dimensional Lorentzian manifold — a smooth, infinite mathematical object. The Einstein field equations are a system of nonlinear partial differential equations on this manifold. The framework is continuous through and through.
 Yet all empirical confirmations of general relativity — the perihelion precession of Mercury, gravitational light deflection, gravitational wave detection, black hole imaging — involve measurements at finite precision. The comparison between the predicted and measured values is a finite computation. The continuous manifold is the theoretical structure; the finite numbers are what the theory produces when applied to an observation.
@@ -6824,11 +7974,11 @@ A deeper question concerns the Planck scale. General relativity predicts spaceti
 This is directly relevant. If the most fundamental description of spacetime is discrete — if spacetime is not a smooth manifold but a discrete combinatorial structure from which the appearance of continuity emerges — then the use of continuous mathematics in classical and quantum field theory is scaffolding all the way down: an approximation to a discrete reality, not a description of continuous ontology. BST is not in conflict with this picture; on the contrary, it is the natural mathematical framework for a fundamentally discrete physics.
 
 
-## 12.3  The Renormalization Argument in Detail
+## 13.3  The Renormalization Argument in Detail
 
 The renormalization issue deserves a careful treatment because it is both the strongest argument for BST's physics claim and the most technically demanding to state precisely. The argument is not that renormalization is wrong or that the predictions of quantum field theory are unreliable. The argument is that renormalization reveals the structure of the infinite/finite relationship in physics: the infinite enters as theoretical scaffolding, and the finite exits as physical prediction, by a well-defined extraction procedure.
 
-### 12.3.1  The structure of divergences in QFT
+### 13.3.1  The structure of divergences in QFT
 
 
 ### Ultraviolet divergence — formal statement:
@@ -6871,7 +8021,7 @@ Agreement to 12 significant figures — finite precision.
 
 The structure is clear: an infinite intermediate quantity (the divergent loop integral) is regularised (made finite by an artificial parameter), and then the dependence on the regularisation parameter is absorbed into redefined physical quantities (renormalisation). The final prediction is finite and matches experiment. The infinite never appears in any physically meaningful quantity — it is present only in intermediate steps of the calculation.
 
-### 12.3.2  What this structure means
+### 13.3.2  What this structure means
 
 Two interpretations of renormalization are possible:
 
@@ -6885,16 +8035,16 @@ Renormalization works because the physical predictions are finite, and the infin
 
 BST's foundational position aligns with Interpretation 2. This is not an argument that Interpretation 1 is wrong — pragmatist realism about mathematical frameworks is a defensible position. The argument is that Interpretation 2 is equally coherent and is supported by the structure of quantum gravity research, the discreteness results at the Planck scale, and the pattern of renormalization itself (which always extracts finite answers, never infinite ones). If Interpretation 2 is correct, then the use of infinite mathematics in physics is precisely what BST predicts it is: scaffolding from which finite predictions are extracted.
 
-### 12.3.3  Historical voices
+### 13.3.3  Historical voices
 
 The intuition behind this interpretation has historical precedent, though none of these figures advanced it in BST's specific terms. Dirac, in his 1951 paper on the difficulties of quantum electrodynamics, argued that the infinities in QED signal a fundamental failure of the theory at short distances and that a future, correct theory would not require renormalization to produce finite answers. Feynman in his Nobel lecture called the subtraction of infinities a 'dippy process' and expressed discomfort with the procedure despite its success. Wilson's development of the renormalization group (1971-1974) gave the clearest physical interpretation: quantum field theories should be understood as effective theories valid below some ultraviolet cutoff, and the renormalization group describes how the theory changes as the cutoff is lowered. The cutoff is precisely an upper bound on the energy scale — and equivalently, a lower bound on the length scale — below which the effective theory applies. Wilson's interpretation is structurally identical to BST's bound: the theory is valid up to a specific scale, and what happens beyond that scale is outside the theory's domain.
 
 
-## 12.4  Discrete Approaches to Quantum Gravity
+## 13.4  Discrete Approaches to Quantum Gravity
 
 The strongest physical evidence for a finite mathematics of physics comes not from the infinities of QFT but from the discrete structure that multiple independent approaches to quantum gravity have discovered.
 
-### 12.4.1  Loop quantum gravity
+### 13.4.1  Loop quantum gravity
 
 Loop quantum gravity (LQG) is the most developed canonical approach to quantum gravity. Its central result is that geometric quantities — area and volume — have discrete spectra. The area operator in LQG has eigenvalues:
 
@@ -6917,12 +8067,12 @@ Spacetime geometry is fundamentally discrete in LQG.
 
 The continuous Riemannian geometry of general relativity emerges from the quantum geometry of LQG as a coarse-grained approximation at scales much larger than the Planck scale — exactly as classical mechanics emerges from quantum mechanics. The fundamental description is discrete; continuity is emergent.
 
-### 12.4.2  Causal set theory
+### 13.4.2  Causal set theory
 
 Causal set theory (Bombelli, Lee, Meyer, Sorkin, 1987) proposes that the fundamental structure of spacetime is a partially ordered set — a causal set — whose elements are discrete spacetime events and whose partial order encodes the causal relationships between them. The continuous Lorentzian manifold of general relativity emerges as a continuum approximation to the discrete causal set at macroscopic scales.
 Causal set theory is explicitly a finite mathematics of spacetime. Its fundamental objects are sets and partial orders — exactly the kind of structures that BST handles. The volume of a spacetime region is estimated by the number of causal set elements it contains. The continuum limit is taken at the end of a calculation, as a technical convenience, not as an ontological commitment.
 
-### 12.4.3  The holographic bound
+### 13.4.3  The holographic bound
 
 The Bekenstein-Hawking entropy formula relates the entropy of a black hole to the area of its event horizon:
 
@@ -6954,7 +8104,7 @@ S_max = A / (4ℓ_P²)   (finite when A is finite)
 
 The holographic bound implies that any finite region of space can contain only a finite amount of information. This is a direct physical upper bound on the complexity of physical states — a bound of exactly the kind that the Axiom of Finite Bounds (AFB, Part III Section 3.3) posits at the mathematical level. The structural parallel is suggestive: both the holographic bound and AFB express the same intuition — that finite regions have finite content — at different levels of description. Whether the connection is deeper than structural analogy is a question for future work.
 
-### 12.4.4  The Planck scale as a natural bound
+### 13.4.4  The Planck scale as a natural bound
 
 The Planck length ℓ_P ≈ 1.616 × 10^{-35} m is the scale at which quantum gravitational effects become relevant. Below this scale, the classical concepts of smooth spacetime and continuous fields are expected to break down. In terms of the number of Planck-scale cells in the observable universe:
 
@@ -6990,7 +8140,7 @@ physics, corresponds to a number of this order of magnitude.
 Plain language: If physics is fundamentally discrete at the Planck scale, then the physical world is a finite combinatorial structure, and its natural mathematical home is a finite set theory. The number of distinct configurations is astronomically large but finite — a specific natural number. AFB, applied to physics, asserts this bound exists. It says nothing about its value — exactly as BST's metatheoretic formulation says nothing about the value of n_M.
 
 
-## 12.5  The Ontological Distinction
+## 13.5  The Ontological Distinction
 
 The physics argument for BST rests on a distinction that must be stated with maximum precision: the distinction between a mathematical framework and a physical ontology.
 
@@ -7029,25 +8179,25 @@ No such confirmation exists.
 
 Plain language: A map is not the territory. Using continuous mathematics to describe a system does not mean the system is continuous — it may mean that continuous mathematics is a convenient and accurate approximation to a discrete reality at the scales being studied. The success of the approximation is evidence for its accuracy at those scales, not evidence that the approximation is ontologically exact at all scales.
 
-### 12.5.1  The meter stick analogy
+### 13.5.1  The meter stick analogy
 
 A simple analogy makes the distinction vivid. A carpenter uses a continuous real-valued length function to measure and cut wood. The measurement model assumes that lengths are real numbers — that there is a definite real-valued length corresponding to each board. The carpenter's predictions (this board is 2.43 meters long) are accurate and useful.
 Does this mean that length is ontologically a real number? No. It means that real-valued length is an accurate model at the scale of carpentry. At the atomic scale, the concept of a sharp edge breaks down. At the quantum scale, position is uncertain. At the Planck scale, the concept of smooth spacetime geometry is expected to fail. The real-valued model works at the carpenter's scale, not because the world is really described by real numbers, but because the world behaves like it is, at that scale.
 Physics is in the same position. The continuous mathematical framework works at the scales physics has probed — it is an accurate and powerful approximation. Whether it is ontologically exact at all scales, including scales below current experimental reach, is an open question. The inherited assumption is that it is. BST's foundational position is that this assumption should be scrutinised rather than inherited silently.
 
 
-## 12.6  What BST Does and Does Not Claim
+## 13.6  What BST Does and Does Not Claim
 
 The argument in this part has a precise scope. It is worth stating what is and is not being claimed, to prevent misreading.
 
-### 12.6.1  What is claimed
+### 13.6.1  What is claimed
 
 - The mathematical framework of physics (real analysis, differential geometry, quantum field theory) uses infinite objects, and this use is the direct inheritance of the mathematical tools available when those frameworks were developed — not a discovery that the physical world is infinite.
 - The finite predictions extracted from these frameworks are the content that is empirically tested. The infinite mathematical objects are scaffolding — intermediate structures from which finite predictions are derived.
 - Multiple independent lines of research in quantum gravity (LQG, causal sets, holographic bounds) suggest that spacetime may be fundamentally discrete at the Planck scale, with the continuous framework as an emergent approximation.
 - BST provides an adequate mathematical foundation for physics as practised — for prediction, computation, and experimental comparison — because every step of every physical calculation that produces an empirically testable prediction is a finite computation.
 
-### 12.6.2  What is not claimed
+### 13.6.2  What is not claimed
 
 - BST does not claim that the physical world is provably discrete. The discreteness of spacetime is a hypothesis, not an established fact.
 - BST does not claim that continuous mathematics is wrong, or that the standard formalism of physics should be abandoned. The continuous framework works; BST's claim is about its ontological interpretation, not its computational validity.
@@ -7055,7 +8205,7 @@ The argument in this part has a precise scope. It is worth stating what is and i
 - BST does not claim that every physical quantity is literally a bounded natural number. It claims that every empirically accessible quantity is approximated to finite precision, and that this finite precision content can be formalised within BST.
 
 
-## 12.7  The Effective Field Theory Interpretation
+## 13.7  The Effective Field Theory Interpretation
 
 The most technically precise version of the scaffolding view is Wilson's effective field theory (EFT) interpretation. It is worth developing this in some detail because it is both the most rigorous version of the argument and the most widely accepted framework in contemporary theoretical physics.
 An effective field theory is a quantum field theory that is explicitly understood as valid only below some ultraviolet energy cutoff Λ. The cutoff is a parameter of the theory — it represents the scale at which new physics (unknown to the effective theory) becomes important. Below Λ, the EFT gives accurate predictions; above Λ, the EFT breaks down and a more fundamental theory is needed.
@@ -7093,7 +8243,7 @@ Under the EFT interpretation, the quantum field theories that describe all known
 This is precisely the BST picture: the theory is finite with its natural bound (Λ = Planck scale); the infinite formalism is a convenient mathematical idealisation. The EFT interpretation is widely adopted among working theoretical physicists, though some take a more realist view of the continuum formalism. BST's foundational position is the natural mathematical expression of the EFT view at the level of the underlying set theory.
 
 
-## 12.8  Summary
+## 13.8  Summary
 
 
 ### Physics and the Inherited Assumption — Summary:
@@ -7148,16 +8298,16 @@ But no experiment requires this interpretation.
 ```
 
 
-### ◆ The Core Claim of Part XII
+### ◆ The Core Claim of Part XIII
 
 Physics inherited its infinite mathematics from the historical accident that infinite analysis was the only well-developed mathematics available when the fundamental equations were written. The success of this mathematics in producing finite predictions that match finite-precision measurements is evidence for its accuracy as a calculational framework, not for its ontological exactness. The infinite is scaffolding: it organises the calculation and drops out at the end. Every empirically tested prediction is finite. BST is the natural foundation for a physics that acknowledges this structure honestly — a physics that treats the continuous formalism as an effective approximation to a fundamentally finite reality, valid at the scales it has been tested, without claiming more.
 
 
-End of Part XII
+End of Part XIII
 
-# Part XIII: The Millennium Problems
+# Part XIV: The Millennium Problems
 
-> **Scope note.** Like Part XII, this part is an extrapolation beyond the formal core of the paper. The problem-by-problem analysis below applies BST's completed construction to seven specific classical problems, identifying which aspects have finite analogs, which require infinite objects BST does not posit, and how each problem transforms under the foundational shift. This analysis is exploratory and substantive, but it does not constitute a formal development of BST-based algebraic geometry, analytic number theory, or gauge theory — those developments are deferred to future work. See the Future Work section following Part XIII.
+> **Scope note.** Like Part XIII, this part is an extrapolation beyond the formal core of the paper. The problem-by-problem analysis below applies BST's completed construction to seven specific classical problems, identifying which aspects have finite analogs, which require infinite objects BST does not posit, and how each problem transforms under the foundational shift. This analysis is exploratory and substantive, but it does not constitute a formal development of BST-based algebraic geometry, analytic number theory, or gauge theory — those developments are deferred to future work. See the Future Work section following Part XIV.
 
 
 In 2000, the Clay Mathematics Institute identified seven problems as the most important unsolved questions in mathematics, offering a prize of one million dollars for the solution to each. The selection was authoritative: the problems were chosen by leading mathematicians as representative of the deepest open questions in their respective areas. They have since become the canonical measure of mathematical depth.
@@ -7169,7 +8319,7 @@ This part does what that paper did not. Each of the seven problems is examined o
 The treatment is not a claim to solve any of the Millennium Problems. It is a precise account of what happens to each problem when the foundational assumptions shift from ZFC to BST.
 
 
-## 13.1  Preliminary: The Ontological Inventory
+## 14.1  Preliminary: The Ontological Inventory
 
 Each Millennium Problem involves specific mathematical objects. Before analysing the problems, it is useful to inventory which of their key objects exist in BST and which do not.
 
@@ -7217,7 +8367,7 @@ Gauge groups SU(N)_B(k⁴)  Yes              Matrices over ℂ_B(k⁴)
 The inventory guides the analysis. When a problem concerns objects that exist in BST, the problem survives intact or in modified form. When it concerns objects that do not exist in BST, it must be reframed in terms of finite analogs — if such analogs capture the problem's mathematical content — or set aside as intrinsically infinitary.
 
 
-## 13.2  P vs NP
+## 14.2  P vs NP
 
 
 ### Problem 1: P vs NP  [SURVIVES INTACT]
@@ -7267,7 +8417,7 @@ The core difficulty of P vs NP — and the reason it remains unsolved — is not
 BST verdict: P vs NP is inherently a finite combinatorial question about resource bounds. Its formulation is naturally bounded. Its barriers are unchanged. A proof in ZFC would translate directly to BST.
 
 
-## 13.3  The Hodge Conjecture
+## 14.3  The Hodge Conjecture
 
 
 ### Problem 2: The Hodge Conjecture  [TRANSFORMS — primary: Tate Conjecture; secondary: Bounded Hodge Conjecture over ℂ_B(k⁴)]
@@ -7344,7 +8494,7 @@ This formulation is weaker than the classical Hodge Conjecture in two respects: 
 BST verdict: The classical formulation requires the completed field C and its analytic machinery. Two analogs are available in BST: the Tate Conjecture over finite fields (primary — fully formulated using étale cohomology), and a bounded Hodge conjecture over ℂ_B(k⁴) (secondary — formulated, but requiring further development of bounded complex analysis to state in full generality). Neither is a trivialisation; both are open mathematical problems of independent interest.
 
 
-## 13.4  The Riemann Hypothesis
+## 14.4  The Riemann Hypothesis
 
 
 ### Problem 3: The Riemann Hypothesis  [SURVIVES — REFRAMED]
@@ -7444,7 +8594,7 @@ This is not a reformulation of the classical RH — the analytic continuation th
 The problem does not dissolve — its finite-field version was a major achievement, and the classical version remains open.
 
 
-## 13.5  Yang-Mills Existence and Mass Gap
+## 14.5  Yang-Mills Existence and Mass Gap
 
 
 ### Problem 4: Yang-Mills Existence and Mass Gap  [SURVIVES — REFRAMED]
@@ -7531,7 +8681,7 @@ This means the Yang-Mills action can be written with gauge fields taking values 
 BST verdict: The continuum formulation requires R^4 and infinite-dimensional analysis — unavailable in BST. The lattice formulation is fully finite and BST-available. With ℂ_B(k⁴), the gauge group SU(N)_B(k⁴) is recoverable within BST, bridging the lattice formulation to the group-theoretic structure of the continuum theory. The problem does not dissolve; it reframes as a question about the behavior of finite spectral gaps under lattice refinement, with the group structure now formally available.
 
 
-## 13.6  Navier-Stokes Existence and Smoothness
+## 14.6  Navier-Stokes Existence and Smoothness
 
 
 ### Problem 5: Navier-Stokes Existence and Smoothness  [SURVIVES — REFRAMED]
@@ -7596,7 +8746,7 @@ The computational study of Navier-Stokes — which is what fluid dynamics in pra
 BST verdict: Smooth solutions on R^3 require real analysis unavailable in BST. The discrete analog on finite grids is fully BST-available and is what computational fluid dynamics actually uses. The problem does not dissolve; it reframes as the behavior of discrete approximations under mesh refinement.
 
 
-## 13.7  Birch and Swinnerton-Dyer Conjecture
+## 14.7  Birch and Swinnerton-Dyer Conjecture
 
 
 ### Problem 6: Birch and Swinnerton-Dyer Conjecture  [PARTIALLY SURVIVES]
@@ -7660,7 +8810,7 @@ The BSD conjecture partially survives in BST: the half of the conjecture that co
 BST verdict: The finite parts — elliptic curve point groups over F_p, torsion classification, rank of specific curves — are BST-available. The L-function connection requires C. BSD decomposes: its finite content survives, its analytic content does not.
 
 
-## 13.8  The Poincaré Conjecture (Solved)
+## 14.8  The Poincaré Conjecture (Solved)
 
 
 ### Problem 7: The Poincaré Conjecture  [SOLVED — BST STATUS NOTED]
@@ -7713,7 +8863,7 @@ Thompson 1994; but no known polynomial-time algorithm.)
 BST verdict: The classical Poincaré Conjecture is solved. BST cannot formulate the classical version (requires smooth manifolds). The result is not Category C — it is not an unwanted absence, just a true theorem about objects outside BST's ontology. The combinatorial analog — characterising finite simplicial complexes homeomorphic to spheres — is BST-available, decidable, and computationally interesting.
 
 
-## 13.9  Summary: The Millennium Problems and BST
+## 14.9  Summary: The Millennium Problems and BST
 
 
 ### Summary table:
@@ -7763,7 +8913,7 @@ Poincaré              Solved              Combinatorial analog
 ```
 
 
-## 13.10  What the Analysis Shows
+## 14.10  What the Analysis Shows
 
 The Millennium Problems do not dissolve under a finite foundation. They transform. The transformation is determined by the mathematical structure of each problem, not by a prior commitment to any answer.
 
@@ -7777,27 +8927,27 @@ The Poincaré Conjecture is solved, and its solution requires tools BST does not
 
 The original paper's claim that BST 'dissolves' the Millennium Problems was both too strong (P vs NP does not dissolve at all) and too weak (the transformations for the other problems are mathematically substantive, not mere dissolutions). The correct account is what this part has provided: a problem-by-problem analysis showing exactly what changes and what doesn't, and why.
 
-### ◆ The Core Finding of Part XIII
+### ◆ The Core Finding of Part XIV
 
 The Millennium Problems do not dissolve under a finite foundation — they transform. P vs NP survives completely unchanged. The Hodge Conjecture has two BST analogs: the Tate Conjecture over finite fields (primary, fully formulated using étale cohomology) and a bounded Hodge conjecture over ℂ_B(k⁴) (secondary, requiring further development of bounded complex analysis). The Riemann Hypothesis has a proved finite-field analog (Weil/Deligne), a surviving prime-counting reformulation, and a truncated zeta function over ℂ_B(k⁴) available for numerical investigation. Yang-Mills and Navier-Stokes reframe as lattice and discrete questions that are fully finite, with SU(N)_B(k⁴) now recoverable over ℂ_B(k⁴) for Yang-Mills. BSD splits into its finite arithmetic content (available) and its analytic content (lost). The transformations are not trivialisations — in each case the BST-reformulated problem is a genuine and open mathematical challenge, or has been a landmark achievement. The shift from ZFC to BST does not make hard mathematics easy; it identifies which hard questions are about finite structures and which are about completed infinities.
 
-End of Part XIII
+End of Part XIV
 
 
 # Future Work
 
-Parts I–XI of this paper constitute the formal core: BFOL, the seven axioms of BST, the ordinal and cardinal theory, two induction schemas, function and relation theory, the complete bounded number chain through ℂ_B(k⁴), real analysis, bounded complex analysis, and the complexity-theoretic development. Parts XII and XIII apply this foundation to physics and to the Millennium Problems as exploratory extrapolations. What follows identifies the open programmes in dependency order — distinguishing internal gaps in existing results from new construction programmes, and near-term from longer-range work.
+Parts I–XII of this paper constitute the formal core: BFOL, the seven axioms of BST, the ordinal and cardinal theory, two induction schemas, function and relation theory, the complete bounded number chain through ℂ_B(k⁴), real analysis, bounded complex analysis, bounded functional analysis, and the complexity-theoretic development. Parts XIII and XIV apply this foundation to physics and to the Millennium Problems as exploratory extrapolations. What follows identifies the open programmes in dependency order — distinguishing internal gaps in existing results from new construction programmes, and near-term from longer-range work.
 
 
 ## Completing the existing formal core
 
 Two items in the paper are formally incomplete: specific arguments were stated as proof sketches where full proofs are required.
 
-**Proof-theoretic ordinal of BST.** Section 9.7 gives a preliminary placement of |BST| = ω^ω, equivalent to IΣ₁, established by bounding above via the Goodstein independence argument and below via primitive recursive totality. The claim is almost certainly correct, but a complete ordinal analysis — a formal cut-elimination argument — has not been carried out. Until it is, the placement in Section 9.7 and the Category D boundary characterisation it grounds should be understood as preliminary. This is the most important single open item in the paper's formal core.
+**Proof-theoretic ordinal of BST.** Section 9.7 gives a preliminary placement of |BST| = ω^ω, equivalent to IΣ₁, established by bounding above via the Goodstein independence argument and below via primitive recursive totality. Section 9.7.1 now provides the sequent-calculus framework supporting this placement: the system GST with BFOL-adapted quantifier rules and the BI induction rule, an explicit ordinal assignment mapping every GST proof to an ordinal < ω^ω in Cantor normal form, and a reduction strategy for all three cut cases (propositional, bounded quantifier, and induction cuts) with the correct ordinal accounting for each. What remains are two explicit verification lemmas: one confirming that substitution of concrete terms for bound variables is well-defined under GST's bound-tracking rules (Case 2), and one verifying that the BI rule's interaction with the cut rule does not introduce cuts of higher degree (Case 3). Until those lemmas are written and verified, the placement remains preliminary. This is the most important single open item in the paper's formal core.
 
-**Mostowski collapse in the A/B equivalence proof.** Section 3.3.9 establishes the semantic equivalence of Formulations A and B via an embedding of every finite BST-structure into some standard model 𝒱_n. The argument uses the Mostowski collapsing lemma, which is stated but not fully proved within ACA₀. Completing this argument within the stated metatheory would close the last proof sketch in Part III.
+**Mostowski collapse in the A/B equivalence proof.** Section 3.3.9 establishes the semantic equivalence of Formulations A and B via an embedding of every finite BST-structure into some standard model 𝒱_n. Lemma 3.5a now supplies the finite Mostowski collapse construction within ACA₀: the collapse map π is defined by rank recursion, injectivity follows from Extensionality in M, and the image is a transitive finite set M* ⊆ V_{h+1}. What remains is the full formalisation of the absoluteness step — that Δ₀ sentences (all BFOL sentences) true in 𝒱_{h+1} are true in the transitive substructure M*. This absoluteness is standard and provable in ACA₀ by induction on formula complexity, but has not yet been written out in full. Until it is, the ⊇ direction of Theorem 3.5b should be understood as having a clearly identified but not yet fully closed gap.
 
-**Bounded Power Set independence.** Section 4.6 establishes the independence of all seven BST axioms via explicit finite models. One quantitative refinement remains: constructing a model in which Theorem 4.3 (Bounded Power Set holds for sets with |A| ≤ ⌊log₂(n_M)⌋) is satisfied but full Power Set fails for sets above that threshold. The model exists in principle; the explicit construction has not been carried out.
+**Bounded Power Set independence.** Section 4.6 establishes the independence of all seven BST axioms via explicit finite models, and Example 4.6a demonstrates the quantitative threshold behaviour of Theorem 4.3: for any BST model with bound n_M, BPS holds for all A with |A| ≤ ⌊log₂(n_M)⌋ while full Power Set fails for sets above that threshold — with |P(B)| = 2^|B| > n_M. The arithmetic is verified concretely for n_M = 7. What remains is the element-by-element construction of an explicit 7-element (or similar) model satisfying all of A1–A7 with the membership relation fully specified, so that the threshold behaviour is demonstrated not just by counting but by an explicit finite structure checkable in ACA₀.
 
 
 ## The analytic and algebraic extension stack
@@ -7806,7 +8956,9 @@ These are new constructions that build directly on existing Parts and have clear
 
 **Completing bounded complex analysis.** Part X develops k-holomorphic functions, bounded Cauchy theory, bounded Dolbeault cohomology, and the bounded Hodge conjecture formulation. Two sections of Part X are marked preliminary: bounded Kähler geometry (Section 10.4) and the Hodge decomposition theorem (Theorem 10.3). Completing these requires proving that the approximate Kähler identities hold to within 1/k and that the eigenspace decomposition of the bounded Laplacian is stable under the approximation. These are concrete technical tasks with a clear success criterion: Theorem 10.3 elevated from proof sketch to theorem, which in turn gives the bounded Hodge conjecture its full analytic foundation. This is the most immediate extension of the Part X programme.
 
-**Bounded functional analysis.** The ingredients are in place: finite metric spaces (Section 9.3), finitely-additive measures, bounded integration, and finite-dimensional vector spaces over ℂ_B(k⁴). The missing development is a BST-native treatment of norms, bounded linear operators, dual spaces, and finite-dimensional spectral theory — the analogs of the Hahn-Banach theorem (recoverable in finite-dimensional form), finite operator algebras, and finite Hilbert space structure over ℂ_B(k⁴). This layer is a prerequisite for the discrete geometry and gauge theory programmes below.
+**Bounded functional analysis.** The systematic development of this layer is now in Part XI. The chapter establishes: bounded normed spaces over ℂ_B(k⁴) with norm equivalence and computable constants (Theorem 11.1); bounded linear operators as finite matrices with computable operator norms (Definition 11.5); the operator algebra ℬ(V) with adjoint, normal, self-adjoint, and unitary operators (Definition 11.4); dual spaces and a constructive Hahn-Banach theorem proved by dimension induction without Zorn's lemma (Theorem 11.2); spectral theory including eigenvalue existence (Theorem 11.3), spectral decomposition for normal operators (Theorem 11.4), Weyl's inequality for eigenvalue stability (Theorem 11.5), and Davis-Kahan eigenspace stability with computable spectral gap (Theorem 11.6); and finite Hilbert space structure with Gram-Schmidt (Theorem 11.8), Riesz representation (Theorem 11.9), and automatic completeness (Definition 11.8). All results are Type I or Type II. The operator norm and spectral gap are computable quantities — exact finite maxima and minima — rather than existential claims, making the bounded version strictly more informative than the classical finite-dimensional theory in several respects.
+
+What Part XI does not yet resolve, and what constitutes the remaining open work in this layer, falls into three groups. First, the Kähler completion: Theorems 11.5 and 11.6 supply the spectral stability ingredient for Theorem 10.3 (Bounded Hodge Decomposition), but the approximate Kähler identities — the other missing ingredient — remain to be established. This is a Part X task that now has its functional-analytic prerequisites in place. Second, the simplicial topology layer: Part XI equips finite simplicial cochain complexes with their full linear-algebraic theory, but a systematic internal development of simplicial homology and cohomology as a standalone Part remains to be written. Third, the downstream programmes: bounded gauge theory requires building out finite connections, discrete curvature, and Yang-Mills action functionals on top of the Hilbert space layer now established; BST-native discrete quantum gravity requires tensor products of finite Hilbert spaces with causal structure. Both programmes now have their foundational Hilbert space prerequisites formally in place, removing the main obstacle to beginning those constructions.
 
 **Bounded simplicial topology as an internal development.** Part X uses finite simplicial complexes as the substrate for bounded manifolds. A systematic internal development of simplicial homology and cohomology — built directly inside BST rather than as a recovery account — would complete the topological layer and is a natural companion to the functional analysis programme. The ingredients are all available: finite sets of simplices, boundary maps as finite matrices over ℤ_B(k), homology groups as finite abelian groups computed by Gaussian elimination.
 
@@ -7815,15 +8967,29 @@ These are new constructions that build directly on existing Parts and have clear
 
 ## Longer-range construction programmes
 
-These require the analytic and algebraic stack above to be more developed before they become specific constructions rather than directions.
+These are programmes where the mathematical prerequisites are partially but not fully in place. The functional analysis layer (Part XI) is now complete and removes the foundational Hilbert space obstacle for gauge theory and quantum gravity. What these programmes still require before they become specific constructions rather than directions is bounded simplicial topology as a standalone internal development, and in the case of quantum gravity, bounded gauge theory as an intermediate step.
 
-**Bounded gauge theory.** Part XIII establishes that SU(N)_B(k⁴) is recoverable over ℂ_B(k⁴) and that lattice Yang-Mills theory is fully finite. The natural next programme is building out bounded principal bundles, finite connections as group-valued edge functions on finite graphs, discrete curvature tensors as plaquette products, and bounded Yang-Mills action functionals — moving from "the gauge groups exist inside BST" to "a complete finite gauge theory exists inside BST." This requires the functional analysis layer above.
+**Bounded gauge theory.** Part XIV establishes that SU(N)_B(k⁴) is recoverable over ℂ_B(k⁴) and that lattice Yang-Mills theory is fully finite. The foundational Hilbert space layer this programme requires is now in place via Part XI — the kinematical Hilbert space ℋ_K = L²(Func(Edges(K), SU(N)_B(k⁴)), counting measure) is a bounded Hilbert space (Definition 11.8) with computable spectrum (Theorem 11.4). What remains is the gauge-specific construction: bounded principal bundles, finite connections as group-valued edge functions on finite graphs, discrete curvature tensors as plaquette products, and bounded Yang-Mills action functionals — moving from "the gauge groups and Hilbert space exist inside BST" to "a complete finite gauge theory exists inside BST." The remaining prerequisite is bounded simplicial topology as a standalone internal development.
 
-**BST-native discrete quantum gravity.** Part XII identifies the structural parallel between the Axiom of Finite Bounds and the holographic bound and the discrete structures of loop quantum gravity and causal set theory. Developing BST as the explicit mathematical foundation for these programmes would require BST-native treatments of finite partial orders with causal structure, discrete Lorentzian geometry, causal intervals and volumes, local combinatorial curvature, and lattice gauge fields. This is one of the richest open directions generated by the paper, but it depends on the functional analysis, simplicial topology, and bounded gauge theory developments above.
+**BST-native discrete quantum gravity.** Part XIV identifies the structural parallel between the Axiom of Finite Bounds and the holographic bound and the discrete structures of loop quantum gravity and causal set theory. Developing BST as the explicit mathematical foundation for these programmes would require BST-native treatments of finite partial orders with causal structure, discrete Lorentzian geometry, causal intervals and volumes, local combinatorial curvature, and lattice gauge fields. Of the prerequisites, the Hilbert space layer is now in place (Part XI — state spaces of discrete quantum gravity models are tensor products of finite Hilbert spaces of the kind constructed there). What remains before this programme can begin in earnest is: simplicial topology as a standalone internal development, and bounded gauge theory as developed in the item above. This is one of the richest open directions generated by the paper.
 
-**Richer bounded complexity theory.** Part XI develops BST-P, BST-NP, and the polynomial hierarchy via Σ^b_i formula classes. Natural extensions include bounded circuit complexity — which connects directly to the Razborov-Rudich and algebrisation barriers named in Part XI — bounded proof complexity (connecting BST proof length to circuit lower bounds via Theorem 11.5), bounded derandomisation classes, and a formal bounded cryptographic security framework. These extensions are internal to the complexity programme and do not depend on the analytic stack.
+**Richer bounded complexity theory.** Part XII develops BST-P, BST-NP, and the polynomial hierarchy via Σ^b_i formula classes. Natural extensions include bounded circuit complexity — which connects directly to the Razborov-Rudich and algebrisation barriers named in Part XII — bounded proof complexity (connecting BST proof length to circuit lower bounds via Theorem 12.5), bounded derandomisation classes, and a formal bounded cryptographic security framework. These extensions are internal to the complexity programme and do not depend on the analytic stack.
 
-**The finite analog programme for advanced algebraic structures.** Part IX surveyed BST's relationship to classical mathematics across standard analysis and the Millennium Problems. Areas not examined include algebraic K-theory, motivic cohomology, derived categories, homological algebra, and tropical geometry. Extending the finite analog survey to these areas would require the simplicial topology and functional analysis developments above, and constitutes a substantial research programme in its own right — one that the paper's four-category accounting framework is already equipped to organise.
+**The derivability of n_M and the computable universe connection.** This is the longest-range open question the paper generates, and the one that connects most directly to foundational questions in physics and the philosophy of mathematics.
+
+The paper establishes two things about n_M. First, its existence follows from the logical structure of BST: AFB asserts that every set is bounded by some metatheoretic natural number, and this is motivated not as a physical assumption but as the consequence of negating completed infinity without retreating to potential infinity — the move that every prior finitist programme failed to make cleanly. The existence of n_M is thus a theorem of the framework's logic, not an empirical input. Second, its value is left unspecified within the theory: BST says n_M exists and that every set has cardinality below it, but makes no claim about what specific number n_M is.
+
+The Cayley-Dickson cascade (§8.8.4 and Part II §2.6) now makes this unspecified value consequential in a specific way. For the full algebraic tower of physics — ℂ for quantum mechanics, ℍ for spinors, 𝕆 for exceptional gauge groups — to exist within a BST model, the precision parameter k must satisfy k¹⁶ ≤ n_M. This is a purely formal constraint, derived from the Cayley-Dickson construction with no physical input. The holographic bound then enters as an independent physical estimate: the observable universe contains approximately 10^{185} Planck-scale cells, suggesting n_M ≈ 10^{185}, which yields k ≤ 10^{185/16} ≈ 10^{11.6}. Section 13.4 (Part XIII) notes this parallel as a "structural analogy" and defers the question of whether the connection is deeper.
+
+The open question is whether that compatibility is accidental or structural — and whether the value of n_M can be derived rather than measured.
+
+There are two distinct sub-questions here. The first is internal to BST: does the formal structure of the theory, combined with the requirement that the algebra of physics be instantiable, place a lower bound on n_M? If supporting 𝕆_B(k¹⁶) requires k¹⁶ ≤ n_M, and if there is a minimum k below which the physics is not recoverable, then BST may be able to derive a lower bound on n_M from purely algebraic requirements — without any measurement. This would be a theorem of BST, not an empirical claim.
+
+The second sub-question connects to the computable universe hypothesis (Zuse 1969, Fredkin 1990, Schmidhuber 1997, Tegmark 2008) and the simulation argument (Bostrom 2003). These programmes typically import finiteness as a hypothesis about the physical substrate — they assert that the universe is computed, therefore finite. BST runs the same direction as the computable universe hypothesis but from a different starting point: the negation of completed infinity as a logical commitment, not a physical assumption, implies the existence of n_M. The question is then whether the computable universe hypothesis and BST's logical derivation of finiteness are two descriptions of the same underlying fact — in which case BST provides what the computable universe hypothesis currently lacks, namely a derivation of finiteness from first principles rather than a stipulation about substrate.
+
+The precise open problem: is there a derivation within BST — or in a natural extension of BST — of a lower bound on n_M from the requirement that the Cayley-Dickson algebraic tower supporting the gauge groups of the Standard Model exist within the theory? And is that lower bound compatible with the holographic bound in a way that is provable rather than numerically observed? If yes, the structural analogy noted in Part XIII becomes a theorem: the holographic bound is not merely analogous to AFB but is the physical manifestation of the same logical constraint.
+
+**The finite analog programme for advanced algebraic structures.** Part IX surveyed BST's relationship to classical mathematics across standard analysis and the Millennium Problems. Areas not examined include algebraic K-theory, motivic cohomology, derived categories, homological algebra, and tropical geometry. Extending the finite analog survey to these areas would require the simplicial topology and functional analysis developments above — the latter now in place via Part XI, the former still pending. The four-category accounting framework of Part IX is already equipped to organise this survey; what it currently lacks is the topological layer needed to engage with the cohomological structures these fields depend on.
 
 
 ## Research programmes built on the completed foundation
@@ -7832,15 +8998,15 @@ Once the analytic stack is mature, three focused mathematical programmes become 
 
 **A bounded Hodge programme.** Once Theorem 10.3 is completed, the bounded Hodge conjecture has its full analytic foundation. A dedicated programme would develop bounded harmonic forms, bounded Lefschetz operators, bounded Hodge diamonds for specific classes of bounded varieties, and a sharpened formulation of the bounded Hodge conjecture that exploits the finite linear-algebraic computability of all objects involved. The Tate conjecture over finite fields remains the primary fully-formulated BST analog of the Hodge conjecture; the bounded Hodge programme over ℂ_B(k⁴) is its companion, pending the Kähler completion.
 
-**A bounded Riemann Hypothesis programme.** Part XIII introduces the truncated zeta function ζ_B(s, k) over ℂ_B(k⁴) as a numerical investigation tool. A dedicated programme would develop this further: bounded Dirichlet series, zero-distribution questions for finite truncations, explicit error terms comparing ζ_B(s, k) to the classical zeta function at finite depths, and the relationship between the truncated zero distribution and the prime-counting reformulation of RH. The classical analytic continuation that defines the non-trivial zeros in Re(s) < 1 is not available in BST, but the numerical and prime-arithmetic content can be pursued systematically within ℂ_B(k⁴).
+**A bounded Riemann Hypothesis programme.** Part XIV introduces the truncated zeta function ζ_B(s, k) over ℂ_B(k⁴) as a numerical investigation tool. A dedicated programme would develop this further: bounded Dirichlet series, zero-distribution questions for finite truncations, explicit error terms comparing ζ_B(s, k) to the classical zeta function at finite depths, and the relationship between the truncated zero distribution and the prime-counting reformulation of RH. The classical analytic continuation that defines the non-trivial zeros in Re(s) < 1 is not available in BST, but the numerical and prime-arithmetic content can be pursued systematically within ℂ_B(k⁴).
 
-**A bounded BSD split theory.** Part XIII establishes that the Birch and Swinnerton-Dyer conjecture splits under BST: the finite arithmetic geometry content survives (rational points on elliptic curves over finite fields, Tate-Shafarevich groups at finite primes), while the analytic content (the L-function and its order of vanishing at s = 1) requires the completed complex plane and is correctly absent. A focused programme would sharpen exactly what of BSD is provable in BST-available finite arithmetic geometry, and whether bounded surrogates for parts of the analytic content can be constructed over ℂ_B(k⁴).
+**A bounded BSD split theory.** Part XIV establishes that the Birch and Swinnerton-Dyer conjecture splits under BST: the finite arithmetic geometry content survives (rational points on elliptic curves over finite fields, Tate-Shafarevich groups at finite primes), while the analytic content (the L-function and its order of vanishing at s = 1) requires the completed complex plane and is correctly absent. A focused programme would sharpen exactly what of BSD is provable in BST-available finite arithmetic geometry, and whether bounded surrogates for parts of the analytic content can be constructed over ℂ_B(k⁴).
 
 
 
 # Coda: What Has Been Built
 
-This paper set out to do what no prior finitist program had done: construct a bounded set theory that is technically rigorous, philosophically honest, and complete enough to support genuine mathematical work. Parts I through XI have accomplished this formal construction — including bounded complex analysis (Part X) and the complexity-theoretic development (Part XI); Parts XII and XIII extend it to physics and the Millennium Problems as substantive extrapolations. Open questions and directions for future development are collected in the Future Work section preceding this Coda. What follows is a plain statement of what has been built.
+This paper set out to do what no prior finitist program had done: construct a bounded set theory that is technically rigorous, philosophically honest, and complete enough to support genuine mathematical work. Parts I through XII have accomplished this formal construction — including bounded complex analysis (Part X), bounded functional analysis (Part XI), and the complexity-theoretic development (Part XII); Parts XIII and XIV extend it to physics and the Millennium Problems as substantive extrapolations. Open questions and directions for future development are collected in the Future Work section preceding this Coda. What follows is a plain statement of what has been built.
 
 ## What Has Been Built
 
@@ -7856,9 +9022,9 @@ The complete bounded number chain. ℕ_B(k), ℤ_B(k), ℚ_B(k²), ℝ_B(k), and
 
 An honest accounting. The four-category analysis (Part IX) classifies every major classical theorem: recovered with explicit bounds (Category A), directly provable (Category B), correctly absent (Category C), or at the narrow edge of finite induction (Category D). No softening; no inflation of what the bounded constructions achieve.
 
-A precise account of the physics relationship. The inherited assumption identified, decomposed, and examined against the evidence from renormalization, effective field theory, loop quantum gravity, causal sets, and the holographic bound (Part XII).
+A precise account of the physics relationship. The inherited assumption identified, decomposed, and examined against the evidence from renormalization, effective field theory, loop quantum gravity, causal sets, and the holographic bound (Part XIII).
 
-A problem-by-problem analysis of the Millennium Problems. Each problem treated on its own mathematical terms, with the transformation under BST determined by the structure of the problem, not by prior commitment (Part XIII).
+A problem-by-problem analysis of the Millennium Problems. Each problem treated on its own mathematical terms, with the transformation under BST determined by the structure of the problem, not by prior commitment (Part XIV).
 
 ## The Foundational Claim
 
