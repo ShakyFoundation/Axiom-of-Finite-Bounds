@@ -7,59 +7,116 @@ Working Paper — 2026
 
 # Abstract
 
-This paper constructs a rigorous, self-contained alternative foundation for finite mathematics from a single axiom: the Axiom of Finite Bounds (AFB), which asserts that every set has finite cardinality bounded by some metatheoretic natural number. The construction proceeds in three stages.
+If infinity is rejected, three positions remain: potential infinity (an endless process of generating larger finite collections), unbounded finitude (every set is finite, with no limit on size), and bounded finitude (every set is finite, and there is an upper bound). The first two do not accomplish what they claim. Potential infinity is actual infinity repackaged as process — its models are infinite. Unbounded finitude, formalised as ZF¬∞, has only infinite models capable of supporting arithmetic. Both relocate infinity rather than removing it. Bounded finitude is the only position that produces a genuinely finite mathematics: a mathematics whose models, domains, and objects are all finite. This paper constructs that mathematics.
 
-The first stage (Parts III–IV) establishes the foundational package. Bounded First-Order Logic (BFOL) is developed as the appropriate logic for a setting in which completed infinite domains are not admitted: quantification is bounded, variable ranges are explicit, and the semantics of quantification does not presuppose infinite totalities. Within BFOL, primitive ordinals and primitive cardinality are introduced, and the Finite Coincidence Theorem — that cardinality and ordinal-membership coincide on finite sets — is established. AFB is then stated. The seven axioms of Bounded Set Theory (BST) are built on top: Extensionality, Empty Set, Pairing, Union, Bounded Separation, Bounded Replacement, and Foundation (proved as a theorem of BST rather than assumed as an independent axiom — included for completeness of the ZFC comparison). Power Set, the Axiom of Infinity, and unrestricted Choice are absent, with each omission formally justified.
+The construction proceeds from a single axiom — the Axiom of Finite Bounds (AFB) — which asserts that every set has finite cardinality bounded by some finite upper bound. From AFB, a complete formal foundation is built in order of logical dependence. Bounded First-Order Logic (BFOL) restricts quantification to bounded forms, enforcing the finite commitment at the level of grammar. Seven axioms of Bounded Set Theory (BST) provide the set-construction machinery: Extensionality, Empty Set, Pairing, Union, Bounded Separation, Bounded Replacement, and Foundation — the last proved as a theorem from finiteness of models rather than assumed independently. Power Set fails above a computable threshold. The Axiom of Choice becomes a constructive theorem. The bounded analogue of the Burali-Forti paradox is derived and resolved by treating the bound as a metatheoretic constraint — the same structural move ZFC uses for proper classes. The complete bounded number chain ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴) is constructed explicitly, with the Cayley-Dickson extensions ℍ_B(k⁸) and 𝕆_B(k¹⁶) available for the algebraic structures of physics. The full apparatus of real analysis — continuity, differentiation, integration, convergence, transcendental functions — is recovered over ℝ_B(k), predominantly as exact bounded theorems (Type II) for order-dependent results and as explicit approximations with computable error O(1/k²) (Type III) for results involving chained field arithmetic. Bounded functional analysis — normed spaces, spectral theory, finite Hilbert spaces — is developed over ℂ_B(k⁴) as exact Type I results with computable operator norms and spectral gaps. Complexity theory is developed with BST-P and BST-NP extensionally equivalent to classical P and NP.
 
-The second stage (Parts V–XII) develops the mathematics the system supports. The Burali-Forti problem for bounded theories — which arises when a maximal bound is asserted internally — is resolved by treating the bound as a metatheoretic constraint rather than an internal object, the same structural move ZFC uses for proper classes. Two induction schemas (BST-native and Buss's S¹₂ PIND) are compared in full. Function and relation theory is developed without Power Set via syntactic and axiomatic approaches. The complete bounded number chain ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴) is constructed explicitly, with ℝ_B(k) as the Cauchy completion of ℚ_B(k) and ℂ_B(k⁴) as the Cartesian square of ℝ_B(k). The full apparatus of real analysis — continuity, differentiation, integration, convergence, transcendental functions — is recovered over ℝ_B(k) (Type II: exact BST theorems at each bound level), and complex analytic machinery is recovered over ℂ_B(k⁴) with explicit error bounds (Type III: approximate, with error vanishing as k grows). The operator-theoretic layer connecting bounded analysis to geometry and physics is developed in Part XI (Bounded Functional Analysis): bounded normed spaces, linear operators as finite matrices over ℂ_B(k⁴), dual spaces, spectral theory (including Weyl's inequality and Davis-Kahan eigenspace stability), and finite Hilbert space structure — all as exact Type I or Type II results, with operator norms and spectral gaps computable rather than merely existential. The complexity-theoretic development of Part XII (Computational Complexity) establishes BST-P and BST-NP as uniform families over bounded domains, their extensional equivalence to classical P and NP, and the recovery of asymptotic complexity via metatheoretic families. A four-category accounting classifies how classical theorems relate to BST: most analysis is recovered with explicit bounds (Category A); all purely finite mathematics is directly provable (Category B); results requiring uncountable Choice or completed infinite structure are correctly absent (Category C); three universal statements at the edge of finite induction — Goodstein, Paris-Harrington, Ackermann totality — form a precisely characterised narrow gap (Category D).
+A four-category accounting classifies how classical theorems relate to BST. Most of analysis is recovered with explicit bounds that are strictly more informative than their classical counterparts (Category A). All purely finite mathematics — combinatorics, finite algebra, number theory, graph theory — is directly provable (Category B). Results requiring completed infinite structure or uncountable Choice — Banach-Tarski, non-measurable sets, the well-ordering of ℝ — are correctly absent (Category C). Three universal statements at the edge of finite induction — Goodstein's theorem, Paris-Harrington, Ackermann totality — form a precisely characterised narrow gap: every finite instance is provable, but the universal collection is not (Category D). This is the honest cost of finite foundations, and it is narrow.
 
-The third stage (Parts XIII–XIV) applies the completed construction to physics and the Millennium Problems as exploratory extrapolations. In physics, the case is made that infinity enters as calculational scaffolding rather than physical ontology, and the structural parallel between AFB and the holographic bound is identified. For the Millennium Problems, each of the seven Clay Institute problems is analysed problem-by-problem: P vs NP survives completely unchanged; the Hodge Conjecture, previously stated to transform into the Tate Conjecture, is now also formulable as a bounded Hodge conjecture over ℂ_B(k⁴); the Riemann Hypothesis has a proved finite-field analog (Weil/Deligne), a surviving prime-counting reformulation, and additionally a truncated zeta function formulation over ℂ_B(k⁴); Yang-Mills and Navier-Stokes reframe as lattice and discrete questions, with gauge groups now recoverable over ℂ_B(k⁴) as Type II uniform families; BSD splits into available finite arithmetic content and unavailable analytic content; and the Poincaré Conjecture, though solved classically, has a BST-available combinatorial analog.
+The case for adopting BST rests on ontological parsimony reinforced by a structural observation. BST posits strictly less than ZFC and recovers the mathematical content that working practice requires. The commitments it does not make — completed infinite totalities, uncountable Choice, Power Set on infinite domains, unbounded quantification — are precisely the commitments whose consequences include the pathological results of infinite mathematics. BST removes not individual paradoxes but the four mechanisms that generate them. A survey of over one hundred and fifty known infinity-dependent paradoxes — spanning set theory, analysis, geometry, probability, physics, computation, and philosophy — finds that all require at least one mechanism BST eliminates, and that BST introduces no new paradoxes of comparable kind. The paradoxes of mathematics cluster almost exclusively in the infinite domain; finite mathematics is essentially paradox-free. BST extends that character to the full analytic apparatus.
 
-The result is a rigorous, self-contained alternative foundation for finite mathematics, with all tradeoffs stated at the level of precision the mathematics demands.
+The paper applies the completed construction to physics and to the Millennium Problems as exploratory extrapolations. In physics, the structural parallel between AFB and the holographic bound is identified, and the case is made that infinity enters physical theory as calculational scaffolding rather than ontology. For the Millennium Problems, each of the seven Clay Institute problems is analysed: P vs NP survives unchanged; the Hodge Conjecture transforms into the Tate Conjecture with a secondary bounded formulation over ℂ_B(k⁴); the Riemann Hypothesis has a proved finite-field analog and a truncated zeta function over ℂ_B(k⁴); Yang-Mills and Navier-Stokes reframe as lattice and discrete questions; BSD splits into available finite arithmetic content and unavailable analytic content; and the Poincaré Conjecture has a BST-available combinatorial analog.
 
-**Keywords:** bounded set theory, finitist foundations, Axiom of Finite Bounds, bounded first-order logic, bounded reals, Burali-Forti problem, finite mathematics, ZFC alternatives
+The result is not a weakening of mathematics. It is a foundation with lower ontological commitment, greater computational explicitness, and cleaner mathematical consequences — with all tradeoffs stated at the level of precision the mathematics demands.
+
+**Keywords:** bounded set theory, finitist foundations, Axiom of Finite Bounds, bounded first-order logic, bounded reals, Burali-Forti problem, finite mathematics, ZFC alternatives, ontological parsimony, mathematical paradoxes
 
 
 # Part I: Preamble
 
 
+## Why the bound
+
+Before the formal construction begins, the foundational commitment requires a plain statement and a plain argument. The formalism of Parts III through XII exists to make this commitment precise, but the commitment itself is not formal. It is a claim about what exists.
+
+The claim has two parts:
+
+**There is no infinity. There is an upper bound.**
+
+The first part — that no completed infinite totality exists — is shared with every finitist programme from Kronecker onward. It is not a new position. What is new is the insistence that the second part is not optional. It is the only logically coherent consequence of the first.
+
+
+### The forced move
+
+The argument is short and, once seen, difficult to unsee. If you deny infinity, there are exactly three positions available:
+
+**(a) Potential infinity.** Every collection is finite, but for every finite collection there is a strictly larger one. There is no completed infinite set, but the process of generating larger and larger finite sets never terminates. This is the Aristotelian position, refined by Brouwer: no actual infinity, but an endless progression of finite stages.
+
+**(b) Unbounded finitude.** Every set is finite, and that is all. There is no claim about a process, no talk of potentiality. The theory simply negates the Axiom of Infinity and leaves it at that. This is ZF¬∞ — hereditarily finite set theory.
+
+**(c) Bounded finitude.** Every set is finite, and there is a ceiling — an upper bound on the size of any set that exists. The bound is finite and real, even if its value is unknown. This is the position of this paper.
+
+These three exhaust the logical space. If you deny completed infinity, you land on one of them. The question is which.
+
+Position (a) does not escape infinity. A process that never terminates is an infinite process. A domain that contains finite collections of every size contains infinitely many objects. Potential infinity is actual infinity described in the language of time and process rather than the language of sets and existence — but the ontological content is the same. A universe that always has room for one more is a universe without a ceiling, and a universe without a ceiling requires an infinite domain to model it. Brouwer's choice sequences, which may always be extended, presuppose an inexhaustible supply of extensions — and an inexhaustible supply is an infinite supply by another name.
+
+Position (b) does not escape infinity either. This is the subtler point, and it is the point that Part III formalises. ZF¬∞ negates the Axiom of Infinity: no set is infinite. But for every natural number n, ZF¬∞ proves the existence of a set with n elements. The theory proves that 0 exists, that 1 exists, that 2 exists, and so on for every specific numeral — without limit. A model of ZF¬∞ must satisfy all of these existence claims simultaneously. Any model that does so contains sets of every finite cardinality — and therefore contains infinitely many sets. ZF¬∞ has no finite models capable of supporting arithmetic. The infinity has been removed from the individual sets and relocated to the domain of the theory. Every set is finite; the universe of sets is infinite. This is not a genuine rejection of infinity. It is a redistribution.
+
+The formal proof of this — that ZF¬∞ has only infinite models — is given in Part III, Section 3.3.6. But the conclusion should be stated here, before the formalism, because it is the philosophical engine of the entire paper: **denying infinity without asserting a bound does not produce a finite mathematics. It produces an infinite mathematics in which every individual object happens to be finite.** The infinity migrates from the objects to the domain — from the sets to the theory — and survives the negation.
+
+Position (c) is therefore not one option among three. It is the only option that does what it claims. If infinity is genuinely rejected — not relocated from objects to domains, not repackaged as potentiality, not redistributed from sets to the theory that describes them — then there must be a ceiling. A maximum. An upper bound on what exists. The bound is what makes the rejection real rather than verbal.
+
+This is the Axiom of Finite Bounds. Not a technical convenience, not a restriction on an existing framework, not a modification of ZFC for specialised purposes. It is the logical consequence of taking seriously the claim that infinity does not exist. Everything else in this paper — the bounded logic, the set theory, the number chain, the analysis, the accounting — follows from that single commitment. The bound comes first. The mathematics comes from the bound.
+
+
+### The parsimony argument
+
+The forced-move argument establishes that the bound is necessary if infinity is to be genuinely rejected. But a further question remains: why reject infinity at all? ZFC is a powerful and productive system. The Axiom of Infinity is not self-contradictory. Why pursue a foundation without it?
+
+The answer is not that infinite mathematics is wrong. It is that infinite mathematics may posit more than it needs to.
+
+There is a methodological principle, as old as rational inquiry itself, that applies here with unusual precision: when two frameworks organise the same practice with equal adequacy, the one with the lower ontological commitment is preferable — not because simplicity is aesthetically pleasing, but because the additional commitments of the stronger framework are unforced. An unforced assumption is one you can do without. And an assumption you can do without is one you should not make without positive reason.
+
+ZFC posits completed infinite totalities — the set of all natural numbers as a finished object, uncountable collections, power sets of infinite sets. BST does not. If BST recovers the mathematical content that working mathematicians and physicists actually use — the content of analysis, algebra, number theory, combinatorics, and computation — then the infinite commitment is unforced. You can have the mathematics without it.
+
+That claim — that BST recovers the mathematical content — is not asserted here in Part I. It is demonstrated in Parts VIII through XII and accounted for precisely in the four-category analysis of Part IX. The reader who reaches Part IX will find the evidence: most of classical analysis is recovered with explicit bounds (Category A), all finite mathematics is directly provable (Category B), a small and precisely characterised class of universal statements sits at the edge of finite induction (Category D), and the results that are absent (Category C) are precisely the ones whose absence is a gain rather than a loss.
+
+That last clause — "whose absence is a gain" — brings us to the third part of the argument.
+
+
+### The paradox dividend
+
+Mathematics built on infinite foundations has, since its earliest development, produced results that mathematicians themselves have found troubling. These results are not bugs in specific proofs. They are theorems — logically valid consequences of the axioms. Their strangeness is not a failure of rigour but a feature of the commitments that generate them.
+
+The most notorious is the Banach-Tarski paradox: a solid ball in three-dimensional space can be decomposed into finitely many pieces and reassembled, by rigid rotations, into two solid balls identical to the original. The decomposition uses non-measurable sets — sets so pathological that they cannot be assigned a consistent volume — constructed by the Axiom of Choice applied to uncountable collections. No one can describe the pieces. No physical process corresponds to the decomposition. The result is a theorem of ZFC. It is also, by any ordinary standard, absurd.
+
+Banach-Tarski is not isolated. It belongs to a large class of results — paradoxes, counterintuitive theorems, pathological constructions — that share a common feature: they require the infinite commitments that BST does not make. A survey of the known paradoxes of mathematics, logic, physics, and philosophy reveals a striking pattern. Virtually all of them depend on one or more of four mechanisms:
+
+**Completed infinite totalities** — the existence of ℕ, ℝ, or any infinite collection as a finished object. This generates Hilbert's Hotel, Galileo's paradox, Dedekind-infinite sets, all supertask paradoxes (Thomson's lamp, Ross-Littlewood, the Grim Reaper), and the entire apparatus of transfinite cardinal arithmetic.
+
+**Uncountable Choice** — the assertion that a choice function exists for uncountable collections where no constructive procedure is possible. This generates Banach-Tarski, the Hausdorff paradox, Vitali non-measurable sets, the well-ordering of ℝ, and pathological decompositions generally.
+
+**Power Set on infinite domains** — the assertion that the collection of all subsets of an infinite set exists as a completed set. This generates the hierarchy of uncountable infinities, Cantor's paradox, the Continuum Hypothesis and its independence, and the escalating tower of infinite cardinals.
+
+**Unbounded quantification over infinite domains** — the use of ∀x and ∃x ranging over completed infinite totalities. This generates Skolem's paradox, enables the self-referential constructions behind Berry's paradox and Richard's paradox, and is the mechanism by which the Löwenheim-Skolem theorem forces the existence of countable models of "uncountable" set theory.
+
+BST has none of these four mechanisms. Completed infinite totalities are excluded by the Axiom of Finite Bounds. Uncountable Choice is not merely unavailable — it is incoherent, since no uncountable set exists to choose from; Choice in BST is a constructive theorem proved by finite enumeration (Theorem 4.1). Power Set fails above a computable threshold (Theorem 4.3). Unbounded quantification is excluded at the level of grammar by Bounded First-Order Logic (Part III).
+
+The consequence is systematic. It is not that BST has been checked against a list of known paradoxes and found to avoid each one. It is that BST removes the *mechanisms* that generate the paradoxes. The tools required to construct these results — infinite sets, uncountable collections, impredicative power sets, unbounded quantifiers — do not exist in the system. A paradox that requires an ingredient the system does not have cannot be constructed in the system.
+
+The scope of this elimination is broad. Zeno's paradoxes require completing an infinite subdivision of a continuum — but ℝ_B(k) is a finite set with no infinite subdivision. Gabriel's Horn requires a surface of infinite extent — but no infinite geometric object exists in BST. The St. Petersburg paradox requires a game with infinitely many possible outcomes — but every sample space in BST is finite. Grandi's series requires an infinite alternating sum — but every series in BST is a finite partial sum. The ultraviolet catastrophe requires integrating over infinite frequencies — but every integral in BST is a finite Riemann sum over a bounded domain. Across set theory, analysis, geometry, probability, physics, computation, and philosophy, the pattern is the same: the paradox requires infinity, and BST does not have infinity.
+
+A reasonable count across the major catalogues of mathematical and philosophical paradoxes puts the number of infinity-dependent paradoxes well above one hundred and fifty. BST eliminates, to the best of the author's analysis, all of them. It introduces none of comparable kind. The bounded Burali-Forti analogue — the one paradox that arises from asserting a bound — is derived and resolved within Part V by the same structural move (external bound as metatheoretic constraint) that ZFC uses for its own Burali-Forti problem.
+
+This is not an incidental feature of the framework. It is evidence — not proof, but evidence — about where the strain in mathematical foundations lies. The paradoxes of mathematics are not evenly distributed across finite and infinite domains. They are concentrated, almost exclusively, in the infinite domain. Finite mathematics — combinatorics, finite algebra, finite number theory, computation over finite inputs — is essentially paradox-free. The pathology lives in the infinite superstructure. If the infinite extensions of mathematics were natural, well-behaved generalisations of finite mathematics, one would expect paradoxes to be distributed roughly uniformly across both domains. They are not. They cluster where the infinite commitments are.
+
+The paper does not claim to have proved that no paradox can arise in BST — such a claim would itself require a formal definition of "paradox" and a metatheoretic proof, which is beyond the scope of the present work. What the paper claims is this: BST removes the four generative mechanisms behind the known paradoxes of infinite mathematics, it introduces no new mechanisms of comparable generative power (its axioms are strictly weaker than ZFC's in proof-theoretic strength), and the structural expectation is therefore that the paradox-free character of finite mathematics extends to BST. The evidence from the full catalogue of known paradoxes supports this expectation without exception.
+
+The parsimony argument can now be stated in its complete form. BST posits strictly less than ZFC. It recovers the mathematical content that working practice requires (demonstrated in Parts VIII–XII, accounted in Part IX). And the commitments it does not make — completed infinities, uncountable Choice, Power Set on infinite domains — are precisely the commitments whose consequences include the pathological results that have troubled mathematicians for over a century. The case for BST is not merely that it is leaner. It is that what it removes was the source of the trouble, and what it keeps is the source of the mathematics.
+
+
+### Two clarifications
+
+First, the bound is not a specific number. The axiom does not say that there are at most 10^80 sets, or 10^(10^185), or any particular finite quantity. It says there is *some* finite upper bound — a ceiling that exists and is real — without naming it. The theory knows it lives in a finite universe without being able to point at the ceiling of that universe from inside. This is not evasion; it is the correct formal expression of an epistemic situation. We assert that reality is finite without claiming to know its extent. The two formulations of AFB developed in Part III (schema and metatheoretic) make this precise from different angles.
+
+Second, the claim "there is no infinity" is treated throughout this paper as a foundational choice, not as an established truth. ZFC is a coherent and powerful formal system. The Axiom of Infinity is not self-contradictory. Mathematicians who accept completed infinite totalities are not making an error — they are making a different foundational commitment, one that has produced extraordinary mathematics. What this paper shows is that the alternative commitment — finite, bounded, no infinity — is equally coherent, surprisingly powerful, and in several specific and identifiable respects, healthier in its consequences. The choice between the two is genuine, and this paper does not pretend to make it for the reader. It builds the foundation that one side of that choice requires, and it does so completely.
+
+
 ## What this paper builds
 
-This paper constructs a complete formal foundation for mathematics from a single axiom: every set has a finite cardinality bounded by some finite ordinal. From that one commitment, the logic, the set theory, the arithmetic, and the main body of analytic mathematics are constructible — without any appeal to completed infinite totalities.
+From the Axiom of Finite Bounds, the paper constructs a complete formal foundation in order of logical dependence: a bounded logic (BFOL, Part III), primitive ordinals and cardinality (Part III), the axiom itself in two formulations (Part III), seven axioms of Bounded Set Theory (Part IV), the full ordinal theory with the Burali-Forti resolution (Part V), two induction schemas (Part VI), function and relation theory without Power Set (Part VII), the complete bounded number chain ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴) (Part VIII), real analysis over ℝ_B(k) with a four-category accounting of classical theorems (Part IX), bounded complex analysis over ℂ_B(k⁴) (Part X), bounded functional analysis including spectral theory and finite Hilbert spaces (Part XI), and computational complexity with BST-P extensionally equivalent to classical P (Part XII). Parts XIII and XIV apply the construction to physics and to the Millennium Problems as exploratory extrapolations.
 
-The construction proceeds in order of logical dependence. The axiom forces a discipline on the logic used to reason about it: quantification must be bounded, because unrestricted quantification over a potentially infinite domain is semantically incoherent in a setting where no such domain is admitted. That discipline is Bounded First-Order Logic (BFOL), developed in Part III. Within BFOL, three further ingredients are needed before the axiom can even be stated: primitive ordinals give meaning to the bound n, primitive cardinality gives meaning to the size of a set, and the coincidence of the two in the finite case is established as a theorem (the Finite Coincidence Theorem, Part III). With those in place, the Axiom of Finite Bounds (AFB) is stated — also in Part III. The set-theoretic axioms of Bounded Set Theory (BST) are then built on top of BFOL and AFB in Part IV. The rest of the paper develops the mathematics that the system supports.
-
-A terminological note on "recovery." Throughout this paper, the word "recovered" is used in a technically stratified sense and is never univocal. Classical results may be recovered in four distinct ways: as exact internal BST theorems about BST objects (Type I); as uniform families of BST theorems indexed by the bound parameter k, with stable form across the family (Type II); as bounded theorems carrying an explicit error term that vanishes as k grows (Type III); or as metatheoretic uniformity claims about the family of bounded models, not expressible as a single BST sentence at any level (Type IV). These types are strictly ordered in strength. The full taxonomy, with the criterion distinguishing each type and its relationship to the paper's four-category accounting, is developed in Part IX, Section 9.1. All subsequent uses of "recovered" are to be read against that taxonomy. Where the type is not obvious from context, it is stated explicitly.
-
-The paper has fourteen parts:
-
-**Part I** — this preamble.
-
-**Part II** — a historical survey of the programs that attempted finite or bounded foundations before this one: Kronecker, Hilbert, Brouwer, Weyl, Nelson, the ultrafinitists, and ZF¬∞. Each is examined at the point where it stopped. The survey is not merely historical — it identifies the four structural stopping points that every prior program hit, and shows precisely how this paper addresses each one.
-
-**Part III** — the foundational package: BFOL, primitive ordinals, and AFB together. These three are not separable. BFOL provides the language. Primitive ordinals provide the minimal arithmetic needed to give content to the phrase "bounded by n." AFB states the foundational constraint. They arrive as a unified commitment.
-
-**Part IV** — the seven axioms of Bounded Set Theory. These are the set-construction principles that operate within the framework of Part III: Extensionality, Empty Set, Pairing, Union, Bounded Separation, Bounded Replacement, and Foundation (which is shown to be a theorem of BST, not an independent axiom — included here for completeness of the ZFC comparison). Power Set, the Axiom of Infinity, and unrestricted Choice are not among them, and each omission is formally justified with an explicit account of what is recoverable.
-
-**Part V** — ordinals and the Burali-Forti problem. The full ordinal theory is developed here, including the result that no prior finitist program has addressed: when a maximum bound is asserted internally to the theory, a bounded analogue of the Burali-Forti paradox arises. The resolution — the bound as a metatheoretic constraint rather than an internal object — is the structural move that distinguishes BST from all prior attempts.
-
-**Part VI** — bounded induction. Two schemas are developed in full: the BST-native successor induction schema, and Buss's bit-induction schema from S¹₂. Both are valid in all models of BST. Their relationship to each other and to full Peano Arithmetic is characterised precisely.
-
-**Part VII** — functions and relations. Without Power Set, function spaces are not automatically available. Two approaches are developed: the syntactic approach, in which functions are defined predicates rather than sets, and the axiomatic approach, in which a Function Axiom recovers function graphs as first-class objects when cardinality conditions permit.
-
-**Part VIII** — the bounded number chain. The natural numbers ℕ_B(k), integers ℤ_B(k), rationals ℚ_B(k), bounded reals ℝ_B(k), and bounded complex numbers ℂ_B(k⁴) are constructed explicitly as parameterised families of finite sets. The closure problem — that arithmetic operations may exceed a fixed bound — is confronted directly, and two resolutions (truncated arithmetic and domain restriction) are developed. The elementary number theory of each system is established, and the bounded reals are constructed as a Cauchy completion of ℚ_B(k), with the bounded complex numbers constructed as ℝ_B(k) × ℝ_B(k), completing the chain ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴).
-
-**Part IX** — analysis. The bounded reals ℝ_B(k), constructed in Part VIII as a Cauchy completion of ℚ_B(k), serve as the analytic domain. The full apparatus of real analysis — continuity, differentiation, integration, convergence, and transcendental functions — is recovered within this construction (predominantly Type II: exact BST theorems at each bound level, with the bounded Cauchy theorem in Part X as a Type III approximate recovery). The relationship between classical analysis and BST is accounted for precisely: most classical theorems are recovered in Type II or Type III form, carrying explicit bounds and being strictly more informative than their classical counterparts; a small class of results (Goodstein, Paris-Harrington, Ackermann universality) sit at the edge of what finite induction can reach; and some ZFC theorems — Banach-Tarski, non-measurable sets, the well-ordering of ℝ — are correctly absent because they concern objects BST does not posit.
-
-**Part X** — bounded complex analysis. The complex-analytic apparatus over ℂ_B(k⁴) is developed: k-holomorphic functions, bounded Cauchy-Riemann equations, bounded contour integration and Cauchy's theorem (with explicit error bound C/k), bounded Dolbeault cohomology as a finite-dimensional vector space over ℂ_B(k⁴), and preliminary bounded Kähler geometry. The part closes with the bounded Hodge conjecture — the secondary BST formulation of the Hodge conjecture, with all objects well-defined within BST.
-
-**Part XI** — bounded functional analysis. The operator-theoretic layer bridging Parts VIII–X to the downstream geometry and gauge programmes is developed systematically: bounded normed spaces and norm equivalence with computable constants; bounded linear operators as finite matrices over ℂ_B(k⁴) with computable operator norms; dual spaces and a constructive Hahn-Banach theorem proved by dimension induction without Zorn's lemma; spectral theory including eigenvalue existence, spectral decomposition for normal operators, Weyl's inequality, and Davis-Kahan eigenspace stability with computable spectral gap; and finite Hilbert space structure with Gram-Schmidt, Riesz representation, and automatic completeness. All results are Type I or Type II. The part establishes the functional-analytic prerequisites for bounded simplicial cohomology, the Hodge programme, bounded gauge theory, and BST-native discrete quantum gravity.
-
-**Part XII** — computational complexity. The connection to Buss's S¹₂ established in Part VI is developed into a full complexity theory: BST-P and BST-NP as uniform families over bounded domains, their extensional equivalence to classical P and NP, the polynomial hierarchy via the Σ^b_i formula classes of BFOL, the formal logical status of P vs NP in BST, and the recovery of asymptotic complexity via metatheoretic families.
-
-**Part XIII** — physics, as an extrapolation. The relationship between the infinite structures of theoretical physics and the finite predictions physics actually makes is examined directly. The argument is that infinity enters physics as theoretical scaffolding from which finite results are extracted, not as an indispensable component of physical ontology. The bounded analogs of the relevant mathematical structures are identified, and the connection between BST and discrete approaches to quantum gravity is explored. This part applies the formal core of Parts I–XII to physical questions; formal development of BST-based physics is deferred to future work.
-
-**Part XIV** — the Millennium Problems, as an extrapolation. Each of the seven Clay Institute problems is examined on its own mathematical terms and recontextualised within BST. The central finding is that no problem simply dissolves: each either survives intact, transforms into a finite-field or discrete analog of comparable depth, or splits into a finite part (available) and an analytic part (requiring completed ℂ or smooth manifolds). The availability of ℂ_B(k⁴) (Part VIII) and the complex analysis of Part X strengthens the analysis of three problems: the Hodge Conjecture gains a second bounded formulation alongside the Tate Conjecture; the Riemann Hypothesis gains a truncated zeta function over ℂ_B(k⁴) for numerical investigation; and Yang-Mills gains a formal account of its gauge group structure via SU(N)_B(k⁴). This part applies the formal core to open problems in mathematics; formal development of the relevant BST-based theories is deferred to future work.
+The construction is surveyed in detail in the roadmap at the end of this preamble.
 
 
 ## What the paper does not do
@@ -81,13 +138,48 @@ First, the foundational package is complete. No prior program produced a formal 
 
 Second, the Burali-Forti problem for bounded theories is solved. Prior programs did not assert a maximal bound and therefore did not face this paradox. This paper asserts the bound, derives the paradox, and resolves it — showing that the resolution is not an ad hoc patch but the same structural move that ZFC uses to handle its own Burali-Forti problem, applied correctly in the bounded setting.
 
-Third, the bounded number chain is constructed in full. Prior finitist programs either abandoned real analysis entirely or recovered fragments of it at the cost of retaining potential infinity. The bounded reals of Part VIII recover the full analytic apparatus — derivatives, integration, convergence, transcendental functions — within a strictly finite setting, predominantly as Type II uniform family recoveries (exact BST theorems at each bound level) and in the complex-analytic case as Type III approximate recoveries with explicit error bounds. The chain does not stop there: the bounded complex field ℂ_B(k⁴) is constructed as ℝ_B(k) × ℝ_B(k), with the Cayley-Dickson extensions ℍ_B(k⁸) and 𝕆_B(k¹⁶) following. The complete chain ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴) is the bounded counterpart of the classical number chain, with every object finite, every cardinality explicit, and every construction carried out within BST. All constructions are explicit and the proofs are given.
+Third, the bounded number chain is constructed in full. Prior finitist programs either abandoned real analysis entirely or recovered fragments of it at the cost of retaining potential infinity. The bounded reals of Part VIII recover the full analytic apparatus — derivatives, integration, convergence, transcendental functions — within a strictly finite setting, predominantly as Type II uniform family recoveries for order-dependent results (IVT, EVT, completeness, Heine-Borel) and Type III approximate recoveries with explicit error bounds for results involving chained field arithmetic over ℝ_B(k) and complex-analytic results over ℂ_B(k⁴). The chain does not stop there: the bounded complex field ℂ_B(k⁴) is constructed as ℝ_B(k) × ℝ_B(k), with the Cayley-Dickson extensions ℍ_B(k⁸) and 𝕆_B(k¹⁶) following. The complete chain ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴) is the bounded counterpart of the classical number chain, with every object finite, every cardinality explicit, and every construction carried out within BST. All constructions are explicit and the proofs are given.
 
 Fourth, the accounting is precise. Prior programs either overstated what was lost (abandoning analysis entirely) or understated it (claiming full recovery without examining hard cases). This paper gives a four-category accounting of how classical theorems relate to BST: recovered with explicit bounds (most of analysis), directly provable (all finite mathematics), correctly absent (Banach-Tarski and consequences of uncountable Choice), and the narrow gap (three universal statements at the edge of finite induction). Every major affected theorem is classified.
 
 Fifth, the model theory is explicit. Prior finitist programs rarely gave a rigorous account of what their models look like or how their theories relate to classical model-theoretic results. This paper provides: a formal BST-Model definition (Definition 5.4); the Bounded Reflection Principle as a named theorem (Theorem 3.5) with a coherence proof in ACA₀; Trakhtenbrot's theorem applied to establish BST-B's undecidability independently of Gödel (Theorem 3.6); the Finite Satisfiability theorem for BST's set-building operations (Theorem 5.3a); and a formal Independence of Universal Combinatorics theorem (Theorem 5.5a) precisely characterising the Category D gap. Additionally, the recovery analysis of the four removed ZFC axioms — including the Bounded Power Set theorem (Theorem 4.3) and the redundancy of AC_ω and Dependent Choice — makes explicit what prior finitist programs left implicit.
 
 The result is not a complete solution to every problem in foundations. It is a rigorous and self-contained alternative foundation for finite mathematics, with every tradeoff stated at the level of precision the mathematics demands.
+
+
+## Roadmap
+
+A terminological note on "recovery." Throughout this paper, the word "recovered" is used in a technically stratified sense and is never univocal. Classical results may be recovered in four distinct ways: as exact internal BST theorems about BST objects (Type I); as uniform families of BST theorems indexed by the bound parameter k, with stable form across the family (Type II); as bounded theorems carrying an explicit error term that vanishes as k grows (Type III); or as metatheoretic uniformity claims about the family of bounded models, not expressible as a single BST sentence at any level (Type IV). These types are strictly ordered in strength. The full taxonomy, with the criterion distinguishing each type and its relationship to the paper's four-category accounting, is developed in Part IX, Section 9.1. All subsequent uses of "recovered" are to be read against that taxonomy. Where the type is not obvious from context, it is stated explicitly.
+
+The paper has fourteen parts:
+
+**Part I** — this preamble.
+
+**Part II** — a historical survey of the programs that attempted finite or bounded foundations before this one: Kronecker, Hilbert, Brouwer, Weyl, Nelson, the ultrafinitists, and ZF¬∞. Each is examined at the point where it stopped. The survey is not merely historical — it identifies the four structural stopping points that every prior program hit, and shows precisely how this paper addresses each one.
+
+**Part III** — the foundational package: BFOL, primitive ordinals, and AFB together. These three are not separable. BFOL provides the language. Primitive ordinals provide the minimal arithmetic needed to give content to the phrase "bounded by n." AFB states the foundational constraint. They arrive as a unified commitment.
+
+**Part IV** — the seven axioms of Bounded Set Theory. These are the set-construction principles that operate within the framework of Part III: Extensionality, Empty Set, Pairing, Union, Bounded Separation, Bounded Replacement, and Foundation (which is shown to be a theorem of BST, not an independent axiom — included here for completeness of the ZFC comparison). Power Set, the Axiom of Infinity, and unrestricted Choice are not among them, and each omission is formally justified with an explicit account of what is recoverable.
+
+**Part V** — ordinals and the Burali-Forti problem. The full ordinal theory is developed here, including the result that no prior finitist program has addressed: when a maximum bound is asserted internally to the theory, a bounded analogue of the Burali-Forti paradox arises. The resolution — the bound as a metatheoretic constraint rather than an internal object — is the structural move that distinguishes BST from all prior attempts.
+
+**Part VI** — bounded induction. Two schemas are developed in full: the BST-native successor induction schema, and Buss's bit-induction schema from S¹₂. Both are valid in all models of BST. Their relationship to each other and to full Peano Arithmetic is characterised precisely.
+
+**Part VII** — functions and relations. Without Power Set, function spaces are not automatically available. Two approaches are developed: the syntactic approach, in which functions are defined predicates rather than sets, and the axiomatic approach, in which a Function Axiom recovers function graphs as first-class objects when cardinality conditions permit.
+
+**Part VIII** — the bounded number chain. The natural numbers ℕ_B(k), integers ℤ_B(k), rationals ℚ_B(k), bounded reals ℝ_B(k), and bounded complex numbers ℂ_B(k⁴) are constructed explicitly as parameterised families of finite sets. The closure problem — that arithmetic operations may exceed a fixed bound — is confronted directly, and two resolutions (truncated arithmetic and domain restriction) are developed. The elementary number theory of each system is established, and the bounded reals are constructed from Cauchy sequences over ℚ_B(k) via canonical rounding, with the bounded complex numbers constructed as ℝ_B(k) × ℝ_B(k), completing the chain ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴).
+
+**Part IX** — analysis. The bounded reals ℝ_B(k), constructed in Part VIII from Cauchy sequences over ℚ_B(k) via canonical rounding, serve as the analytic domain. The full apparatus of real analysis — continuity, differentiation, integration, convergence, and transcendental functions — is recovered within this construction (predominantly Type II: exact BST theorems at each bound level for order-dependent results such as IVT, EVT, and completeness; Type III with explicit error O(1/k²) for results depending on chained field arithmetic, with the bounded Cauchy theorem in Part X as a further Type III approximate recovery). The relationship between classical analysis and BST is accounted for precisely: most classical theorems are recovered in Type II or Type III form, carrying explicit bounds and being strictly more informative than their classical counterparts; a small class of results (Goodstein, Paris-Harrington, Ackermann universality) sit at the edge of what finite induction can reach; and some ZFC theorems — Banach-Tarski, non-measurable sets, the well-ordering of ℝ — are correctly absent because they concern objects BST does not posit.
+
+**Part X** — bounded complex analysis. The complex-analytic apparatus over ℂ_B(k⁴) is developed: k-holomorphic functions, bounded Cauchy-Riemann equations, bounded contour integration and Cauchy's theorem (with explicit error bound C/k), bounded Dolbeault cohomology as a finite-dimensional vector space over ℂ_B(k⁴), and preliminary bounded Kähler geometry. The part closes with the bounded Hodge conjecture — the secondary BST formulation of the Hodge conjecture, with all objects well-defined within BST.
+
+**Part XI** — bounded functional analysis. The operator-theoretic layer bridging Parts VIII–X to the downstream geometry and gauge programmes is developed systematically: bounded normed spaces and norm equivalence with computable constants; bounded linear operators as finite matrices over ℂ_B(k⁴) with computable operator norms; dual spaces and a constructive Hahn-Banach theorem proved by dimension induction without Zorn's lemma; spectral theory including eigenvalue existence, spectral decomposition for normal operators, Weyl's inequality, and Davis-Kahan eigenspace stability with computable spectral gap; and finite Hilbert space structure with Gram-Schmidt, Riesz representation, and automatic completeness. All results are Type I or Type II. The part establishes the functional-analytic prerequisites for bounded simplicial cohomology, the Hodge programme, bounded gauge theory, and BST-native discrete quantum gravity.
+
+**Part XII** — computational complexity. The connection to Buss's S¹₂ established in Part VI is developed into a full complexity theory: BST-P and BST-NP as uniform families over bounded domains, their extensional equivalence to classical P and NP, the polynomial hierarchy via the Σ^b_i formula classes of BFOL, the formal logical status of P vs NP in BST, and the recovery of asymptotic complexity via metatheoretic families.
+
+**Part XIII** — physics, as an extrapolation. The relationship between the infinite structures of theoretical physics and the finite predictions physics actually makes is examined directly. The argument is that infinity enters physics as theoretical scaffolding from which finite results are extracted, not as an indispensable component of physical ontology. The bounded analogs of the relevant mathematical structures are identified, and the connection between BST and discrete approaches to quantum gravity is explored. This part applies the formal core of Parts I–XII to physical questions; formal development of BST-based physics is deferred to future work.
+
+**Part XIV** — the Millennium Problems, as an extrapolation. Each of the seven Clay Institute problems is examined on its own mathematical terms and recontextualised within BST. The central finding is that no problem simply dissolves: each either survives intact, transforms into a finite-field or discrete analog of comparable depth, or splits into a finite part (available) and an analytic part (requiring completed ℂ or smooth manifolds). The availability of ℂ_B(k⁴) (Part VIII) and the complex analysis of Part X strengthens the analysis of three problems: the Hodge Conjecture gains a second bounded formulation alongside the Tate Conjecture; the Riemann Hypothesis gains a truncated zeta function over ℂ_B(k⁴) for numerical investigation; and Yang-Mills gains a formal account of its gauge group structure via SU(N)_B(k⁴). This part applies the formal core to open problems in mathematics; formal development of the relevant BST-based theories is deferred to future work.
 
 
 End of Part I
@@ -4537,7 +4629,7 @@ The qualification: the event algebra is a collection of subsets of Ω. In classi
 
 The following areas of mathematics are not available in BST in their classical infinite form, but each has a bounded reformulation that recovers the mathematical substance:
 
-- Classical real analysis as a completed infinite structure: Dedekind cuts and Cauchy sequences construct ℝ as a completed infinite object, which BST does not posit. The analytic apparatus — derivatives, integrals, transcendental functions, IVT, EVT — is recovered in full via the bounded reals ℝ_B(k), constructed in Part VIII (Section 8.7) as a Cauchy completion of ℚ_B(k). The bounded versions carry explicit precision bounds and are strictly more informative than their classical counterparts. Recovery type: Type II (exact BST theorems at each bound level k).
+- Classical real analysis as a completed infinite structure: Dedekind cuts and Cauchy sequences construct ℝ as a completed infinite object, which BST does not posit. The analytic apparatus — derivatives, integrals, transcendental functions, IVT, EVT — is recovered in full via the bounded reals ℝ_B(k), constructed in Part VIII (Section 8.7) from Cauchy sequences over ℚ_B(k) via canonical rounding. The bounded versions carry explicit precision bounds and are strictly more informative than their classical counterparts. Recovery type: Type II for order-dependent results (exact BST theorems at each bound level k); Type III with explicit error O(1/k²) for results depending on chained field arithmetic.
 - Classical topology: open sets as arbitrary subsets of an infinite space require infinite subsets. Finite topological spaces and topology over ℝ_B(k) are fully available. The classical continuum topology is replaced by a bounded analog that supports the same analytic theorems over explicit domains.
 - Measure theory: sigma-algebras over infinite domains require Power Set or its equivalent at infinite scale. Finitely-additive probability over finite event algebras and Lebesgue-style measure over bounded domains are fully available and support all computable probability theory.
 - Functional analysis: infinite-dimensional Hilbert and Banach spaces require infinite sets. Finite-dimensional spectral theory over bounded domains is fully available; its systematic development is in Part XI (Section 11.4).
@@ -4664,7 +4756,7 @@ Under AFB, none of these systems exists as a completed infinite totality. There 
 
 This part constructs the bounded number chain ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴) in full, confronts the closure problem at each level, and establishes which arithmetic results hold unconditionally within a bound and which hold only with explicit provisos. The construction is not a weakening of classical arithmetic — it is arithmetic done honestly, without assuming a completed infinite background domain that the foundation does not provide.
 
-The chain constructed here is the foundation for Part IX. The bounded reals ℝ_B(k) are constructed in Section 8.7 as a Cauchy completion of ℚ_B(k); Part IX develops the analytic apparatus over them.
+The chain constructed here is the foundation for Part IX. The bounded reals ℝ_B(k) are constructed in Section 8.7 from Cauchy sequences over ℚ_B(k) via canonical rounding; Part IX develops the analytic apparatus over them.
 
 
 ## 8.1  The Bounded Naturals ℕ_B(k)
@@ -5000,7 +5092,7 @@ in lowest terms with positive denominator. Unique.
 
 ### 8.3.2  The density theorem
 
-A key property of ℚ_B(k) is its density — how many rationals lie in a given interval. This matters for Section 8.7, where the bounded reals are constructed as a Cauchy completion of ℚ_B(k).
+A key property of ℚ_B(k) is its density — how many rationals lie in a given interval. This matters for Section 8.7, where the bounded reals are constructed from Cauchy sequences over ℚ_B(k) via canonical rounding.
 
 ### Theorem 8.6 — Density of ℚ_B(k):
 
@@ -5302,7 +5394,7 @@ This is a genuine difference in expressive power — not a weakness of BST but a
 
 ## 8.7  The Bounded Reals ℝ_B(k)
 
-Sections 8.1 through 8.3 constructed ℕ_B(k), ℤ_B(k), and ℚ_B(k). Sections 8.4 through 8.6 established their structure, embeddings, and relationship to classical systems. The chain so far runs ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) — but it is not yet complete. The rationals are dense within their bound but contain no irrational values. Analysis requires √2, π, e, and the full continuum of computable reals. The classical construction of ℝ from ℚ proceeds by Cauchy completion: adding the limit points of all Cauchy sequences. The bounded version follows the same path with three modifications: sequences are finite, moduli of convergence are explicit, and the resulting object is a finite set.
+Sections 8.1 through 8.3 constructed ℕ_B(k), ℤ_B(k), and ℚ_B(k). Sections 8.4 through 8.6 established their structure, embeddings, and relationship to classical systems. The chain so far runs ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) — but it is not yet complete. The rationals are dense within their bound but contain no irrational values. Analysis requires √2, π, e, and the full continuum of computable reals. The classical construction of ℝ from ℚ proceeds by Cauchy completion: adding the limit points of all Cauchy sequences. The bounded version follows the same path with four modifications: sequences are finite, moduli of convergence are explicit, the equivalence relation identifying sequences is defined by canonical rounding rather than by an approximate threshold (Section 8.7.2), and the resulting object is a finite set.
 
 
 ### 8.7.1  Cauchy sequences in ℚ_B(k)
@@ -5346,35 +5438,86 @@ within n_M for sufficiently large model bound.
 
 ### 8.7.2  The equivalence relation
 
-### Definition 8.14 — Cauchy equivalence:
+The classical Cauchy construction of ℝ from ℚ identifies two sequences when the difference of their terms converges to zero. In the classical setting, this works because for any ε > 0, the tails can be made ε-close — and approximate equality at every precision simultaneously yields exact equality in the limit.
+
+In BST, precision is fixed at 1/k. Approximate closeness at a fixed threshold is not transitive: if the tails of s and t lie within 2/k of each other, and the tails of t and u lie within 2/k of each other, the triangle inequality gives only that the tails of s and u lie within 4/k of each other — which exceeds the 2/k threshold. This holds at every k, regardless of how large k is: the ratio 4/k to 2/k is always 2, and no choice of k makes 4/k ≤ 2/k. Approximate equality at a fixed precision is inherently non-transitive.
+
+This is not a marginal issue. Under the Bounded Reflection Principle (Theorem 3.5), BST-B proves only sentences true in every finite model. Since the transitivity failure holds at every positive k, a naive approximate-threshold equivalence would fail in every model, and BST-B could not prove the quotient is well-defined.
+
+The resolution follows the pattern already established at every prior link in the bounded number chain. When ℤ_B(k) was constructed from pairs of naturals, the equivalence (a,b) ~_k (c,d) was defined as the exact condition ad = bc — not as "a/b is approximately c/d" — with the cross-multiplication computed in the wider system ℤ_B(k²). When ℚ_B(k) was constructed, the same pattern applied: exact equivalence, computed within domain. The bounded reals require the same structural move: replace approximate closeness with exact identification, computed within the resources available to the model.
+
+### Definition 8.14 — Cauchy equivalence (canonical rounding):
 
 ```
-Two sequences s = (q₀,...,q_m) and t = (r₀,...,r_n)
-in CS(k) are equivalent, written s ~_k t, if:
+Define the canonical rounding function
+ρ_k: CS(k) → ℚ_B(k) as follows.
 
-∀i ≥ ⌈m/2⌉  ∀j ≥ ⌈n/2⌉:  |q_i − r_j| < 2/k
+For a bounded Cauchy sequence s = (q₀, q₁, ..., q_m)
+in CS(k):
+
+(i)   Compute the tail representative: q* = q_m
+      (the final term of the sequence).
+
+(ii)  Round to the nearest element of ℚ_B(k):
+      ρ_k(s) = the element r ∈ ℚ_B(k) minimising
+      |q* − r|, with ties broken by the canonical
+      ordering on ℚ_B(k) (lowest terms, positive
+      denominator, lexicographic on (numerator,
+      denominator)).
+
+Since ℚ_B(k) is a finite linearly ordered set
+(Theorem 8.7) and |·| is computable in ℚ_B(k²)
+(Section 8.3), ρ_k is a well-defined total function
+CS(k) → ℚ_B(k), computable within the model.
 ```
 
 ```
-Intuition: the tails of s and t lie within 2/k of each
-other — they are tracking the same limit to precision 1/k.
+The Cauchy equivalence is defined as the kernel of ρ_k:
+
+s ~_k t   :=   ρ_k(s) = ρ_k(t)
+
+Two Cauchy sequences are equivalent if and only if
+they round to the same canonical rational.
 ```
 
 ```
 ~_k is an equivalence relation on CS(k):
 
-Reflexivity: |q_i − q_i| = 0 < 2/k. ✓
+Reflexivity:  ρ_k(s) = ρ_k(s). ✓
 
-Symmetry: |q_i − r_j| < 2/k → |r_j − q_i| < 2/k. ✓
+Symmetry:     ρ_k(s) = ρ_k(t) → ρ_k(t) = ρ_k(s). ✓
 
-Transitivity: If s ~_k t and t ~_k u, then for tail
-indices i, j, l:
-|q_i − p_l| ≤ |q_i − r_j| + |r_j − p_l| < 2/k + 2/k = 4/k.
-Note: precision degrades from 2/k to 4/k under
-composition. This is the expected behaviour — the
-bound k can always be chosen large enough to absorb
-the degradation. Proved by BI-BST on tail lengths. □
+Transitivity: ρ_k(s) = ρ_k(t) and ρ_k(t) = ρ_k(u)
+              → ρ_k(s) = ρ_k(u). ✓
+
+All three properties are immediate from the
+transitivity of equality on ℚ_B(k).
+No approximate threshold is involved.
+No precision degradation occurs. □
 ```
+
+```
+Well-definedness of the rounding:
+The Cauchy condition (Definition 8.13) ensures that
+all tail elements of s lie within 1/k of each other.
+In particular, any two tail elements q_i, q_j with
+i, j ≥ ⌈m/2⌉ satisfy |q_i − q_j| < 1/k.
+The final term q_m is a tail element, so all tail
+elements lie within 1/k of q_m.
+
+Replacing q_m with any other tail element q_i
+(i ≥ ⌈m/2⌉) as the input to ρ_k would produce
+either the same canonical rational or an adjacent
+one — differing by at most 1/k² (the maximum gap
+between adjacent elements of ℚ_B(k), by Theorem 8.6).
+The choice of q_m as representative is therefore
+stable: perturbation by less than 1/k shifts the
+rounding target by at most one grid position.
+```
+
+Plain language: Two Cauchy sequences are equivalent when they point at the same rational approximation to precision 1/k. The equivalence is exact — it is equality of canonical rational representatives, not approximate closeness of tails. This is the same structural move used to define ℤ_B(k) and ℚ_B(k): replace approximate comparison with exact equivalence computed within the model's domain. The transitivity problem that plagues approximate-threshold equivalence does not arise because exact equality is always transitive.
+
+Note on the relationship to the classical construction. In the classical Cauchy construction, the equivalence s ~ t is defined by lim|s_n − t_n| = 0 — an infinite-precision condition that entails exact equality in the limit. The bounded construction replaces this infinite-precision limit with a finite-precision canonical representative. The two agree to within 1/k: if two classical Cauchy sequences converge to the same real number, their bounded truncations round to the same canonical rational (for sufficiently large k). The bounded construction is the finite-precision shadow of the classical one, made formally exact by the rounding step.
 
 
 ### 8.7.3  The construction
@@ -5384,37 +5527,44 @@ the degradation. Proved by BI-BST on tail lengths. □
 ```
 ℝ_B(k)  :=  CS(k) / ~_k
            =  { [s]_~ | s ∈ CS(k) }
+           ≅  range(ρ_k)  ⊆  ℚ_B(k)
 ```
 
 ```
-Existence: By Definition 7.7 (Part VII), quotient sets
-exist in BST whenever the base set and equivalence
-relation are definable and finite. CS(k) is finite
-(Definition 8.13) and ~_k is decidable (the condition
-|q_i − r_j| < 2/k is computable in ℚ_B(k)). ✓
+Existence: ~_k is the kernel of the total function
+ρ_k: CS(k) → ℚ_B(k). By Definition 7.7 (Part VII),
+quotient sets exist in BST whenever the base set and
+equivalence relation are definable and finite. CS(k) is
+finite (Definition 8.13) and ~_k is decidable (it
+reduces to equality of elements of ℚ_B(k), which is
+decidable by Extensionality). ✓
 ```
 
 ```
-Cardinality: |ℝ_B(k)| is finite. The number of distinct
-limit values — real numbers approximable to precision
-1/k by rationals with numerator and denominator ≤ k —
-is at most k² (by Theorem 8.6: adjacent elements of
-ℚ_B(k) differ by at most 1/k²; precision 1/k resolves
-at most k² distinct values in [−k, k]).
+Canonical form: Each equivalence class [s] is
+canonically represented by the element ρ_k(s) ∈ ℚ_B(k).
+The quotient CS(k)/~_k is therefore isomorphic to
+range(ρ_k) — a finite subset of ℚ_B(k). In practice,
+ℝ_B(k) may be identified with this subset.
 ```
 
 ```
-Canonical representatives: each class [s] has a
-canonical representative — the constant sequence
-(q, q, q) where q ∈ ℚ_B(k) is the closest rational
-to the limit, if the limit is rational; otherwise
-the lexicographically first sequence of minimum
-length in the class. In practice, the choice of
-representative does not affect any theorem — all
-work is done with equivalence classes.
+Cardinality: |ℝ_B(k)| = |range(ρ_k)| ≤ |ℚ_B(k)|.
+The number of distinct limit values — rationals in
+ℚ_B(k) that are rounding targets of at least one
+Cauchy sequence — is at most |ℚ_B(k)| ~ (12/π²)k².
+In practice, for k large relative to the sequences
+being considered, range(ρ_k) covers [−k, k] at
+spacing ~ 1/k², giving |ℝ_B(k)| ≤ k².
+
+This matches the cardinality estimate of the original
+construction: the object has not changed, only the
+formal path to it.
 ```
 
-Plain language: ℝ_B(k) is the set of all real numbers approximable to precision 1/k by rationals in ℚ_B(k). It is a finite set containing all of ℚ_B(k) and additionally those irrational values — √2, √3, truncations of π and e — that are approximable within the bound.
+Plain language: ℝ_B(k) is the set of all rational values in ℚ_B(k) that are the best 1/k-precision approximations of limits of bounded Cauchy sequences. It is a finite set, a subset of ℚ_B(k), containing all of ℚ_B(k) itself (since constant sequences round to their own value) and representing irrational values — √2, π, e — by their nearest rational at precision 1/k.
+
+Remark on the nature of ℝ_B(k). The bounded reals are a finite set of rationals. This is not a deficiency — it is the correct formal expression of what "real number at precision 1/k" means in a bounded setting. The classical real line is the limit of a family of such finite approximations as k → ∞ in the metatheory. BST does not posit that limit; it works with each finite approximation directly. The Cauchy construction is the motivation — it explains why this particular finite set is the right one — but the resulting object is a finite subset of ℚ_B(k), and all arithmetic on it is rational arithmetic within domain.
 
 
 ### 8.7.4  Embedding and arithmetic
@@ -5423,58 +5573,131 @@ Plain language: ℝ_B(k) is the set of all real numbers approximable to precisio
 
 ```
 The map  ι: ℚ_B(k) → ℝ_B(k)  defined by
-q ↦ [(q, q, q)]  (constant sequence of length 3)
+q ↦ ρ_k((q, q, q))  =  q
 
-is an injective order-preserving field homomorphism
-on the domain where field operations close.
+is the identity on ℚ_B(k): every rational maps to
+itself, since the constant sequence (q, q, q) has
+final term q, which rounds to q.
 
-Proof: Injectivity follows from Theorem 8.6 — distinct
-rationals in ℚ_B(k) are separated by at least 1/k²,
-so their constant sequences are inequivalent under ~_k.
-Order-preservation and the field homomorphism property
-follow from arithmetic on constant sequences reducing
-to arithmetic on their values. □
+ι is injective, order-preserving, and a field
+homomorphism on the domain where field operations
+close.
+
+Proof: Injectivity is immediate (ι is the identity).
+Order-preservation follows from the order on ℚ_B(k)
+(Definition 8.11). The field homomorphism property
+holds because ι is the identity embedding. □
 ```
 
 ### Definition 8.16 — Real arithmetic:
 
 ```
-For [s], [t] ∈ ℝ_B(k) with s = (q₀,...,q_m),
-t = (r₀,...,r_n), l = min(m,n):
+Since ℝ_B(k) ≅ range(ρ_k) ⊆ ℚ_B(k), arithmetic on
+ℝ_B(k) is defined via rational arithmetic followed
+by rounding:
 
-[s] + [t]  :=  [(q₀+r₀, ..., q_l+r_l)]
-               addition performed in ℚ_B(k²)
+For a, b ∈ ℝ_B(k) (identified with their canonical
+rational representatives in ℚ_B(k)):
 
-[s] × [t]  :=  [(q₀r₀, ..., q_l r_l)]
-               multiplication performed in ℚ_B(k⁴)
+a +_k b  :=  ρ_k(a + b)
+             where a + b is computed in ℚ_B(k²)
+             and ρ_k rounds the result back to ℝ_B(k).
 
-−[s]       :=  [(−q₀, ..., −q_m)]
+a ×_k b  :=  ρ_k(a × b)
+             where a × b is computed in ℚ_B(k⁴)
+             and ρ_k rounds the result back to ℝ_B(k).
+
+−_k a    :=  ρ_k(−a)  =  −a
+             (negation of a rational in ℚ_B(k) stays
+             in ℚ_B(k), so rounding is trivial).
 ```
 
 ```
-Well-definedness: if s ~_k s' and t ~_k t', then
-(s+t) ~_k (s'+t') to precision 4/k, by the triangle
-inequality. Full verification by BI-BST. ✓
+Rounding error:
+Each arithmetic operation introduces a rounding error
+of at most 1/(2k²) — the maximum distance from any
+point to the nearest element of ℚ_B(k), by Theorem 8.6.
 
-Bound widening mirrors the pattern established for ℚ_B(k) in Section 8.3: addition requires ℚ_B(k²), multiplication ℚ_B(k⁴).
+For a chain of N operations, the accumulated rounding
+error is at most N/(2k²).
+
+This is the same bound-widening pattern used throughout
+the chain: addition requires the wider system ℚ_B(k²),
+multiplication requires ℚ_B(k⁴), and the rounding step
+returns the result to ℝ_B(k) at the cost of an explicit
+and computable error.
+```
+
+```
+Closure proviso:
+As with ℤ_B(k) and ℚ_B(k), operations on ℝ_B(k) are
+closed within the domain: the rounding step ρ_k always
+returns an element of ℝ_B(k) ⊆ ℚ_B(k), by definition.
+The intermediate computation (before rounding) may
+require the wider ambient system ℚ_B(k²) or ℚ_B(k⁴),
+which must fit within n_M. This is the standard
+within-domain proviso.
 ```
 
 
 ### 8.7.5  Key theorems
 
-### Theorem 8.13 — ℝ_B(k) is a bounded ordered field:
+### Theorem 8.13 — ℝ_B(k) is a bounded approximate ordered field:
 
 ```
-On the domain where operations stay within bound,
-ℝ_B(k) satisfies all ordered field axioms.
-Proof: Each axiom reduces to the corresponding
-property of ℚ_B(k) applied termwise. By BI-BST. □
+On the domain where intermediate computations stay
+within the model bound:
+
+ℝ_B(k) satisfies all ordered field axioms up to
+rounding error at most 1/(2k²) per operation.
+
+Specifically, for all a, b, c ∈ ℝ_B(k):
+
+Commutativity:    a +_k b = b +_k a  (exact — rounding
+                  is applied to the same sum). ✓
+                  a ×_k b = b ×_k a  (exact). ✓
+
+Associativity:    |( a +_k b ) +_k c − a +_k ( b +_k c )|
+                  ≤ 1/(2k²)
+                  (one rounding step may differ). ✓
+
+Distributivity:   |a ×_k (b +_k c) − (a ×_k b +_k a ×_k c)|
+                  ≤ C/k²  for computable C. ✓
+
+Additive identity:  a +_k 0 = a  (exact — 0 ∈ ℚ_B(k)). ✓
+Multiplicative id:  a ×_k 1 = a  (exact — 1 ∈ ℚ_B(k)). ✓
+
+Additive inverses:  a +_k (−_k a) = 0  (exact). ✓
+
+Order compatibility: a < b → a +_k c ≤ b +_k c
+                     (≤ rather than < due to rounding). ✓
+
+Proof: Each identity reduces to rational arithmetic
+in ℚ_B(k²) or ℚ_B(k⁴), followed by rounding. The
+rounding step introduces at most 1/(2k²) per
+application (Theorem 8.6). Commutativity and
+identity are exact because the inputs to ρ_k are
+identical in both cases. Associativity and
+distributivity may differ by one rounding step,
+giving the stated error bound. By BI-BST. □
+
+Note: ℝ_B(k) is an exact ordered field on the
+subdomain where all intermediate results happen to
+lie in ℝ_B(k) without rounding. The rounding error
+is the cost of guaranteed closure. For applications
+requiring exact field axioms, work in ℚ_B(k) directly;
+ℝ_B(k) adds density at the cost of approximate
+associativity, with the approximation error explicit
+and computable.
 ```
+
+Plain language: The bounded reals form an ordered field up to a rounding error that is explicit, computable, and vanishes as k grows. Commutativity and identities are exact. Associativity holds to within 1/(2k²). For any specific computation, the accumulated error is bounded by (number of operations)/(2k²) — always finite, always computable, always improvable by choosing a larger k in the metatheory. This is Type II recovery for the exact properties and Type III for the approximate ones, with the error term stated precisely.
 
 ### Theorem 8.14 — ℝ_B(k) contains irrational elements:
 
 ```
-For any integer n ≥ 2 with n ≤ k, √n ∈ ℝ_B(k).
+For any integer n ≥ 2 with n ≤ k, √n ∈ ℝ_B(k)
+(represented by its nearest rational in ℚ_B(k)).
 
 Proof: The Newton-Raphson iteration for √n,
 starting from q₀ = 1:
@@ -5482,52 +5705,104 @@ starting from q₀ = 1:
 converges quadratically. Within ⌈log₂(log₂(k))⌉
 steps it produces q with |q² − n| < 1/k, using only
 arithmetic in ℚ_B(k²). The resulting finite sequence
-is in CS(k); its equivalence class is √n ∈ ℝ_B(k). □
+s is in CS(k), and ρ_k(s) is the element of ℚ_B(k)
+nearest to √n at precision 1/k.
+
+This representative is unique and well-defined.
+It is the canonical name for √n in ℝ_B(k). □
 
 Similarly for any computable real approximable to
 precision 1/k by a rational sequence of length ≤ k².
+The irrational value is represented in ℝ_B(k) by its
+nearest rational at precision 1/k — a specific,
+computable element of ℚ_B(k).
 ```
+
+Plain language: ℝ_B(k) "contains" irrational values in the sense that each irrational approximable to precision 1/k has a unique canonical rational representative in the finite set ℝ_B(k). The element is not irrational — it is the rational nearest to the irrational value. This is the formally precise version of what "√2 to six decimal places" means: a specific rational number, not an infinite object. The classical irrational is the metatheoretic limit of the family {ρ_k(√2-sequence) | k ∈ metatheory}.
 
 ### Theorem 8.15 — ℝ_B(k) is k-complete:
 
 ```
-Every sequence in CS(k) has a limit in ℝ_B(k) —
-namely, its own equivalence class [s].
+Every bounded Cauchy sequence s ∈ CS(k) has a limit
+in ℝ_B(k) — namely ρ_k(s), its canonical rational
+representative.
 
-Proof: Immediate from the construction. □
+Proof: ρ_k(s) ∈ ℝ_B(k) by construction. The tail
+elements of s all lie within 1/k of ρ_k(s), by the
+Cauchy condition and the definition of rounding.
+Therefore ρ_k(s) is within 1/k of the sequence's
+"limit" — in the only sense of "limit" that is
+available at precision 1/k. □
 
 This is the bounded completeness theorem: every
 explicitly given finite Cauchy sequence with modulus
-1/k has a representative in the finite set ℝ_B(k).
+1/k has a representative in the finite set ℝ_B(k),
+and that representative is within 1/k of every tail
+element. Recovery type: Type II — exact BST theorem
+at each bound level k.
 ```
 
 
 ### ◆ Summary — The Bounded Reals
 
 ```
-Construction:  ℝ_B(k) = CS(k) / ~_k
-               Equivalence classes of finite Cauchy
-               sequences from ℚ_B(k) with precision 1/k.
+Construction:  ℝ_B(k) = CS(k) / ~_k ≅ range(ρ_k)
+               Canonical rational representatives of
+               finite Cauchy sequences from ℚ_B(k),
+               identified via the rounding function ρ_k.
 
-Cardinality:   Finite. At most k² distinct values
-               in [−k, k].
+Equivalence:   s ~_k t  iff  ρ_k(s) = ρ_k(t)
+               (exact equality of canonical representatives;
+               trivially transitive).
+
+Cardinality:   Finite. At most |ℚ_B(k)| ~ (12/π²)k²
+               distinct values in [−k, k].
 
 Contains:      All of ℚ_B(k) via constant sequences.
-               All √n for integer n ≤ k.
+               All √n for integer n ≤ k (as nearest
+               rational representatives).
                All computable reals approximable to
                precision 1/k within the bound.
 
-Arithmetic:    Ordered field within domain.
-               Addition closes in ℚ_B(k²).
-               Multiplication closes in ℚ_B(k⁴).
+Arithmetic:    Approximate ordered field within domain.
+               Commutativity and identities: exact.
+               Associativity, distributivity: within 1/(2k²).
+               Addition intermediate step in ℚ_B(k²).
+               Multiplication intermediate step in ℚ_B(k⁴).
+               Rounding returns results to ℝ_B(k).
 
 Completeness:  k-complete (Theorem 8.15).
+               Every Cauchy sequence in CS(k) has a
+               canonical representative in ℝ_B(k).
+```
+
+```
+Structural note — the "within domain" pattern:
+
+ℤ_B(k):  equivalence (a,b) ~ (c,d) defined by exact
+          condition ad = bc, computed in ℤ_B(k²).
+          Transitivity: trivial (exact equality).
+
+ℚ_B(k):  equivalence (a,b) ~ (c,d) defined by exact
+          condition ad = bc, computed in ℤ_B(k²).
+          Transitivity: trivial (exact equality).
+
+ℝ_B(k):  equivalence s ~ t defined by exact condition
+          ρ_k(s) = ρ_k(t), computed in ℚ_B(k).
+          Transitivity: trivial (exact equality).
+
+The pattern is uniform: at each stage of the chain,
+equivalence is defined by exact identification computed
+within the model's domain. Approximate comparison is
+used as motivation, not as the formal relation. This
+is what makes the quotient construction well-defined
+at every level.
 ```
 
 
 ## 8.8  The Bounded Complex Numbers ℂ_B(k⁴)
 
-Sections 8.1 through 8.7 constructed the bounded real field ℝ_B(k). The classical extension from ℝ to ℂ is algebraic: ℂ = ℝ × ℝ with multiplication defined by the rule (a,b)·(c,d) = (ac−bd, ad+bc). No completed infinite object beyond ℝ is required. The same extension is available in BST, using the Cartesian product machinery of Part VII and the field structure of ℝ_B(k) established in Theorem 8.13.
+Sections 8.1 through 8.7 constructed the bounded real field ℝ_B(k). The classical extension from ℝ to ℂ is algebraic: ℂ = ℝ × ℝ with multiplication defined by the rule (a,b)·(c,d) = (ac−bd, ad+bc). No completed infinite object beyond ℝ is required. The same extension is available in BST, using the Cartesian product machinery of Part VII and the approximate field structure of ℝ_B(k) established in Theorem 8.13.
 
 The classical complex field ℂ — as a completed infinite object — does not exist in BST. The bounded complex field ℂ_B(k⁴) does.
 
@@ -5597,32 +5872,50 @@ The embedding of ℝ_B(k) into ℂ_B(k⁴) sends each a ∈ ℝ_B(k) to the pair
 
 ### 8.8.3  Field axioms
 
-### Theorem 8.16 — ℂ_B(k⁴) is a bounded field:
+### Theorem 8.16 — ℂ_B(k⁴) is a bounded approximate field:
 
 ```
 On the domain where operations stay within bound,
-ℂ_B(k⁴) satisfies the field axioms:
+ℂ_B(k⁴) satisfies the field axioms with the same
+approximation profile as ℝ_B(k):
 
-(i)   Commutativity of + and ·: immediate from
-      commutativity of ℝ_B(k).
+(i)   Commutativity of + and ·: exact (immediate from
+      commutativity of ℝ_B(k), which is exact). ✓
 
-(ii)  Associativity of + and ·: each reduces to
-      associativity in ℝ_B(k) componentwise.
+(ii)  Associativity of + and ·: approximate, within
+      C/k² for computable C. Each complex operation
+      involves a bounded number of ℝ_B(k) operations
+      (at most 4 for multiplication: ac, bd, ad, bc),
+      each contributing at most 1/(2k²) rounding error.
+      Total: at most 4/(2k²) = 2/k² per complex
+      multiplication. ✓
 
-(iii) Distributivity: by direct expansion.
+(iii) Distributivity: approximate, within C'/k² for
+      computable C'. ✓
 
-(iv)  Additive identity: (0, 0).
+(iv)  Additive identity: (0, 0). Exact. ✓
 
-(v)   Multiplicative identity: (1, 0).
+(v)   Multiplicative identity: (1, 0). Exact. ✓
 
-(vi)  Additive inverses: (−a, −b).
+(vi)  Additive inverses: (−a, −b). Exact. ✓
 
 (vii) Multiplicative inverses: (a/(a²+b²), −b/(a²+b²))
-      for all (a,b) ≠ (0,0) within domain.
+      for all (a,b) ≠ (0,0) within domain. Approximate:
+      the divisions and additions contribute O(1/k²)
+      rounding. ✓
 
-Proof of each: reduces to Theorem 8.13 applied
-componentwise, plus the definition of multiplication.
-By BI-BST on component length. □
+Proof of each: reduces to Theorem 8.13 (corrected)
+applied componentwise, plus the definition of
+multiplication. The rounding errors propagate
+componentwise. By BI-BST on component length. □
+
+Note: ℂ_B(k⁴) inherits the same "exact for commutative
+and identity operations, approximate for associative
+and distributive operations" profile as ℝ_B(k). The
+error per complex operation is a small computable
+multiple of 1/k², vanishing as k grows. For any fixed
+computation of bounded length, the total error is
+O(1/k²) — Type III with explicit bound.
 ```
 
 ```
@@ -5683,9 +5976,11 @@ Cardinality: |𝕆_B(k¹⁶)| ≤ k¹⁶.
 ```
 Algebraic properties at each step:
 
-ℝ_B(k):    Ordered field. Commutative, associative.
-ℂ_B(k⁴):   Field. Commutative, associative.
-             Not ordered. Algebraically closed.
+ℝ_B(k):    Approximate ordered field. Commutative (exact),
+            associative within 1/(2k²).
+ℂ_B(k⁴):   Approximate field. Commutative (exact),
+            associative within C/k².
+            Not ordered. Algebraically closed within bound.
 ℍ_B(k⁸):   Division algebra. Associative.
              Not commutative (ij ≠ ji).
              Cannot be proved via Theorem 8.16 —
@@ -5807,12 +6102,15 @@ Ordered field with canonical order.
 
 ```
 ℝ_B(k):
-Equivalence classes of finite Cauchy sequences from
-ℚ_B(k) with precision 1/k.
+Canonical rational representatives of finite Cauchy
+sequences from ℚ_B(k), identified via the rounding
+function ρ_k. Isomorphic to range(ρ_k) ⊆ ℚ_B(k).
 Cardinality ≤ k² distinct values in [−k, k].
 Contains all of ℚ_B(k) and all computable reals
 approximable to precision 1/k within the bound.
-Bounded ordered field. k-complete.
+Approximate ordered field: commutativity and identities
+exact; associativity/distributivity within 1/(2k²).
+k-complete (Theorem 8.15).
 ```
 
 ```
@@ -5845,7 +6143,7 @@ End of Part VIII
 
 Parts III through VIII have built the foundational package in full: bounded logic, primitive ordinals, AFB, the seven axioms of BST, the ordinal theory, bounded induction, functions and relations, and the complete bounded number chain ℕ_B(k) ↪ ℤ_B(k) ↪ ℚ_B(k²) ↪ ℝ_B(k) ↪ ℂ_B(k⁴). This part develops the full analytic apparatus over ℝ_B(k) and gives an honest accounting of how BST's mathematics compares to classical mathematics.
 
-That accounting requires a precise framing. The natural comparison — BST against ZFC, theorem by theorem — can be stated as a list of losses: results provable in ZFC that BST cannot prove. That framing is wrong on two counts. First, what looks like a loss is often a recovery in a precise sense once the right construction is in hand — the bounded reals are not a mere approximation to ℝ, they are a finite analytic domain within which most classical real analysis holds as exact bounded theorems at each level (Type II) and complex-analytic results hold as approximate theorems with explicit error control (Type III), all of which are strictly more informative than their classical counterparts. Second, some results that are ZFC theorems are not losses from BST's perspective at all — their absence is the correct consequence of a lower ontological commitment, and in some cases their absence is a gain.
+That accounting requires a precise framing. The natural comparison — BST against ZFC, theorem by theorem — can be stated as a list of losses: results provable in ZFC that BST cannot prove. That framing is wrong on two counts. First, what looks like a loss is often a recovery in a precise sense once the right construction is in hand — the bounded reals are not a mere approximation to ℝ, they are a finite analytic domain within which order-dependent results of classical real analysis hold as exact bounded theorems at each level (Type II) and results involving chained field arithmetic hold as approximate theorems with explicit error control O(1/k²) (Type III), all of which are strictly more informative than their classical counterparts. Second, some results that are ZFC theorems are not losses from BST's perspective at all — their absence is the correct consequence of a lower ontological commitment, and in some cases their absence is a gain.
 
 The taxonomy that follows reflects this. The four categories are not four types of loss. They are four different structural relationships between a classical theorem and BST. Three of those relationships are either recoveries or gains. One — the narrowest — is a genuine limitation. Before the category taxonomy is presented, however, the word "recovered" requires a precise treatment. It has been used throughout this paper in a stratified sense. This section establishes that taxonomy formally.
 
@@ -5972,7 +6270,7 @@ One more point before proceeding. The Category D gap is sometimes described as B
 
 The theorems in this category have the form: classical statement over ℝ (or another infinite domain) → BST statement over ℝ_B(k) with explicit bound, where the BST version implies the classical version in any model where the bound is suppressed.
 
-ℝ_B(k) is constructed in full in Part VIII, Section 8.7. The key properties used here are: it is a finite ordered field, k-complete (Theorem 8.15), contains all of ℚ_B(k) and all computable reals approximable to precision 1/k within the bound, and has at most k² distinct values in [−k, k].
+ℝ_B(k) is constructed in full in Part VIII, Section 8.7. The key properties used here are: it is a finite approximate ordered field (commutativity and identities exact, associativity within 1/(2k²)), k-complete (Theorem 8.15), contains all of ℚ_B(k) and all computable reals approximable to precision 1/k within the bound, and has at most k² distinct values in [−k, k]. The Category A recoveries below depend primarily on order and finite search, not on field associativity, and are therefore unaffected by the approximate status of the field axioms.
 
 ### The Intermediate Value Theorem
 
@@ -6000,7 +6298,7 @@ Classical statement: Every Cauchy sequence of reals converges.
 
 Classical diagnosis: Requires ℝ as a completed object. Appears to be a loss.
 
-BST recovery: By Theorem 8.15 (k-completeness, Part VIII, Section 8.7.5), every explicitly given finite Cauchy sequence of elements of ℚ_B(k) with modulus of convergence 1/k has a limit in ℝ_B(k) — namely its own equivalence class. The limit exists by construction, and its location within precision 1/k is explicit.
+BST recovery: By Theorem 8.15 (k-completeness, Part VIII, Section 8.7.5), every explicitly given finite Cauchy sequence of elements of ℚ_B(k) with modulus of convergence 1/k has a limit in ℝ_B(k) — namely its canonical rational representative ρ_k(s). The limit exists by construction, and its location within precision 1/k is explicit.
 
 Assessment: The classical completeness theorem is a statement about infinite sequences over an infinite domain. The BST version is a statement about finite sequences over a finite domain, with explicit precision. Every use of completeness in applied analysis concerns a specific finite computation — and for that computation, Theorem 8.15 applies exactly. Category A, Type II.
 
@@ -6036,7 +6334,7 @@ I(f, 𝒫) := Σ_{i=0}^{m-1} f(t_i) · (x_{i+1} - x_i)
 where t_i ∈ [x_i, x_{i+1}] are sample points.
 ```
 
-This is an exact finite sum in ℝ_B(k). For any continuous f on ℝ_B(k) ∩ [a,b] and any ε > 0, there exists δ > 0 such that for any two partitions 𝒫, 𝒬 with mesh < δ, |I(f,𝒫) - I(f,𝒬)| < ε. This follows from uniform continuity of f on the finite domain (established in Part IX, analytic machinery). Non-measurable sets do not arise: every subset of a finite Ω is in the algebra generated by singletons, and every such set has a well-defined measure. The Vitali and Banach-Tarski constructions require uncountable Choice and are correctly absent (Category C).
+This is a finite sum computed in the wider system ℚ_B(k⁴) — the individual products f(t_i) · (x_{i+1} − x_i) and their sum are rational arithmetic, exact in ℚ_B(k⁴). The final result is rounded to ℝ_B(k) by ρ_k, introducing at most 1/(2k²) rounding error. For any fixed partition and fixed f, the Riemann sum is therefore exact to within 1/(2k²) — a computable, vanishing error. For any continuous f on ℝ_B(k) ∩ [a,b] and any ε > 0, there exists δ > 0 such that for any two partitions 𝒫, 𝒬 with mesh < δ, |I(f,𝒫) - I(f,𝒬)| < ε. This follows from uniform continuity of f on the finite domain (established in Part IX, analytic machinery). Non-measurable sets do not arise: every subset of a finite Ω is in the algebra generated by singletons, and every such set has a well-defined measure. The Vitali and Banach-Tarski constructions require uncountable Choice and are correctly absent (Category C).
 
 Assessment: Measure theory and integration are fully available in BST on finite event algebras and finite domains. The BST versions are paradox-free by construction. The countably-additive σ-algebra framework — which exists only to handle infinite domains — is correctly absent. Category A.
 
@@ -6477,16 +6775,22 @@ all of topology over finite domains,
 Lebesgue-style measure over finite event algebras.
 
 Recovery is stratified. For Type II results (IVT, EVT,
-completeness, Heine-Borel, measure theory): the BST
-theorem is exact at each bound level k; the classical
-theorem is its shadow when the bound is suppressed.
-For Type III results (bounded Cauchy theorem, k-holomorphic
-functions, bounded Hodge decomposition): the BST theorem
-carries an explicit error term; the classical theorem
-is the limit as the error vanishes. In both cases the
-BST version is strictly more informative than the classical
-one: it gives a rate, a witness, or a computable bound
-that the classical statement suppresses.
+completeness, Heine-Borel): the BST theorem is exact
+at each bound level k; these depend on order and
+finite search over ℝ_B(k), not on field associativity,
+and are therefore exact. The classical theorem is their
+shadow when the bound is suppressed.
+For Type III results (field arithmetic on ℝ_B(k) and
+ℂ_B(k⁴), measure-theoretic integration, k-holomorphic
+functions, bounded Hodge decomposition): the BST
+theorem carries an explicit error term — at most
+O(N/k²) for a computation involving N field operations,
+where N is computable from the specific theorem. The
+classical theorem is the limit as the error vanishes.
+In both cases the BST version is strictly more
+informative than the classical one: it gives a rate,
+a witness, or a computable bound that the classical
+statement suppresses.
 ```
 
 ```
@@ -8334,7 +8638,8 @@ All natural numbers N      No               Requires Infinity
 Integer ring Z             No (as a set)    Unbounded
 Rational field Q           No (as a set)    Unbounded
 Real field R               No               Requires Infinity; unbounded
-Bounded reals ℝ_B(k)       Yes              Cauchy completion of ℚ_B(k²);
+Bounded reals ℝ_B(k)       Yes              Cauchy sequences over ℚ_B(k²)
+                                            with canonical rounding;
                                             k-complete; Part VIII §8.7
 Completed complex field C  No               Requires completed R
 Bounded complex field       Yes              ℝ_B(k) × ℝ_B(k); bounded
