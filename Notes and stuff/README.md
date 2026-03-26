@@ -1,1 +1,0 @@
-This directory was previously called unmerged future work, a better description replaced that and the previous folder was removed sa the files it contained had beeen distilled and processed and merged with the latest commit to the .md
