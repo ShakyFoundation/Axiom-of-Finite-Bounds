@@ -30,6 +30,19 @@ The paper applies the completed construction to the Millennium Problems as an ex
 **Keywords:** bounded set theory, finitist foundations, Axiom of Finite Bounds, bounded first-order logic, bounded reals, Burali-Forti problem, finite mathematics, ZFC alternatives, ontological parsimony, mathematical paradoxes
 
 
+---
+
+**Note on standalone papers.** Two sections of this paper have been developed into standalone papers that take precedence over the corresponding sections here.
+
+*Bounded First-Order Logic* (Working Paper, 2026) supersedes Part III of this paper. It provides the complete syntax, semantics, proof theory, and metatheory of BFOL, including results (direct Maehara-method Craig interpolation, Beth definability, cut-elimination) not present in this paper's treatment.
+
+*Bounded Set Theory* (Working Paper, 2026) supersedes Parts IV and V of this paper. It constructs BST from a single axiom (the Axiom of Finite Bounds), proves all nine non-Infinity ZFC axioms as Bounded Fundamental Theorems uniformly constrained to interior elements, and establishes consistency relative to IΣ₁. The architecture differs from this paper's treatment: where this paper presents six axioms and four BFTs, the standalone paper demonstrates that a single axiom suffices and all nine ZFC properties are theorems.
+
+This paper remains the complete development of the full programme (number systems, analysis, complex analysis, functional analysis, representation theory, complexity theory, and the Millennium Problems). For the logic and set theory foundations specifically, the standalone papers are the definitive versions.
+
+---
+
+
 # Part I: Preamble
 
 
@@ -445,6 +458,8 @@ All quantification ranges over finite domains. If every domain is finite and bou
 The three components of this Part formalize the commitment at three levels. BFOL formalizes it at the level of logic: all quantification is bounded. Primitive ordinals formalize it at the level of arithmetic: counting has a ceiling. The Axiom of Finite Bounds formalizes it at the level of set theory: every set is finite and bounded. These three are not built sequentially from each other — they are three expressions of one commitment, presented in the order required by logical dependence.
 
 ## 3.1  Bounded First-Order Logic (BFOL)
+
+**Note.** This section is superseded by the standalone paper *Bounded First-Order Logic* (Working Paper, 2026), which provides a more complete treatment including direct Maehara-method Craig interpolation, Beth definability, and cut-elimination. The treatment below remains correct but is less comprehensive.
 
 
 ### 3.1.1  The problem with standard first-order logic in a bounded foundation
@@ -2581,6 +2596,8 @@ End of Part 3b
 
 # Part IV: The Six Axioms of Bounded Set Theory
 
+**Note.** This Part is superseded by the standalone paper *Bounded Set Theory* (Working Paper, 2026). The standalone paper demonstrates that a single axiom (AFB) suffices: all nine non-Infinity ZFC axioms are proved as Bounded Fundamental Theorems, each uniformly constrained to interior elements. The architecture presented below (six axioms, four BFTs) has been refined. The standalone paper also replaces ACA₀ with IΣ₁ as the metatheory and establishes that the metatheory has the same proof-theoretic strength as the theory. The treatment below remains historically informative but is not the definitive version.
+
 
 The formal system presented here rests on a single pre-formal commitment:
 
@@ -3681,6 +3698,8 @@ The foundational commitment — there is no infinity, and there is an upper boun
 End of Part IV
 
 # Part V: Ordinals and the Burali-Forti Problem
+
+**Note.** The ordinal theory and Burali-Forti resolution are also developed in the standalone paper *Bounded Set Theory* (Sections 5 and 5.5), which reflects the current single-axiom architecture. The treatment below remains correct in its conclusions but uses the older six-axiom framework.
 
 The foundational commitment — there is no infinity, and there is an upper bound — has immediate consequences for ordinal theory. Classical ordinals are built to extend through ω and beyond; BST's ordinals cannot.
 
